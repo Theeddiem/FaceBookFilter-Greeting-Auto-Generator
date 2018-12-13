@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings;
 using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
@@ -31,20 +32,12 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void initializeAppGreetings()
         {
-            addAGreetingCard("Happy Birthday", Properties.Resources.Happy_birthday_greeting1, "Happy_birthday_greeting1");
-            addAGreetingCard("Happy Holiday", Properties.Resources.happy_holiday_greeting, "happy_holiday_greeting");
-            addAGreetingCard("Wedding Congratulations", Properties.Resources.happy_Wedding_greeting, "happy_Wedding_greeting");
-            addAGreetingCard("Happy Anniversary", Properties.Resources.wedding_anniversary_greeting, "wedding_anniversary_greeting");
-            addAGreetingCard("Easy Recruitment", Properties.Resources.gious_kal, "gious_kal");
-            addAGreetingCard("Happy New year", Properties.Resources.happy_newYear_greeting, "happy_newYear_greeting");
-        }
-
-        private void addAGreetingCard(string i_GreetingSubject, Image i_GreetingPicture, string i_ImageFileName)
-        {
-            PictureBox greetingPictureBox = new PictureBox();
-            greetingPictureBox.Image = i_GreetingPicture;
-            Greeting greeting = new Greeting(i_GreetingSubject, greetingPictureBox, i_ImageFileName);
-            greetingsListBox.Items.Add(greeting);
+            greetingsListBox.Items.Add(GreetingFactory.Create("AnniversaryGreeting"));
+            greetingsListBox.Items.Add(GreetingFactory.Create("BirthdayGreeting"));
+            greetingsListBox.Items.Add(GreetingFactory.Create("HolidayGreeting"));
+            greetingsListBox.Items.Add(GreetingFactory.Create("NewYearGreeting"));
+            greetingsListBox.Items.Add(GreetingFactory.Create("RecruitmentGreeting"));
+            greetingsListBox.Items.Add(GreetingFactory.Create("WeddingGreeting"));
         }
 
         private void greetingsListBox_SelectedIndexChanged(object sender, EventArgs e)

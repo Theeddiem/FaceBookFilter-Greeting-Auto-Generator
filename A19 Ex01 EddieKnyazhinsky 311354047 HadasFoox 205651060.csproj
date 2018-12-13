@@ -72,13 +72,20 @@
   <ItemGroup>
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
-    <Compile Include="Greeting.cs" />
+    <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GreetingForm.Designer.cs">
       <DependentUpon>GreetingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Greetings\AnniversaryGreeting.cs" />
+    <Compile Include="Greetings\BirthdayGreeting.cs" />
+    <Compile Include="Greetings\GreetingFactory.cs" />
+    <Compile Include="Greetings\HolidayGreeting.cs" />
+    <Compile Include="Greetings\NewYearGreeting.cs" />
+    <Compile Include="Greetings\RecruitmentGreeting.cs" />
+    <Compile Include="Greetings\WeddingGreeting.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
