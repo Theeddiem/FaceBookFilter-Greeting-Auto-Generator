@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E43D3A7B-5E34-4CC1-921A-7AA08DF94947}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>A19Ex01EddieKnyazhinsky311354047HadasFoox205651060</RootNamespace>
+    <AssemblyName>A19 Ex01 EddieKnyazhinsky 311354047 HadasFoox 205651060</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>FBApi\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FbGraphApiWrapper">
+      <HintPath>FBApi\FbGraphApiWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FavoriteFriend.cs" />
+    <Compile Include="Favoriteplace.cs" />
+    <Compile Include="Greeting.cs" />
+    <Compile Include="GreetingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GreetingForm.Designer.cs">
+      <DependentUpon>GreetingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OvalPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlacesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlacesForm.Designer.cs">
+      <DependentUpon>PlacesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GreetingForm.resx">
+      <DependentUpon>GreetingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlacesForm.resx">
+      <DependentUpon>PlacesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy_holiday_greeting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No_User.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-exit-logout-sign-out-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favourite-places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placesForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook_Our_Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gious_kal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy_newYear_greeting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy_Wedding_greeting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wedding_anniversary_greeting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Happy_birthday_greeting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greeting_Backround2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greeting_Icon..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GreetingIcon.ico" />
+    <None Include="Resources\unknow.png" />
+    <None Include="Resources\not-available-.jpg" />
+    <None Include="Resources\Greeting-Card-Envelope.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
