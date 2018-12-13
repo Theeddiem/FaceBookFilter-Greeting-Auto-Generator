@@ -45,5 +45,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             return m_GreetingSubject;
         }
+
+        public enum GreetingType
+        {
+            AnniversaryGreeting,
+            BirthdayGreeting,
+            HolidayGreeting,
+            NewYearGreeting,
+            RecruitmentGreeting,
+            WeddingGreeting
+        }
     }
 }

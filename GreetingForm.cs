@@ -27,17 +27,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            initializeAppGreetings();
+            getGreetingList();
         }
 
-        private void initializeAppGreetings()
+        private void getGreetingList()
         {
-            greetingsListBox.Items.Add(GreetingFactory.Create("AnniversaryGreeting"));
-            greetingsListBox.Items.Add(GreetingFactory.Create("BirthdayGreeting"));
-            greetingsListBox.Items.Add(GreetingFactory.Create("HolidayGreeting"));
-            greetingsListBox.Items.Add(GreetingFactory.Create("NewYearGreeting"));
-            greetingsListBox.Items.Add(GreetingFactory.Create("RecruitmentGreeting"));
-            greetingsListBox.Items.Add(GreetingFactory.Create("WeddingGreeting"));
+            foreach (var item in Enum.GetNames(typeof(Greeting.GreetingType)))
+            {
+                greetingsListBox.Items.Add(GreetingFactory.Create(item));
+            }
         }
 
         private void greetingsListBox_SelectedIndexChanged(object sender, EventArgs e)

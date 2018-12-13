@@ -92,10 +92,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void fetchInfo()
         {
-          getPosts();
+          //getPosts();
           getFriendsData();
-          getLikedPages();
-          getPhotos();
+          //getLikedPages();
+          //getPhotos();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
