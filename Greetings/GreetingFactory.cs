@@ -7,7 +7,63 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
     public static class GreetingFactory
     {
-        public static Greeting Create(string i_Type)
+        public static BirthdayGreeting News
+        {
+            get => default(BirthdayGreeting);
+            set
+            {
+            }
+        }
+
+        internal static RecruitmentGreeting New
+        {
+            get => default(RecruitmentGreeting);
+            set
+            {
+            }
+        }
+
+        internal static NewYearGreeting NewYearGreeting
+        {
+            get => default(NewYearGreeting);
+            set
+            {
+            }
+        }
+
+        internal static WeddingGreeting WeddingGreeting
+        {
+            get => default(WeddingGreeting);
+            set
+            {
+            }
+        }
+
+        public static Greeting Greeting
+        {
+            get => default(Greeting);
+            set
+            {
+            }
+        }
+
+        internal static HolidayGreeting HolidayGreeting
+        {
+            get => default(HolidayGreeting);
+            set
+            {
+            }
+        }
+
+        internal static AnniversaryGreeting AnniversaryGreeting
+        {
+            get => default(AnniversaryGreeting);
+            set
+            {
+            }
+        }
+
+        public static Greeting Create(string i_Type) //check if methond shouled be wtih big lteer
         {
             Greeting greeting = null;
 

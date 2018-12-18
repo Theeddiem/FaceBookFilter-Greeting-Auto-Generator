@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.AnniversaryGreeting">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\AnniversaryGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.BirthdayGreeting">
+    <Position X="11.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\BirthdayGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.GreetingFactory">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <AssociationLine Name="New" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.RecruitmentGreeting">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-3.937" Y="-3.182" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="NewYearGreeting" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.NewYearGreeting">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-4.247" Y="-3.027" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="WeddingGreeting" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.WeddingGreeting">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.758" Y="-2.738" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Greeting" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greeting" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="1.613" />
+        <Point X="7.75" Y="2.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-6.426" Y="-7.441" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="News" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.BirthdayGreeting">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-3.721" Y="-6.215" Height="0.182" Width="1.605" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="AnniversaryGreeting" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.AnniversaryGreeting">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-10.731" Y="-3.543" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="HolidayGreeting" Type="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.HolidayGreeting">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-9.224" Y="-4.622" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gCEAIAAAAAAAACAAAABACAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\GreetingFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="News" />
+      <Property Name="New" />
+      <Property Name="NewYearGreeting" />
+      <Property Name="WeddingGreeting" />
+      <Property Name="Greeting" />
+      <Property Name="HolidayGreeting" />
+      <Property Name="AnniversaryGreeting" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.HolidayGreeting">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\HolidayGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.NewYearGreeting">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\NewYearGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.RecruitmentGreeting">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\RecruitmentGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.WeddingGreeting">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\WeddingGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greeting">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greeting.GreetingType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Greetings\Greeting.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAACAAAGAAAAAAAAAAAAAAQIBAA=</HashCode>
+      <FileName>Greetings\Greeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
