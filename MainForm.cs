@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -12,7 +13,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 4;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-      
+        private string k_GuyAppId = "1450160541956417";
+
+
         public MainForm()
         {
             FacebookService.s_CollectionLimit = 200;
@@ -22,12 +25,16 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            //var t = new Thread(loginAndInit);
+            //t.SetApartmentState(ApartmentState.STA);
+            //t.Start();
             loginAndInit();
+            //new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_MyAppId,
+                LoginResult result = FacebookService.Login(k_GuyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -58,6 +65,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void updateLogInUi()
         {
+           // profilePictureBox.Invoke(new Action(()=>profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Text = m_LoggedInUser.Name;
             nameLabel.Text = m_LoggedInUser.Name;
@@ -92,10 +100,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void fetchInfo()
         {
-          //getPosts();
-          getFriendsData();
-          //getLikedPages();
-          //getPhotos();
+            new Thread(getFriendsData).Start();
+            new Thread(getPosts).Start();
+            new Thread(getLikedPages).Start();
+            //new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
@@ -112,37 +120,39 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getPostsButton_Click(object sender, EventArgs e)
         {
-            getPosts();
+            new Thread(getPosts).Start();
         }
 
         private void getPosts()
         {
+            postsListBox.Invoke(new Action(() => postsListBox.Items.Clear()));
             try
             {
                 foreach (Post post in m_LoggedInUser.Posts)
                 {
                     if (post.Message != null)
                     {
-                        postsListBox.Items.Add(post.Message);
+                        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(post.Message)));
+                        //postsListBox.Items.Add(post.Message);
                     }
-                    else if (post.Caption != null)
-                    {
-                        postsListBox.Items.Add(post.Caption);
-                    }
-                    else
-                    {
-                        postsListBox.Items.Add(string.Format("[{0}]", post.Type));
-                    }
+                    //else if (post.Caption != null)
+                    //{
+                    //    postsListBox.Items.Add(post.Caption);
+                    //}
+                    //else
+                    //{
+                    //    postsListBox.Items.Add(string.Format("[{0}]", post.Type));
+                    //}
                 }
 
                 if (m_LoggedInUser.Posts.Count == 0)
                 {
-                    postsListBox.Items.Add("User has no posts");
+                    postsListBox.Invoke(new Action(() => postsListBox.Items.Add("User has no posts")));
                 }
             }
             catch
             {
-                postsListBox.Items.Add("n/a");
+                postsListBox.Invoke(new Action(() => postsListBox.Items.Add("n/a")));
             }
         }
 
@@ -196,42 +206,45 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getLikedPages_Click(object sender, EventArgs e)
         {
-            getLikedPages();
+            new Thread(getLikedPages).Start();
         }
 
         private void getLikedPages()
         {
+
+            likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Clear()));
             try
             {
                 foreach (Page likedPage in m_LoggedInUser.LikedPages)
                 {
-                    likedPagesListBox.Items.Add(likedPage.Name);
+                    likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add(likedPage.Name)));
+
                 }
 
                 if (m_LoggedInUser.LikedPages.Count == 0)
                 {
-                    likedPagesListBox.Items.Add("User has no liked pages");
+                    likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("User has no liked pages")));
                 }
             }
             catch
             {
-                likedPagesListBox.Items.Add("n/a");
+                likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("n/a")));
             }
         }
 
         private void friendsButton_Click(object sender, EventArgs e)
         {
-            getFriendsData();
+            new Thread(getFriendsData).Start();
         }
 
         private void getFriendsData()
         {
-            friendsListBox.Items.Clear();
-            friendsListBox.DisplayMember = "Name";
+           friendsListBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
+            friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "Name"));
 
             foreach (User friend in m_LoggedInUser.Friends)
             {
-                friendsListBox.Items.Add(friend);
+                friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));  
             }
 
             amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString();
@@ -274,7 +287,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void photosButton_Click(object sender, EventArgs e)
         {
-            getPhotos();
+            new Thread(getPhotos).Start();
         }
 
         private void getPhotos()
@@ -288,7 +301,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     {
                         PictureBox picture = new PictureBox { Image = photo.ImageNormal, SizeMode = PictureBoxSizeMode.StretchImage };
                         picture.Size = new Size(90, 80);
-                        photosFlowLayoutPanel.Controls.Add(picture);
+                        photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
 
                         if (amountOfPhotos++ == k_PhotosAmountPerAlbum)
                         {

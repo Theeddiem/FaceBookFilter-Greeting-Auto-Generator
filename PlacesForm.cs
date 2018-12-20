@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
@@ -13,22 +14,24 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
     public partial class PlacesForm : Form
     {
         private User m_LoggedInUser;
+        private ListBox m_CurrentFriends;
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
             InitializeComponent();
             m_LoggedInUser = i_LoggedInUser;
-            getFriends(i_CurrentFriends);
+            m_CurrentFriends = i_CurrentFriends;
+            new Thread (getFriends).Start();
         }
 
-        private void getFriends(ListBox i_CurrentFriends)
+        private void getFriends()                   
         {
             friendsListBox.Items.Clear();
-            friendsListBox.DisplayMember = "Name";
+           // friendsListBox.DisplayMember = "Name";
 
-            foreach (User friend in i_CurrentFriends.Items)
+            foreach (User friend in m_CurrentFriends.Items)
             {
-                friendsListBox.Items.Add(friend);
+                friendsListBox.Invoke( new Action( ()=> friendsListBox.Items.Add(friend)));
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
         }
