@@ -233,12 +233,24 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getFriendsData()
         {
-           friendsListBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
-           friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "Name"));
+            //friendsListBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
+            //friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "Name"));
 
-            foreach (User friend in m_LoggedInUser.Friends)
+            //foreach (User friend in m_LoggedInUser.Friends)
+            //{
+            //    friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));
+            //}
+
+            var allFriends = m_LoggedInUser.Friends;
+            if (!friendsListBox.InvokeRequired)
             {
-                friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));  
+                // binding the data source of the binding source, to our data source:
+                userBindingSource.DataSource = allFriends;
+            }
+            else
+            {
+                // In case of cross-thread operation, invoking the binding code on the listBox's thread:
+                friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
             }
 
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString()));
