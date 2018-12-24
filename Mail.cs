@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
@@ -14,7 +15,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const string k_IdLoginEmail = "greetingscsharp@gmail.com";
         private const string k_PassWordLoginEmail = "1Q2W3e4r";
         private const int k_PortNumber = 25;
-        private const int k_Timeout = 10000;
+        private const int k_Timeout = 5000;
 
         public static void SendEmailMessage(string i_ToAddress, string i_FromAddress, string i_MsgSubject, string i_MsgBody, string i_ImagefilePath)
         {
@@ -37,8 +38,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
                 Attachment attachment = new Attachment(i_ImagefilePath);
                 newMailMessage.Attachments.Add(attachment);
-
-                client.Send(newMailMessage);
+                 client.Send(newMailMessage);
             }
             catch (Exception ex)
             {
