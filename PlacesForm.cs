@@ -21,17 +21,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             InitializeComponent();
             m_LoggedInUser = i_LoggedInUser;
             m_CurrentFriends = i_CurrentFriends;
-            new Thread (getFriends).Start();
+            getFriends();
         }
 
         private void getFriends()                   
         {
             friendsListBox.Items.Clear();
-           // friendsListBox.DisplayMember = "Name";
+            friendsListBox.DisplayMember = "Name";
 
             foreach (User friend in m_CurrentFriends.Items)
             {
-                friendsListBox.Invoke( new Action( ()=> friendsListBox.Items.Add(friend)));
+                friendsListBox.Items.Add(friend);
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
         }

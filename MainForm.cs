@@ -25,11 +25,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //var t = new Thread(loginAndInit);
-            //t.SetApartmentState(ApartmentState.STA);
-            //t.Start();
             loginAndInit();
-            //new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
@@ -65,7 +61,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void updateLogInUi()
         {
-           // profilePictureBox.Invoke(new Action(()=>profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Text = m_LoggedInUser.Name;
             nameLabel.Text = m_LoggedInUser.Name;
@@ -103,7 +98,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             new Thread(getFriendsData).Start();
             new Thread(getPosts).Start();
             new Thread(getLikedPages).Start();
-            //new Thread(getPhotos).Start();
+            new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
@@ -133,16 +128,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     if (post.Message != null)
                     {
                         postsListBox.Invoke(new Action(() => postsListBox.Items.Add(post.Message)));
-                        //postsListBox.Items.Add(post.Message);
                     }
-                    //else if (post.Caption != null)
-                    //{
-                    //    postsListBox.Items.Add(post.Caption);
-                    //}
-                    //else
-                    //{
-                    //    postsListBox.Items.Add(string.Format("[{0}]", post.Type));
-                    //}
+                    else if (post.Caption != null)
+                    {
+                        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(post.Caption)));
+                    }
+                    else
+                    {
+                        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(string.Format("[{0}]", post.Type))));
+                    }
                 }
 
                 if (m_LoggedInUser.Posts.Count == 0)
@@ -240,14 +234,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getFriendsData()
         {
            friendsListBox.Invoke(new Action(() => friendsListBox.Items.Clear()));
-            friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "Name"));
+           friendsListBox.Invoke(new Action(() => friendsListBox.DisplayMember = "Name"));
 
             foreach (User friend in m_LoggedInUser.Friends)
             {
                 friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));  
             }
 
-            amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString();
+            amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString()));
+            
         }
 
         private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -327,7 +322,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             picture.Size = new Size(photosFlowLayoutPanel.Width - 10, photosFlowLayoutPanel.Height - 10);
             picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
-            photosFlowLayoutPanel.Controls.Add(picture);
+            photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }
     }
 }
