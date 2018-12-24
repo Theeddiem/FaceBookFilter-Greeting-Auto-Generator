@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.FavoriteFriend" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAIQEAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>FavoriteFriend.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.FavoritePlace" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEAAAAAAAAAAAAAAEAAEAAAAAAAAA=</HashCode>
+      <FileName>Favoriteplace.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.GreetingsForm" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAgCGwBAAACAACQAAIKAAAAAEIgAgAAAAEAQAA=</HashCode>
+      <FileName>GreetingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greeting" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAACAAAGAAAAAAAAAAAAAAQIBAA=</HashCode>
+      <FileName>Greetings\Greeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Mail" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAACAAEAAAAAACAAgQA=</HashCode>
+      <FileName>Mail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.MainForm" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIUABSQJCSUKBgggBArAAIoSCEQARAI0AKJEAAIYAAE=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OvalPictureBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.PlacesForm" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KKTAgDAAAGQAIBAAhgCAAAKCCIAAAAAEAAAoYKBEAAA=</HashCode>
+      <FileName>PlacesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Program" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.AnniversaryGreeting" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\AnniversaryGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.BirthdayGreeting" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\BirthdayGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.GreetingFactory" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\GreetingFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.HolidayGreeting" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\HolidayGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.NewYearGreeting" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\NewYearGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.RecruitmentGreeting" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\RecruitmentGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings.WeddingGreeting" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Greetings\WeddingGreeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAABQAAQAAAAAAAAEABMCAICQBAEAAAAkAAABAAEIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Settings" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

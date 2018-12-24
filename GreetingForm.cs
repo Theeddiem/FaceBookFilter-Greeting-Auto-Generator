@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings;
 using FacebookWrapper.ObjectModel;
@@ -51,37 +52,47 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void sendEmailButton_Click(object sender, EventArgs e)
         {
-            sendEmailGreeting();
+            new Thread(sendEmailGreeting).Start();
         }
 
         private void sendEmailGreeting()
         {
-            if (friendsListBox.SelectedItems.Count > 0 && greetingsListBox.SelectedItem != null)
+            friendsListBox.Invoke(new Action(() =>
             {
-                try
+                if (friendsListBox.SelectedItems.Count > 0 && greetingsListBox.SelectedItem != null)
                 {
-                    foreach (User selectedFriend in friendsListBox.SelectedItems)
+                    try
                     {
-                        sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
-                    }
+                        foreach (User selectedFriend in friendsListBox.SelectedItems)
+                        {
+                            sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
+                        }
 
                     MessageBox.Show("Sent");
                 }
-                catch (Exception ex)
+                    catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
             }
+
+            }));
+
+
         }
 
         private void sendEmail(string i_MsgBody, string i_FromName, User i_SelectedFriend)
         {
             string name = i_SelectedFriend.Name;
-            string toAddress = i_SelectedFriend.Email; 
+            string toAddress = "Eddieknaz@gmail.com";//i_SelectedFriend.Email; 
             string fromAddress = "greetingscsharp@gmail.com";
 
             string msgSubject = string.Format($"{m_SelectedGreeting.GreetingSubject} from {i_FromName}");
             string imagePath = string.Format("{0}\\Resources\\{1}.jpg", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, m_SelectedGreeting.ImageFileName);
+
+
+            //var sendMailThread = new Thread(() => Mail.SendEmailMessage(toAddress, fromAddress, msgSubject, i_MsgBody, imagePath)            );
+            //sendMailThread.Start();
 
             Mail.SendEmailMessage(toAddress, fromAddress, msgSubject, i_MsgBody, imagePath);
         }

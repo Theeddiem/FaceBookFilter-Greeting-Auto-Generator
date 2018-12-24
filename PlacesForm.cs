@@ -111,7 +111,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 User selectedFriend = friendsListBox.SelectedItem as User;
                 showFriendImage(selectedFriend);
                 findCommonPlacesWithFriend(selectedFriend);
-                checkForNoCommonPlaces();//
+                checkForNoCommonPlaces();
             }
         }
 
