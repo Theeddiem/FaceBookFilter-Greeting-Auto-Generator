@@ -160,7 +160,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void friendsListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            new Thread(displayFriendCommonPlaces).Start();
+            displayFriendCommonPlaces();
         }
 
         private void popularPlacesListBox_SelectedIndexChanged(object sender, EventArgs e)
