@@ -11,6 +11,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     public static class Mail
     {
+
         private const string k_HostEmailSever = "smtp.gmail.com";
         private const string k_IdLoginEmail = "greetingscsharp@gmail.com";
         private const string k_PassWordLoginEmail = "1Q2W3e4r";
