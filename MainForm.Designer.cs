@@ -53,12 +53,16 @@
             this.facebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.logOutButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
+            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -122,8 +126,8 @@
             // 
             // postsListBox
             // 
-            this.postsListBox.DataSource = this.userBindingSource;
-            this.postsListBox.DisplayMember = "Name";
+            this.postsListBox.DataSource = this.postsBindingSource;
+            this.postsListBox.DisplayMember = "Message";
             this.postsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postsListBox.FormattingEnabled = true;
             this.postsListBox.ItemHeight = 15;
@@ -182,7 +186,7 @@
             // 
             // likedPagesListBox
             // 
-            this.likedPagesListBox.DataSource = this.userBindingSource;
+            this.likedPagesListBox.DataSource = this.likedPagesBindingSource;
             this.likedPagesListBox.DisplayMember = "Name";
             this.likedPagesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likedPagesListBox.FormattingEnabled = true;
@@ -341,6 +345,16 @@
             this.profilePictureBox.TabIndex = 23;
             this.profilePictureBox.TabStop = false;
             // 
+            // postsBindingSource
+            // 
+            this.postsBindingSource.DataMember = "Posts";
+            this.postsBindingSource.DataSource = this.userBindingSource;
+            // 
+            // likedPagesBindingSource
+            // 
+            this.likedPagesBindingSource.DataMember = "LikedPages";
+            this.likedPagesBindingSource.DataSource = this.userBindingSource;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +397,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +428,7 @@
         private System.Windows.Forms.FlowLayoutPanel photosFlowLayoutPanel;
         private OvalPictureBox profilePictureBox;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource postsBindingSource;
+        private System.Windows.Forms.BindingSource likedPagesBindingSource;
     }
 }
