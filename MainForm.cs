@@ -242,7 +242,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             var allLikedPages = m_LoggedInUser.LikedPages;
             if (!likedPagesListBox.InvokeRequired)
             {
-                // binding the data source of the binding source, to our data source:
+                // binding the data source of the binding source, to our data source://
                 likedPagesBindingSource.DataSource = allLikedPages;
                    
             }
