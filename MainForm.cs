@@ -25,7 +25,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginAndInit();
+
+            var t = new Thread(loginAndInit);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            //new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
@@ -61,8 +65,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void updateLogInUi()
         {
-            profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
-            this.Text = m_LoggedInUser.Name;
+            profilePictureBox.Invoke(new Action(() => profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
+            //profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            this.Invoke(new Action(()=>this.Text = m_LoggedInUser.Name));
+            //this.Text = m_LoggedInUser.Name;
             nameLabel.Text = m_LoggedInUser.Name;
 
             if (m_LoggedInUser.Birthday != null)
