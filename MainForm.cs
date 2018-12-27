@@ -52,7 +52,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             {
                 m_LoggedInUser = i_Result.LoggedInUser;
                 new Thread(updateLogInUi).Start();
-                //updateLogInUi();
             }
             else
             {
@@ -64,19 +63,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
-            //this.Text = m_LoggedInUser.Name;
-            //nameLabel.Text = m_LoggedInUser.Name;
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
 
             if (m_LoggedInUser.Birthday != null)
             {
                 userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine)));
-                //userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine);
             }
             else
             {
                 userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine)));
-                //userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine);
             }
 
             showLogInLabels();
@@ -89,9 +84,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             loginButton.Invoke(new Action(() => loginButton.Hide()));
             logOutButton.Invoke(new Action(() => logOutButton.Show()));
-
-            //loginButton.Hide();
-            //logOutButton.Show();
         }
 
         private void showLogInLabels()
@@ -99,9 +91,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
-
-            //userInfoLabel.Show();
-            //amountFriendsLabel.Show();
         }
 
         private void fetchInfo()
@@ -131,19 +120,16 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getPosts()
         {
-           // postsListBox.Invoke(new Action(() => postsListBox.Items.Clear()));
-            try
+           try
             {
 
                 var allPosts = m_LoggedInUser.Posts;
                 if (!postsListBox.InvokeRequired)
                 {
-                    // binding the data source of the binding source, to our data source:
                     postsBindingSource.DataSource = allPosts;
                 }
                 else
                 {
-                    // In case of cross-thread operation, invoking the binding code on the listBox's thread:
                     postsListBox.Invoke(new Action(() => postsBindingSource.DataSource = allPosts));
                 }
 
@@ -213,13 +199,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             photosButton.Invoke(new Action(() => photosButton.Enabled = i_Enable));
             getLikedPagesButton.Invoke(new Action(() => getLikedPagesButton.Enabled = i_Enable));
             getPostsButton.Invoke(new Action(() => getPostsButton.Enabled = i_Enable));
-
-            //findPlacesButton.Enabled = i_Enable;
-            //sendGreetingButton.Enabled = i_Enable;
-            //friendsButton.Enabled = i_Enable;
-            //photosButton.Enabled = i_Enable;
-            //getLikedPagesButton.Enabled = i_Enable;
-            //getPostsButton.Enabled = i_Enable;
         }
 
         private void eraseCurrentContent()
@@ -242,23 +221,12 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             var allLikedPages = m_LoggedInUser.LikedPages;
             if (!likedPagesListBox.InvokeRequired)
             {
-                // binding the data source of the binding source, to our data source://
-                likedPagesBindingSource.DataSource = allLikedPages;
-                   
+                likedPagesBindingSource.DataSource = allLikedPages;     
             }
             else
-            {//
-                // In case of cross-thread operation, invoking the binding code on the listBo//x's th/read:
+            {
                 likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
             }
-            //likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Clear()));
-            
-                //    foreach (Page likedPage in m_LoggedInUser.LikedPages)
-                //    {
-                //        likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add(likedPage.Name)));
-
-                //    }
-
             //    if (m_LoggedInUser.LikedPages.Count == 0)
             //{
             //    likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("User has no liked pages")));
@@ -266,8 +234,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             }
             catch
             {
-              ;
-                //likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("n/a")));
+              //likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("n/a")));
             }
 }
 
@@ -283,12 +250,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
-                    // binding the data source of the binding source, to our data source:
                     userBindingSource.DataSource = allFriends;
                 }
                 else
                 {
-                    // In case of cross-thread operation, invoking the binding code on the listBox's thread:
                     friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
                 }
             }
