@@ -164,10 +164,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 //    }
                 //}
 
-                if (m_LoggedInUser.Posts.Count == 0)
-                {
-                    postsListBox.Invoke(new Action(() => postsListBox.Items.Add("User has no posts")));
-                }
+                //if (m_LoggedInUser.Posts.Count == 0)
+                //{
+                //    postsListBox.Invoke(new Action(() => postsListBox.Items.Add("User has no posts")));
+                //}
             }
             catch
             {
