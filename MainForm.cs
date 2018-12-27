@@ -248,7 +248,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             }
             else
             {
-                // In case of cross-thread operation, invoking the binding code on the listBox's thread:
+                // In case of cross-thread operation, invoking the binding code on the listBox's th/read:
                 likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
             }
             //likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Clear()));
