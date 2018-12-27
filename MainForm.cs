@@ -51,8 +51,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             if (!string.IsNullOrEmpty(i_Result.AccessToken))
             {
                 m_LoggedInUser = i_Result.LoggedInUser;
-                //new Thread(updateLogInUi).Start();
-                updateLogInUi();
+                new Thread(updateLogInUi).Start();
+                //updateLogInUi();
             }
             else
             {
