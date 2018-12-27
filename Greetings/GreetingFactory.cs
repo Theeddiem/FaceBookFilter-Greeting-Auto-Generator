@@ -7,8 +7,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
     public static class GreetingFactory
     {
-     
-        public static Greeting Create(string i_Type) //check if methond shouled be wtih big lteer
+        public static Greeting Create(string i_Type)
         {
             Greeting greeting = null;
 

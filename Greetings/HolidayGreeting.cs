@@ -6,8 +6,7 @@ using System.Windows.Forms;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
-
-    class HolidayGreeting : Greeting
+    internal class HolidayGreeting : Greeting
     {
         public HolidayGreeting()
         {

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
-    class AnniversaryGreeting : Greeting
+    internal class AnniversaryGreeting : Greeting
     {
         public AnniversaryGreeting()
         {

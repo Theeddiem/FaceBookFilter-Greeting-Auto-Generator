@@ -75,25 +75,16 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     MessageBox.Show(ex.ToString());
                 }
             }
-
             }));
-
-
         }
 
         private void sendEmail(string i_MsgBody, string i_FromName, User i_SelectedFriend)
         {
             string name = i_SelectedFriend.Name;
-            string toAddress = "Eddieknaz@gmail.com";//i_SelectedFriend.Email; 
+            string toAddress = i_SelectedFriend.Email; 
             string fromAddress = "greetingscsharp@gmail.com";
-
             string msgSubject = string.Format($"{m_SelectedGreeting.GreetingSubject} from {i_FromName}");
             string imagePath = string.Format("{0}\\Resources\\{1}.jpg", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, m_SelectedGreeting.ImageFileName);
-
-
-            //var sendMailThread = new Thread(() => Mail.SendEmailMessage(toAddress, fromAddress, msgSubject, i_MsgBody, imagePath)            );
-            //sendMailThread.Start();
-
             Mail.SendEmailMessage(toAddress, fromAddress, msgSubject, i_MsgBody, imagePath);
         }
 
