@@ -15,7 +15,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private string k_MyAppId = "1954908174562233";
         private string k_GuyAppId = "1450160541956417";
 
-
         public MainForm()
         {
             FacebookService.s_CollectionLimit = 200;
