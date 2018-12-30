@@ -26,7 +26,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new Thread(loginAndInit).Start();
+            //new Thread(loginAndInit).Start();
+            loginAndInit();
         }
 
         private void loginAndInit()
@@ -229,11 +230,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
-                    userBindingSource.DataSource = allFriends;
+                    friendsBindingSource.DataSource = allFriends;
                 }
                 else
                 {
-                    friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
+                    friendsListBox.Invoke(new Action(() => friendsBindingSource.DataSource = allFriends));
                 }
             }
             catch {
@@ -246,7 +247,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            displaySelectedFriend();
+            //displaySelectedFriend();
         }
 
         private void displaySelectedFriend()

@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label imageNormalLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.loginButton = new System.Windows.Forms.Button();
             this.findPlacesButton = new System.Windows.Forms.Button();
@@ -37,13 +38,13 @@
             this.getPostsButton = new System.Windows.Forms.Button();
             this.postsListBox = new System.Windows.Forms.ListBox();
             this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userInfoLabel = new System.Windows.Forms.Label();
             this.sendGreetingButton = new System.Windows.Forms.Button();
             this.getLikedPagesButton = new System.Windows.Forms.Button();
             this.likedPagesListBox = new System.Windows.Forms.ListBox();
             this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.friendsListBox = new System.Windows.Forms.ListBox();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.friendsButton = new System.Windows.Forms.Button();
             this.amountFriendsLabel = new System.Windows.Forms.Label();
             this.friendLabel = new System.Windows.Forms.Label();
@@ -55,15 +56,31 @@
             this.facebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.logOutButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
+            this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
+            this.userListBox = new System.Windows.Forms.ListBox();
+            this.friendsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            imageNormalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            this.photosFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imageNormalLabel
+            // 
+            imageNormalLabel.AutoSize = true;
+            imageNormalLabel.Location = new System.Drawing.Point(660, 67);
+            imageNormalLabel.Name = "imageNormalLabel";
+            imageNormalLabel.Size = new System.Drawing.Size(112, 20);
+            imageNormalLabel.TabIndex = 23;
+            imageNormalLabel.Text = "Image Normal:";
             // 
             // loginButton
             // 
@@ -135,11 +152,6 @@
             // postsBindingSource
             // 
             this.postsBindingSource.DataMember = "Posts";
-            this.postsBindingSource.DataSource = this.userBindingSource;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
             // 
             // userInfoLabel
             // 
@@ -196,12 +208,11 @@
             // likedPagesBindingSource
             // 
             this.likedPagesBindingSource.DataMember = "LikedPages";
-            this.likedPagesBindingSource.DataSource = this.userBindingSource;
             // 
             // friendsListBox
             // 
-            this.friendsListBox.DataSource = this.userBindingSource;
-            this.friendsListBox.DisplayMember = "Name";
+            this.friendsListBox.DataSource = this.friendsBindingSource;
+            this.friendsListBox.DisplayMember = "Bio";
             this.friendsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsListBox.FormattingEnabled = true;
             this.friendsListBox.ItemHeight = 22;
@@ -210,7 +221,12 @@
             this.friendsListBox.Name = "friendsListBox";
             this.friendsListBox.Size = new System.Drawing.Size(276, 158);
             this.friendsListBox.TabIndex = 12;
+            this.friendsListBox.ValueMember = "Albums";
             this.friendsListBox.SelectedIndexChanged += new System.EventHandler(this.friendsListBox_SelectedIndexChanged);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
             // 
             // friendsButton
             // 
@@ -272,6 +288,7 @@
             this.photosFlowLayoutPanel.AutoScroll = true;
             this.photosFlowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.photosFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.photosFlowLayoutPanel.Controls.Add(this.userListBox);
             this.photosFlowLayoutPanel.Location = new System.Drawing.Point(840, 112);
             this.photosFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.photosFlowLayoutPanel.Name = "photosFlowLayoutPanel";
@@ -354,6 +371,29 @@
             this.profilePictureBox.TabIndex = 23;
             this.profilePictureBox.TabStop = false;
             // 
+            // imageNormalPictureBox
+            // 
+            this.imageNormalPictureBox.Location = new System.Drawing.Point(733, 47);
+            this.imageNormalPictureBox.Name = "imageNormalPictureBox";
+            this.imageNormalPictureBox.Size = new System.Drawing.Size(100, 50);
+            this.imageNormalPictureBox.TabIndex = 24;
+            this.imageNormalPictureBox.TabStop = false;
+            // 
+            // userListBox
+            // 
+            this.userListBox.FormattingEnabled = true;
+            this.userListBox.ItemHeight = 20;
+            this.userListBox.Location = new System.Drawing.Point(3, 3);
+            this.userListBox.Name = "userListBox";
+            this.userListBox.Size = new System.Drawing.Size(300, 204);
+            this.userListBox.TabIndex = 0;
+            this.userListBox.ValueMember = "Albums";
+            // 
+            // friendsBindingSource
+            // 
+            this.friendsBindingSource.DataMember = "Friends";
+            this.friendsBindingSource.DataSource = this.userBindingSource;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -361,6 +401,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1370, 614);
+            this.Controls.Add(imageNormalLabel);
+            this.Controls.Add(this.imageNormalPictureBox);
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.likedPagesListBox);
             this.Controls.Add(this.photosFlowLayoutPanel);
@@ -390,13 +432,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facebook";
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            this.photosFlowLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.friendsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,8 +470,11 @@
         private System.Windows.Forms.Button photosButton;
         private System.Windows.Forms.FlowLayoutPanel photosFlowLayoutPanel;
         private OvalPictureBox profilePictureBox;
-        private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource postsBindingSource;
         private System.Windows.Forms.BindingSource likedPagesBindingSource;
+        private System.Windows.Forms.PictureBox imageNormalPictureBox;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource friendsBindingSource;
+        private System.Windows.Forms.ListBox userListBox;
     }
 }
