@@ -36,11 +36,13 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.getPostsButton = new System.Windows.Forms.Button();
             this.postsListBox = new System.Windows.Forms.ListBox();
+            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userInfoLabel = new System.Windows.Forms.Label();
             this.sendGreetingButton = new System.Windows.Forms.Button();
             this.getLikedPagesButton = new System.Windows.Forms.Button();
             this.likedPagesListBox = new System.Windows.Forms.ListBox();
+            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.friendsListBox = new System.Windows.Forms.ListBox();
             this.friendsButton = new System.Windows.Forms.Button();
             this.amountFriendsLabel = new System.Windows.Forms.Label();
@@ -53,16 +55,14 @@
             this.facebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.logOutButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
-            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -71,10 +71,9 @@
             this.loginButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.loginButton.Location = new System.Drawing.Point(114, 54);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
+            this.loginButton.Location = new System.Drawing.Point(171, 83);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(92, 52);
+            this.loginButton.Size = new System.Drawing.Size(138, 80);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login With FaceBook";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -86,10 +85,9 @@
             this.findPlacesButton.Enabled = false;
             this.findPlacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.findPlacesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.findPlacesButton.Location = new System.Drawing.Point(44, 225);
-            this.findPlacesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.findPlacesButton.Location = new System.Drawing.Point(66, 346);
             this.findPlacesButton.Name = "findPlacesButton";
-            this.findPlacesButton.Size = new System.Drawing.Size(143, 36);
+            this.findPlacesButton.Size = new System.Drawing.Size(214, 55);
             this.findPlacesButton.TabIndex = 3;
             this.findPlacesButton.Text = "Find Places";
             this.findPlacesButton.UseVisualStyleBackColor = false;
@@ -101,10 +99,9 @@
             this.nameLabel.BackColor = System.Drawing.Color.White;
             this.nameLabel.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.nameLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.nameLabel.Location = new System.Drawing.Point(4, 146);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nameLabel.Location = new System.Drawing.Point(6, 225);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(63, 19);
+            this.nameLabel.Size = new System.Drawing.Size(91, 29);
             this.nameLabel.TabIndex = 4;
             this.nameLabel.Text = "Name: ";
             this.nameLabel.Visible = false;
@@ -115,10 +112,9 @@
             this.getPostsButton.Enabled = false;
             this.getPostsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getPostsButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPostsButton.Location = new System.Drawing.Point(215, 218);
-            this.getPostsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.getPostsButton.Location = new System.Drawing.Point(322, 335);
             this.getPostsButton.Name = "getPostsButton";
-            this.getPostsButton.Size = new System.Drawing.Size(93, 34);
+            this.getPostsButton.Size = new System.Drawing.Size(140, 52);
             this.getPostsButton.TabIndex = 5;
             this.getPostsButton.Text = "Posts";
             this.getPostsButton.UseVisualStyleBackColor = false;
@@ -130,12 +126,16 @@
             this.postsListBox.DisplayMember = "Message";
             this.postsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postsListBox.FormattingEnabled = true;
-            this.postsListBox.ItemHeight = 15;
-            this.postsListBox.Location = new System.Drawing.Point(215, 264);
-            this.postsListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.postsListBox.ItemHeight = 22;
+            this.postsListBox.Location = new System.Drawing.Point(322, 406);
             this.postsListBox.Name = "postsListBox";
-            this.postsListBox.Size = new System.Drawing.Size(282, 94);
+            this.postsListBox.Size = new System.Drawing.Size(421, 136);
             this.postsListBox.TabIndex = 6;
+            // 
+            // postsBindingSource
+            // 
+            this.postsBindingSource.DataMember = "Posts";
+            this.postsBindingSource.DataSource = this.userBindingSource;
             // 
             // userBindingSource
             // 
@@ -146,10 +146,9 @@
             this.userInfoLabel.AutoSize = true;
             this.userInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.userInfoLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.userInfoLabel.Location = new System.Drawing.Point(5, 167);
-            this.userInfoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.userInfoLabel.Location = new System.Drawing.Point(8, 257);
             this.userInfoLabel.Name = "userInfoLabel";
-            this.userInfoLabel.Size = new System.Drawing.Size(92, 13);
+            this.userInfoLabel.Size = new System.Drawing.Size(135, 20);
             this.userInfoLabel.TabIndex = 7;
             this.userInfoLabel.Text = "user Info Label";
             this.userInfoLabel.Visible = false;
@@ -160,10 +159,9 @@
             this.sendGreetingButton.Enabled = false;
             this.sendGreetingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.sendGreetingButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.sendGreetingButton.Location = new System.Drawing.Point(44, 273);
-            this.sendGreetingButton.Margin = new System.Windows.Forms.Padding(2);
+            this.sendGreetingButton.Location = new System.Drawing.Point(66, 420);
             this.sendGreetingButton.Name = "sendGreetingButton";
-            this.sendGreetingButton.Size = new System.Drawing.Size(143, 37);
+            this.sendGreetingButton.Size = new System.Drawing.Size(214, 57);
             this.sendGreetingButton.TabIndex = 9;
             this.sendGreetingButton.Text = "Send Greeting";
             this.sendGreetingButton.UseVisualStyleBackColor = false;
@@ -175,10 +173,9 @@
             this.getLikedPagesButton.Enabled = false;
             this.getLikedPagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getLikedPagesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getLikedPagesButton.Location = new System.Drawing.Point(560, 245);
-            this.getLikedPagesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.getLikedPagesButton.Location = new System.Drawing.Point(840, 377);
             this.getLikedPagesButton.Name = "getLikedPagesButton";
-            this.getLikedPagesButton.Size = new System.Drawing.Size(93, 35);
+            this.getLikedPagesButton.Size = new System.Drawing.Size(140, 54);
             this.getLikedPagesButton.TabIndex = 10;
             this.getLikedPagesButton.Text = "Pages";
             this.getLikedPagesButton.UseVisualStyleBackColor = false;
@@ -190,12 +187,16 @@
             this.likedPagesListBox.DisplayMember = "Name";
             this.likedPagesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likedPagesListBox.FormattingEnabled = true;
-            this.likedPagesListBox.ItemHeight = 15;
-            this.likedPagesListBox.Location = new System.Drawing.Point(560, 288);
-            this.likedPagesListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.likedPagesListBox.ItemHeight = 22;
+            this.likedPagesListBox.Location = new System.Drawing.Point(840, 443);
             this.likedPagesListBox.Name = "likedPagesListBox";
-            this.likedPagesListBox.Size = new System.Drawing.Size(309, 64);
+            this.likedPagesListBox.Size = new System.Drawing.Size(462, 92);
             this.likedPagesListBox.TabIndex = 11;
+            // 
+            // likedPagesBindingSource
+            // 
+            this.likedPagesBindingSource.DataMember = "LikedPages";
+            this.likedPagesBindingSource.DataSource = this.userBindingSource;
             // 
             // friendsListBox
             // 
@@ -203,10 +204,11 @@
             this.friendsListBox.DisplayMember = "Name";
             this.friendsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsListBox.FormattingEnabled = true;
-            this.friendsListBox.ItemHeight = 15;
-            this.friendsListBox.Location = new System.Drawing.Point(218, 73);
+            this.friendsListBox.ItemHeight = 22;
+            this.friendsListBox.Location = new System.Drawing.Point(327, 112);
+            this.friendsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.friendsListBox.Name = "friendsListBox";
-            this.friendsListBox.Size = new System.Drawing.Size(185, 109);
+            this.friendsListBox.Size = new System.Drawing.Size(276, 158);
             this.friendsListBox.TabIndex = 12;
             this.friendsListBox.SelectedIndexChanged += new System.EventHandler(this.friendsListBox_SelectedIndexChanged);
             // 
@@ -216,9 +218,10 @@
             this.friendsButton.Enabled = false;
             this.friendsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.friendsButton.Location = new System.Drawing.Point(218, 32);
+            this.friendsButton.Location = new System.Drawing.Point(327, 49);
+            this.friendsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.friendsButton.Name = "friendsButton";
-            this.friendsButton.Size = new System.Drawing.Size(93, 35);
+            this.friendsButton.Size = new System.Drawing.Size(140, 54);
             this.friendsButton.TabIndex = 13;
             this.friendsButton.Text = "Friends";
             this.friendsButton.UseVisualStyleBackColor = false;
@@ -229,9 +232,10 @@
             this.amountFriendsLabel.AutoSize = true;
             this.amountFriendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.amountFriendsLabel.ForeColor = System.Drawing.Color.Gray;
-            this.amountFriendsLabel.Location = new System.Drawing.Point(317, 43);
+            this.amountFriendsLabel.Location = new System.Drawing.Point(476, 66);
+            this.amountFriendsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.amountFriendsLabel.Name = "amountFriendsLabel";
-            this.amountFriendsLabel.Size = new System.Drawing.Size(14, 13);
+            this.amountFriendsLabel.Size = new System.Drawing.Size(19, 20);
             this.amountFriendsLabel.TabIndex = 17;
             this.amountFriendsLabel.Text = "0";
             this.amountFriendsLabel.Visible = false;
@@ -240,9 +244,10 @@
             // 
             this.friendLabel.AutoSize = true;
             this.friendLabel.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friendLabel.Location = new System.Drawing.Point(415, 169);
+            this.friendLabel.Location = new System.Drawing.Point(622, 260);
+            this.friendLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.friendLabel.Name = "friendLabel";
-            this.friendLabel.Size = new System.Drawing.Size(70, 15);
+            this.friendLabel.Size = new System.Drawing.Size(102, 21);
             this.friendLabel.TabIndex = 19;
             this.friendLabel.Text = "friend Label";
             this.friendLabel.Visible = false;
@@ -253,9 +258,10 @@
             this.photosButton.Enabled = false;
             this.photosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.photosButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.photosButton.Location = new System.Drawing.Point(560, 32);
+            this.photosButton.Location = new System.Drawing.Point(840, 49);
+            this.photosButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.photosButton.Name = "photosButton";
-            this.photosButton.Size = new System.Drawing.Size(93, 34);
+            this.photosButton.Size = new System.Drawing.Size(140, 52);
             this.photosButton.TabIndex = 21;
             this.photosButton.Text = "Photos";
             this.photosButton.UseVisualStyleBackColor = false;
@@ -266,17 +272,19 @@
             this.photosFlowLayoutPanel.AutoScroll = true;
             this.photosFlowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.photosFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.photosFlowLayoutPanel.Location = new System.Drawing.Point(560, 73);
+            this.photosFlowLayoutPanel.Location = new System.Drawing.Point(840, 112);
+            this.photosFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.photosFlowLayoutPanel.Name = "photosFlowLayoutPanel";
-            this.photosFlowLayoutPanel.Size = new System.Drawing.Size(320, 160);
+            this.photosFlowLayoutPanel.Size = new System.Drawing.Size(479, 245);
             this.photosFlowLayoutPanel.TabIndex = 22;
             // 
             // friendPictureBox
             // 
             this.friendPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.friendPictureBox.Location = new System.Drawing.Point(415, 78);
+            this.friendPictureBox.Location = new System.Drawing.Point(622, 120);
+            this.friendPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.friendPictureBox.Name = "friendPictureBox";
-            this.friendPictureBox.Size = new System.Drawing.Size(101, 87);
+            this.friendPictureBox.Size = new System.Drawing.Size(150, 132);
             this.friendPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.friendPictureBox.TabIndex = 18;
             this.friendPictureBox.TabStop = false;
@@ -285,9 +293,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1, 275);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 423);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 36);
+            this.pictureBox2.Size = new System.Drawing.Size(57, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
@@ -296,9 +305,10 @@
             // 
             this.placesPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.placesPictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.favourite_places;
-            this.placesPictureBox.Location = new System.Drawing.Point(1, 224);
+            this.placesPictureBox.Location = new System.Drawing.Point(2, 345);
+            this.placesPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.placesPictureBox.Name = "placesPictureBox";
-            this.placesPictureBox.Size = new System.Drawing.Size(38, 36);
+            this.placesPictureBox.Size = new System.Drawing.Size(57, 55);
             this.placesPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.placesPictureBox.TabIndex = 15;
             this.placesPictureBox.TabStop = false;
@@ -310,8 +320,9 @@
             this.facebookLogoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.facebookLogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("facebookLogoPictureBox.Image")));
             this.facebookLogoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.facebookLogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.facebookLogoPictureBox.Name = "facebookLogoPictureBox";
-            this.facebookLogoPictureBox.Size = new System.Drawing.Size(913, 26);
+            this.facebookLogoPictureBox.Size = new System.Drawing.Size(1370, 39);
             this.facebookLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.facebookLogoPictureBox.TabIndex = 14;
             this.facebookLogoPictureBox.TabStop = false;
@@ -324,10 +335,9 @@
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.logOutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.logOutButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.logOutButton.Location = new System.Drawing.Point(2, 332);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.logOutButton.Location = new System.Drawing.Point(3, 511);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(59, 54);
+            this.logOutButton.Size = new System.Drawing.Size(88, 83);
             this.logOutButton.TabIndex = 1;
             this.logOutButton.UseVisualStyleBackColor = false;
             this.logOutButton.Visible = false;
@@ -337,31 +347,20 @@
             // 
             this.profilePictureBox.BackColor = System.Drawing.Color.DarkGray;
             this.profilePictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
-            this.profilePictureBox.Location = new System.Drawing.Point(7, 43);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePictureBox.Location = new System.Drawing.Point(10, 66);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(103, 101);
+            this.profilePictureBox.Size = new System.Drawing.Size(154, 155);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePictureBox.TabIndex = 23;
             this.profilePictureBox.TabStop = false;
             // 
-            // postsBindingSource
-            // 
-            this.postsBindingSource.DataMember = "Posts";
-            this.postsBindingSource.DataSource = this.userBindingSource;
-            // 
-            // likedPagesBindingSource
-            // 
-            this.likedPagesBindingSource.DataMember = "LikedPages";
-            this.likedPagesBindingSource.DataSource = this.userBindingSource;
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(913, 399);
+            this.ClientSize = new System.Drawing.Size(1370, 614);
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.likedPagesListBox);
             this.Controls.Add(this.photosFlowLayoutPanel);
@@ -385,20 +384,19 @@
             this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(915, 438);
+            this.MinimumSize = new System.Drawing.Size(1362, 644);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facebook";
+            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

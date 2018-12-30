@@ -8,6 +8,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
+    
     public partial class MainForm : Form
     {
         private const int k_PhotosAmountPerAlbum = 4;
@@ -15,6 +16,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private string k_MyAppId = "1954908174562233";
         private string k_GuyAppId = "1450160541956417";
 
+        
         public MainForm()
         {
             FacebookService.s_CollectionLimit = 200;
@@ -24,7 +26,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginAndInit();
+            new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
@@ -119,7 +121,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getPosts()
         {
-           try
+            try
             {
 
                 var allPosts = m_LoggedInUser.Posts;
@@ -131,32 +133,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 {
                     postsListBox.Invoke(new Action(() => postsBindingSource.DataSource = allPosts));
                 }
-
-
-                //foreach (Post post in m_LoggedInUser.Posts)
-                //{
-                //    if (post.Message != null)
-                //    {
-                //        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(post.Message)));
-                //    }
-                //    else if (post.Caption != null)
-                //    {
-                //        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(post.Caption)));
-                //    }
-                //    else
-                //    {
-                //        postsListBox.Invoke(new Action(() => postsListBox.Items.Add(string.Format("[{0}]", post.Type))));
-                //    }
-                //}
-
-                //if (m_LoggedInUser.Posts.Count == 0)
-                //{
-                //    postsListBox.Invoke(new Action(() => postsListBox.Items.Add("User has no posts")));
-                //}
             }
             catch
             {
-               // postsListBox.Invoke(new Action(() => postsListBox.Items.Add("n/a")));
+                // postslistbox.invoke(new action(() => postslistbox.items.add("n/a")));
             }
         }
 
