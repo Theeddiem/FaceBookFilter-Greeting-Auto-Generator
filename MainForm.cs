@@ -29,7 +29,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId,
+                LoginResult result = FacebookService.Login(k_GuyAppId
+                ,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -40,7 +41,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 "user_likes",
                 "user_posts",
                 "user_tagged_places",
-                "user_photos");
+                "user_photos"
+                );
   
             fetchUserConnection(result);
         }
