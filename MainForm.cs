@@ -26,13 +26,13 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //new Thread(loginAndInit).Start();
-            loginAndInit();
+            loginAndInit();//new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId,
+                LoginResult result = FacebookService.Login(k_GuyAppId
+                ,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -43,7 +43,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 "user_likes",
                 "user_posts",
                 "user_tagged_places",
-                "user_photos");
+                "user_photos"
+                );
   
             fetchUserConnection(result);
         }
@@ -230,11 +231,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
-                    friendsBindingSource.DataSource = allFriends;
+                    userBindingSource.DataSource = allFriends;
                 }
                 else
                 {
-                    friendsListBox.Invoke(new Action(() => friendsBindingSource.DataSource = allFriends));
+                    friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
                 }
             }
             catch {
@@ -247,11 +248,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //displaySelectedFriend();
+            displaySelectedFriend();
         }
 
         private void displaySelectedFriend()
-        {
+        {//
             if (friendsListBox.SelectedItems.Count == 1)
             {
                 User selectedFriend = friendsListBox.SelectedItem as User;
