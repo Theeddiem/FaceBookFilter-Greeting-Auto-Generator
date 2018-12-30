@@ -26,7 +26,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new Thread(loginAndInit).Start();
+            loginAndInit();//new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
@@ -252,7 +252,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         }
 
         private void displaySelectedFriend()
-        {
+        {//
             if (friendsListBox.SelectedItems.Count == 1)
             {
                 User selectedFriend = friendsListBox.SelectedItem as User;
