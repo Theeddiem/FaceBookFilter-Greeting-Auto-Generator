@@ -8,7 +8,6 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
-    
     public partial class MainForm : Form
     {
         private const int k_PhotosAmountPerAlbum = 4;
@@ -16,7 +15,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private string k_MyAppId = "1954908174562233";
         private string k_GuyAppId = "1450160541956417";
 
-        
         public MainForm()
         {
             FacebookService.s_CollectionLimit = 10;
@@ -26,7 +24,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginAndInit();//new Thread(loginAndInit).Start();
+            Thread thread = new Thread(loginAndInit);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
 
         private void loginAndInit()
@@ -43,8 +43,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 "user_posts",
                 "user_tagged_places",
                 "user_photos"
-                );
-  
+                            );
+
             fetchUserConnection(result);
         }
 
@@ -53,7 +53,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             if (!string.IsNullOrEmpty(i_Result.AccessToken))
             {
                 m_LoggedInUser = i_Result.LoggedInUser;
-                new Thread(updateLogInUi).Start();
+                updateLogInUi();
             }
             else
             {
@@ -66,6 +66,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
+            userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Gender : {0} {1}Birthday: {2} {1}Email: {3}{1}", m_LoggedInUser.Gender, Environment.NewLine, m_LoggedInUser.Birthday,m_LoggedInUser.Email)));
             showLogInLabels();
             changeToLogInButton();
             enableButtons(true);
@@ -82,9 +83,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
+
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
             birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
             friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
+            friendPictureBox.Invoke(new Action(() => friendPictureBox.Show()));
         }
 
         private void fetchInfo()
@@ -116,7 +119,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             try
             {
-
                 var allPosts = m_LoggedInUser.Posts;
                 if (!postsListBox.InvokeRequired)
                 {
@@ -201,9 +203,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message);
+                catchPageLabel.Invoke(new Action(() => catchPageLabel.Text = "N/A"));
+                catchPageLabel.Invoke(new Action(() => catchPageLabel.Visible = true));
             }
         }
 
@@ -226,48 +229,12 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
                 }
             }
-            catch {
-
+            catch
+            {
             }
 
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString()));
-            
         }
-
-        //private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    displaySelectedFriend();
-        //}
-
-        //private void displaySelectedFriend()
-        //{
-        //    if (friendsListBox.SelectedItems.Count == 1)
-        //    {
-        //        User selectedFriend = friendsListBox.SelectedItem as User;
-
-        //        if (selectedFriend.PictureNormalURL != null)
-        //        {
-        //            friendPictureBox.LoadAsync(selectedFriend.PictureNormalURL);
-        //        }
-        //        else
-        //        {
-        //            friendPictureBox.Image = friendPictureBox.ErrorImage;
-        //        }
-
-        //        friendPictureBox.Show();
-
-        //        if (selectedFriend.Birthday != null)
-        //        {
-        //            birthdayLabel.Text = string.Format("{1}Birthday: {0}", Environment.NewLine);
-        //        }
-        //        //else
-        //        //{
-        //        //    birthdayLabel.Text = string.Format("Gend{1}Birthday: n/a", selectedFriend.Gender, Environment.NewLine);
-        //        //}
-
-        //        birthdayLabel.Show();
-        //    }
-        //}
 
         private void photosButton_Click(object sender, EventArgs e)
         {
