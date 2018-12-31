@@ -19,7 +19,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         
         public MainForm()
         {
-            FacebookService.s_CollectionLimit = 200;
+            FacebookService.s_CollectionLimit = 10;
             FacebookService.s_FbApiVersion = 2.8f;
             InitializeComponent();
         }
@@ -68,14 +68,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
 
-            if (m_LoggedInUser.Birthday != null)
-            {
-                userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine)));
-            }
-            else
-            {
-                userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine)));
-            }
+            //if (m_LoggedInUser.Birthday != null)
+            //{
+            //    userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine)));
+            //}
+            //else
+            //{
+            //    userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine)));
+            //}
 
             showLogInLabels();
             changeToLogInButton();
@@ -92,8 +92,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void showLogInLabels()
         {
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
-            userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
+            //userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
+            birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
+            friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
         }
 
         private void fetchInfo()
@@ -166,10 +168,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void hideLogOutLabels()
         {
             nameLabel.Hide();
-            userInfoLabel.Hide();
+            //userInfoLabel.Hide();
             amountFriendsLabel.Hide();
             friendPictureBox.Hide();
-            friendLabel.Hide();
+            birthdayLabel.Hide();
+            friendBirthdayLabel.Hide();
         }
 
         private void enableButtons(bool i_Enable)
