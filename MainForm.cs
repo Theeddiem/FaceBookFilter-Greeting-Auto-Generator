@@ -52,7 +52,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             if (!string.IsNullOrEmpty(i_Result.AccessToken))
             {
                 m_LoggedInUser = i_Result.LoggedInUser;
-                new Thread(updateLogInUi).Start();
+                // new Thread(updateLogInUi).Start();
+                updateLogInUi();
             }
             else
             {
@@ -185,12 +186,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             friendsListBox.Items.Clear();
             //likedPagesListBox.Items.Clear();
             postsListBox.Items.Clear();
-            photosFlowLayoutPanel.Controls.Clear();
+            likedPagesListBox.Controls.Clear();
         }
 
         private void getLikedPages_Click(object sender, EventArgs e)
         {
             //new Thread(getLikedPages).Start();
+
+            foreach (Page item in m_LoggedInUser.LikedPages)
+            {
+                listBox1.Items.Add(item.Name);
+            }
             getLikedPages();
         }
 
@@ -199,20 +205,22 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
             try
             {
-                var allLikedPages = m_LoggedInUser.LikedPages;
-                if (!likedPagesListBox.InvokeRequired)
+                var LikedPages = m_LoggedInUser.LikedPages;
+                if (!kk.InvokeRequired)
                 {
-                    likedPagesBindingSource.DataSource = allLikedPages;
+                    likedPagesBindingSource.DataSource = LikedPages;
+                   // likedPagesBindingSource1.DataSource = LikedPages;
+
                 }
                 else
                 {
-                    likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
+                    kk.Invoke(new Action(() => likedPagesBindingSource.DataSource = LikedPages));
+                    //languagesListBox.Invoke(new Action(() => likedPagesBindingSource1.DataSource = LikedPages));
                 }
             }
 
             catch
             {
-
             }
         }
 
@@ -294,7 +302,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     {
                         PictureBox picture = new PictureBox { Image = photo.ImageNormal, SizeMode = PictureBoxSizeMode.StretchImage };
                         picture.Size = new Size(90, 80);
-                        photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
+                        likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Controls.Add(picture)));
 
                         if (amountOfPhotos++ == k_PhotosAmountPerAlbum)
                         {
@@ -317,10 +325,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void noPictureAvaillable()
         {
             PictureBox picture = new PictureBox();
-            picture.Size = new Size(photosFlowLayoutPanel.Width - 10, photosFlowLayoutPanel.Height - 10);
+            picture.Size = new Size(likedPagesListBox.Width - 10, likedPagesListBox.Height - 10);
             picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
-            photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
+            likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Controls.Add(picture)));
         }
     }
 }
