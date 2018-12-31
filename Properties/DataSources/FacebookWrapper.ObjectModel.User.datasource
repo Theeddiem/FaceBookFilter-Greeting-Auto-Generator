@@ -203,6 +203,20 @@
                      </ControlSetting>
                   </ControlSettings>
                </PropertyUISetting>
+               <PropertyUISetting Name="User.Posts.Place">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Description">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
             </PropertyUISettings>
          </TypeUISetting>
       </GenericObjectDataSource>
@@ -226,6 +240,87 @@
       </GenericObjectDataSource>
       <GenericObjectDataSource DisplayName="NewsFeed" Version="1.0">
          <TypeInfo>FacebookWrapper.ObjectModel.Post, FbGraphApiWrapper, Version=6.8.0.15, Culture=neutral, PublicKeyToken=null</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="UpdateTime">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Source">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="PictureURL">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Name">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="ObjectID">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Link">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="IconURL">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Id">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Description">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="CreatedTime">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+               <PropertyUISetting Name="Caption">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
       </GenericObjectDataSource>
       <GenericObjectDataSource DisplayName="InboxThreads" Version="1.0">
          <TypeInfo>FacebookWrapper.ObjectModel.InboxThread, FbGraphApiWrapper, Version=6.8.0.15, Culture=neutral, PublicKeyToken=null</TypeInfo>
@@ -463,6 +558,20 @@
             </ControlSettings>
          </PropertyUISetting>
          <PropertyUISetting Name="User.SignificantOther">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="User.Posts.From">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="Gender">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
                   <BindableControlInfo Name="[None]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />

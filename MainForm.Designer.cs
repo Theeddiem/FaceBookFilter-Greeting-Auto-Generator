@@ -41,7 +41,6 @@
             this.userInfoLabel = new System.Windows.Forms.Label();
             this.sendGreetingButton = new System.Windows.Forms.Button();
             this.getLikedPagesButton = new System.Windows.Forms.Button();
-            this.likedPagesListBox = new System.Windows.Forms.ListBox();
             this.friendsListBox = new System.Windows.Forms.ListBox();
             this.friendsButton = new System.Windows.Forms.Button();
             this.amountFriendsLabel = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             this.logOutButton = new System.Windows.Forms.Button();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
             this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
-            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -181,19 +178,6 @@
             this.getLikedPagesButton.Text = "Pages";
             this.getLikedPagesButton.UseVisualStyleBackColor = false;
             this.getLikedPagesButton.Click += new System.EventHandler(this.getLikedPages_Click);
-            // 
-            // likedPagesListBox
-            // 
-            this.likedPagesListBox.DataSource = this.likedPagesBindingSource;
-            this.likedPagesListBox.DisplayMember = "Name";
-            this.likedPagesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.likedPagesListBox.FormattingEnabled = true;
-            this.likedPagesListBox.ItemHeight = 22;
-            this.likedPagesListBox.Location = new System.Drawing.Point(840, 443);
-            this.likedPagesListBox.Name = "likedPagesListBox";
-            this.likedPagesListBox.Size = new System.Drawing.Size(462, 92);
-            this.likedPagesListBox.TabIndex = 11;
-            this.likedPagesListBox.ValueMember = "AccessToken";
             // 
             // friendsListBox
             // 
@@ -349,11 +333,6 @@
             this.imageNormalPictureBox.TabIndex = 24;
             this.imageNormalPictureBox.TabStop = false;
             // 
-            // likedPagesBindingSource
-            // 
-            this.likedPagesBindingSource.DataMember = "LikedPages";
-            this.likedPagesBindingSource.DataSource = this.userBindingSource;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -363,7 +342,6 @@
             this.ClientSize = new System.Drawing.Size(1370, 614);
             this.Controls.Add(this.imageNormalPictureBox);
             this.Controls.Add(this.profilePictureBox);
-            this.Controls.Add(this.likedPagesListBox);
             this.Controls.Add(this.photosFlowLayoutPanel);
             this.Controls.Add(this.photosButton);
             this.Controls.Add(this.friendLabel);
@@ -396,7 +374,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,7 +390,6 @@
         private System.Windows.Forms.Label userInfoLabel;
         private System.Windows.Forms.Button sendGreetingButton;
         private System.Windows.Forms.Button getLikedPagesButton;
-        private System.Windows.Forms.ListBox likedPagesListBox;
         private System.Windows.Forms.ListBox friendsListBox;
         private System.Windows.Forms.Button friendsButton;
         private System.Windows.Forms.PictureBox facebookLogoPictureBox;
@@ -427,6 +403,5 @@
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.PictureBox imageNormalPictureBox;
         private System.Windows.Forms.BindingSource postsBindingSource;
-        private System.Windows.Forms.BindingSource likedPagesBindingSource;
     }
 }

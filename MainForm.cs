@@ -148,6 +148,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             changeToLogOutButton();
             profilePictureBox.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.Text = "Welcome to Facebook";
+            userBindingSource.DataSource = null;
+            postsBindingSource.DataSource = null;
             hideLogOutLabels();
             eraseCurrentContent();
             enableButtons(false);
@@ -181,18 +183,20 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void eraseCurrentContent()
         {
             friendsListBox.Items.Clear();
-            likedPagesListBox.Items.Clear();
+            //likedPagesListBox.Items.Clear();
             postsListBox.Items.Clear();
             photosFlowLayoutPanel.Controls.Clear();
         }
 
         private void getLikedPages_Click(object sender, EventArgs e)
         {
-            new Thread(getLikedPages).Start();
+            //new Thread(getLikedPages).Start();
+            getLikedPages();
         }
 
         private void getLikedPages()
         {
+
             try
             {
                 var allLikedPages = m_LoggedInUser.LikedPages;
@@ -205,7 +209,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
                 }
             }
-      
+
             catch
             {
 
@@ -224,7 +228,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
-                    userBindingSource.DataSource = allFriends;
+                   userBindingSource.DataSource = allFriends;
+
                 }
                 else
                 {
