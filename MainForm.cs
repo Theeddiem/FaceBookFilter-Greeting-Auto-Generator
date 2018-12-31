@@ -8,29 +8,30 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
+    
     public partial class MainForm : Form
     {
         private const int k_PhotosAmountPerAlbum = 4;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
         private string k_GuyAppId = "1450160541956417";
+
         
         public MainForm()
         {
-            FacebookService.s_CollectionLimit = 15;
+            FacebookService.s_CollectionLimit = 10;
             FacebookService.s_FbApiVersion = 2.8f;
             InitializeComponent();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            loginAndInit();
+            loginAndInit();//new Thread(loginAndInit).Start();
         }
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId
-                ,
+                LoginResult result = FacebookService.Login(k_GuyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -52,8 +53,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             if (!string.IsNullOrEmpty(i_Result.AccessToken))
             {
                 m_LoggedInUser = i_Result.LoggedInUser;
-                // new Thread(updateLogInUi).Start();
-                updateLogInUi();
+                new Thread(updateLogInUi).Start();
             }
             else
             {
@@ -66,16 +66,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
-
-            if (m_LoggedInUser.Birthday != null)
-            {
-                userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine)));
-            }
-            else
-            {
-                userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine)));
-            }
-
             showLogInLabels();
             changeToLogInButton();
             enableButtons(true);
@@ -93,6 +83,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
+            birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
+            friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
         }
 
         private void fetchInfo()
@@ -124,6 +116,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             try
             {
+
                 var allPosts = m_LoggedInUser.Posts;
                 if (!postsListBox.InvokeRequired)
                 {
@@ -134,8 +127,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     postsListBox.Invoke(new Action(() => postsBindingSource.DataSource = allPosts));
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -149,8 +143,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             changeToLogOutButton();
             profilePictureBox.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.Text = "Welcome to Facebook";
-            userBindingSource.DataSource = null;
-            postsBindingSource.DataSource = null;
             hideLogOutLabels();
             eraseCurrentContent();
             enableButtons(false);
@@ -167,8 +159,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             nameLabel.Hide();
             userInfoLabel.Hide();
             amountFriendsLabel.Hide();
-            imageNormalPictureBox.Hide();
-            friendLabel.Hide();
+            friendPictureBox.Hide();
+            birthdayLabel.Hide();
+            friendBirthdayLabel.Hide();
         }
 
         private void enableButtons(bool i_Enable)
@@ -184,49 +177,39 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void eraseCurrentContent()
         {
             friendsListBox.Items.Clear();
-            //likedPagesListBox.Items.Clear();
+            likedPagesListBox.Items.Clear();
             postsListBox.Items.Clear();
-            likedPagesListBox.Controls.Clear();
+            photosFlowLayoutPanel.Controls.Clear();
         }
 
         private void getLikedPages_Click(object sender, EventArgs e)
         {
-            //new Thread(getLikedPages).Start();
-
-            foreach (Page item in m_LoggedInUser.LikedPages)
-            {
-                listBox1.Items.Add(item.Name);
-            }
-            getLikedPages();
+            new Thread(getLikedPages).Start();
         }
 
         private void getLikedPages()
         {
-
             try
             {
-                var LikedPages = m_LoggedInUser.LikedPages;
-                if (!kk.InvokeRequired)
+                var allLikedPages = m_LoggedInUser.LikedPages;
+                if (!likedPagesListBox.InvokeRequired)
                 {
-                    likedPagesBindingSource.DataSource = LikedPages;
-                   // likedPagesBindingSource1.DataSource = LikedPages;
-
+                    likedPagesBindingSource.DataSource = allLikedPages;     
                 }
                 else
                 {
-                    kk.Invoke(new Action(() => likedPagesBindingSource.DataSource = LikedPages));
-                    //languagesListBox.Invoke(new Action(() => likedPagesBindingSource1.DataSource = LikedPages));
+                    likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
                 }
             }
-
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void friendsButton_Click(object sender, EventArgs e)
         {
-            getFriendsData();
+            new Thread(getFriendsData).Start();
         }
 
         private void getFriendsData()
@@ -236,28 +219,28 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
-                   userBindingSource.DataSource = allFriends;
-
+                    userBindingSource.DataSource = allFriends;
                 }
                 else
                 {
                     friendsListBox.Invoke(new Action(() => userBindingSource.DataSource = allFriends));
                 }
             }
+            catch {
 
-            catch
-            {
             }
+
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Text = m_LoggedInUser.Friends.Count().ToString()));
+            
         }
 
-        private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //displaySelectedFriend();
-        }
+        //private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    displaySelectedFriend();
+        //}
 
         //private void displaySelectedFriend()
-        //{//
+        //{
         //    if (friendsListBox.SelectedItems.Count == 1)
         //    {
         //        User selectedFriend = friendsListBox.SelectedItem as User;
@@ -275,14 +258,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         //        if (selectedFriend.Birthday != null)
         //        {
-        //            friendLabel.Text = string.Format("Gender: {1}{2}Birthday: {0}", selectedFriend.Birthday.ToString(), selectedFriend.Gender, Environment.NewLine);
+        //            birthdayLabel.Text = string.Format("{1}Birthday: {0}", Environment.NewLine);
         //        }
-        //        else
-        //        {
-        //            friendLabel.Text = string.Format("Gender: {0}{1}Birthday: n/a", selectedFriend.Gender, Environment.NewLine);
-        //        }
+        //        //else
+        //        //{
+        //        //    birthdayLabel.Text = string.Format("Gend{1}Birthday: n/a", selectedFriend.Gender, Environment.NewLine);
+        //        //}
 
-        //        friendLabel.Show();
+        //        birthdayLabel.Show();
         //    }
         //}
 
@@ -302,7 +285,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     {
                         PictureBox picture = new PictureBox { Image = photo.ImageNormal, SizeMode = PictureBoxSizeMode.StretchImage };
                         picture.Size = new Size(90, 80);
-                        likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Controls.Add(picture)));
+                        photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
 
                         if (amountOfPhotos++ == k_PhotosAmountPerAlbum)
                         {
@@ -325,10 +308,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void noPictureAvaillable()
         {
             PictureBox picture = new PictureBox();
-            picture.Size = new Size(likedPagesListBox.Width - 10, likedPagesListBox.Height - 10);
+            picture.Size = new Size(photosFlowLayoutPanel.Width - 10, photosFlowLayoutPanel.Height - 10);
             picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
-            likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Controls.Add(picture)));
+            photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }
     }
 }
