@@ -42,7 +42,6 @@
             this.sendGreetingButton = new System.Windows.Forms.Button();
             this.getLikedPagesButton = new System.Windows.Forms.Button();
             this.likedPagesListBox = new System.Windows.Forms.ListBox();
-            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.friendsListBox = new System.Windows.Forms.ListBox();
             this.friendsButton = new System.Windows.Forms.Button();
             this.amountFriendsLabel = new System.Windows.Forms.Label();
@@ -56,14 +55,15 @@
             this.friendPictureBox = new System.Windows.Forms.PictureBox();
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.friendBirthdayLabel = new System.Windows.Forms.Label();
+            this.likedPagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -202,11 +202,7 @@
             this.likedPagesListBox.Name = "likedPagesListBox";
             this.likedPagesListBox.Size = new System.Drawing.Size(309, 49);
             this.likedPagesListBox.TabIndex = 11;
-            // 
-            // likedPagesBindingSource
-            // 
-            this.likedPagesBindingSource.DataMember = "LikedPages";
-            this.likedPagesBindingSource.DataSource = this.userBindingSource;
+            this.likedPagesListBox.ValueMember = "Albums";
             // 
             // friendsListBox
             // 
@@ -219,7 +215,7 @@
             this.friendsListBox.Name = "friendsListBox";
             this.friendsListBox.Size = new System.Drawing.Size(185, 94);
             this.friendsListBox.TabIndex = 12;
-            this.friendsListBox.SelectedIndexChanged += new System.EventHandler(this.friendsListBox_SelectedIndexChanged);
+           
             // 
             // friendsButton
             // 
@@ -313,7 +309,7 @@
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.logOutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.logOutButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.logOutButton.Location = new System.Drawing.Point(2, 332);
+            this.logOutButton.Location = new System.Drawing.Point(1, 344);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(2);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(59, 54);
@@ -368,6 +364,10 @@
             this.friendBirthdayLabel.Text = "friend birthday";
             this.friendBirthdayLabel.Visible = false;
             // 
+            // likedPagesBindingSource
+            // 
+            this.likedPagesBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,12 +407,12 @@
             this.Text = "Facebook";
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.placesPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facebookLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,9 +441,9 @@
         private OvalPictureBox profilePictureBox;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource postsBindingSource;
-        private System.Windows.Forms.BindingSource likedPagesBindingSource;
         private System.Windows.Forms.PictureBox friendPictureBox;
         private System.Windows.Forms.Label friendBirthdayLabel;
         private System.Windows.Forms.Label birthdayLabel;
+        private System.Windows.Forms.BindingSource likedPagesBindingSource;
     }
 }

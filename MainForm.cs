@@ -31,8 +31,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId
-                ,
+                LoginResult result = FacebookService.Login(k_GuyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -67,16 +66,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
-
-            //if (m_LoggedInUser.Birthday != null)
-            //{
-            //    userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{3}Gender: {1}{3}Birthday: {2} ", m_LoggedInUser.Email, m_LoggedInUser.Gender, m_LoggedInUser.Birthday, Environment.NewLine)));
-            //}
-            //else
-            //{
-            //    userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Email: {0}{2}Gender: {1}{2}Birthday: n/a ", m_LoggedInUser.Email, m_LoggedInUser.Gender, Environment.NewLine)));
-            //}
-
             showLogInLabels();
             changeToLogInButton();
             enableButtons(true);
@@ -92,7 +81,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void showLogInLabels()
         {
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
-            //userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
+            userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
             birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
             friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
@@ -138,9 +127,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     postsListBox.Invoke(new Action(() => postsBindingSource.DataSource = allPosts));
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                // postslistbox.invoke(new action(() => postslistbox.items.add("n/a")));
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -168,7 +157,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void hideLogOutLabels()
         {
             nameLabel.Hide();
-            //userInfoLabel.Hide();
+            userInfoLabel.Hide();
             amountFriendsLabel.Hide();
             friendPictureBox.Hide();
             birthdayLabel.Hide();
@@ -202,25 +191,21 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             try
             {
-            var allLikedPages = m_LoggedInUser.LikedPages;
-            if (!likedPagesListBox.InvokeRequired)
+                var allLikedPages = m_LoggedInUser.LikedPages;
+                if (!likedPagesListBox.InvokeRequired)
+                {
+                    likedPagesBindingSource.DataSource = allLikedPages;     
+                }
+                else
+                {
+                    likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
+                }
+            }
+            catch (Exception ex)
             {
-                likedPagesBindingSource.DataSource = allLikedPages;     
+                MessageBox.Show(ex.Message);
             }
-            else
-            {
-                likedPagesListBox.Invoke(new Action(() => likedPagesBindingSource.DataSource = allLikedPages));
-            }
-            //    if (m_LoggedInUser.LikedPages.Count == 0)
-            //{
-            //    likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("User has no liked pages")));
-            //}
-            }
-            catch
-            {
-              //likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Items.Add("n/a")));
-            }
-}
+        }
 
         private void friendsButton_Click(object sender, EventArgs e)
         {
@@ -249,40 +234,40 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             
         }
 
-        private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            displaySelectedFriend();
-        }
+        //private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    displaySelectedFriend();
+        //}
 
-        private void displaySelectedFriend()
-        {//
-            if (friendsListBox.SelectedItems.Count == 1)
-            {
-                User selectedFriend = friendsListBox.SelectedItem as User;
+        //private void displaySelectedFriend()
+        //{
+        //    if (friendsListBox.SelectedItems.Count == 1)
+        //    {
+        //        User selectedFriend = friendsListBox.SelectedItem as User;
 
-                if (selectedFriend.PictureNormalURL != null)
-                {
-                    friendPictureBox.LoadAsync(selectedFriend.PictureNormalURL);
-                }
-                else
-                {
-                    friendPictureBox.Image = friendPictureBox.ErrorImage;
-                }
+        //        if (selectedFriend.PictureNormalURL != null)
+        //        {
+        //            friendPictureBox.LoadAsync(selectedFriend.PictureNormalURL);
+        //        }
+        //        else
+        //        {
+        //            friendPictureBox.Image = friendPictureBox.ErrorImage;
+        //        }
 
-                friendPictureBox.Show();
+        //        friendPictureBox.Show();
 
-                if (selectedFriend.Birthday != null)
-                {
-                    friendLabel.Text = string.Format("Gender: {1}{2}Birthday: {0}", selectedFriend.Birthday.ToString(), selectedFriend.Gender, Environment.NewLine);
-                }
-                else
-                {
-                    friendLabel.Text = string.Format("Gender: {0}{1}Birthday: n/a", selectedFriend.Gender, Environment.NewLine);
-                }
+        //        if (selectedFriend.Birthday != null)
+        //        {
+        //            birthdayLabel.Text = string.Format("{1}Birthday: {0}", Environment.NewLine);
+        //        }
+        //        //else
+        //        //{
+        //        //    birthdayLabel.Text = string.Format("Gend{1}Birthday: n/a", selectedFriend.Gender, Environment.NewLine);
+        //        //}
 
-                friendLabel.Show();
-            }
-        }
+        //        birthdayLabel.Show();
+        //    }
+        //}
 
         private void photosButton_Click(object sender, EventArgs e)
         {
