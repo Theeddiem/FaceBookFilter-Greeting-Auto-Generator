@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
+namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     public partial class MainForm : Form
     {
@@ -153,7 +153,7 @@ namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
         private void logoutAction()
         {
             changeToLogOutButton();
-            profilePictureBox.Image = A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
+            profilePictureBox.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.Text = "Welcome to Facebook";
             hideLogOut();
             enableButtons(false);
@@ -300,7 +300,7 @@ namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
         {
             PictureBox picture = new PictureBox();
             picture.Size = new Size(photosFlowLayoutPanel.Width - 10, photosFlowLayoutPanel.Height - 10);
-            picture.Image = A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
+            picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }

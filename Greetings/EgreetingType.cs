@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Greetings
+namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
     public enum EgreetingType
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties {
+namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

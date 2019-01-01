@@ -1,4 +1,4 @@
-﻿namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
+﻿namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     partial class PlacesForm
     {
@@ -169,7 +169,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.placesForm;
+            this.pictureBox1.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.placesForm;
             this.pictureBox1.Location = new System.Drawing.Point(123, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(206, 128);

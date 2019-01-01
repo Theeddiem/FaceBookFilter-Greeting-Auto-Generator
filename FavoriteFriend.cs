@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
+namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     public class FavoriteFriend : IComparable<FavoriteFriend>
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Greetings
+namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
 {
     internal class AnniversaryGreeting : Greeting
     {
