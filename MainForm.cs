@@ -13,7 +13,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 4;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        private string k_GuyAppId = "1450160541956417";
+        //private string k_GuyAppId = "1450160541956417";
 
         public MainForm()
         {
@@ -31,7 +31,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId,
+                LoginResult result = FacebookService.Login(k_MyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -63,7 +63,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void updateLogInUi()
         {
-            profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            profilePictureBox.Invoke(new Action(() => profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Gender : {0} {1}Birthday: {2} {1}Email: {3}{1}", m_LoggedInUser.Gender, Environment.NewLine, m_LoggedInUser.Birthday,m_LoggedInUser.Email)));
@@ -83,7 +83,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             nameLabel.Invoke(new Action(() => nameLabel.Show() ));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Show()));
-
             amountFriendsLabel.Invoke(new Action(() => amountFriendsLabel.Show()));
             birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
             friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
@@ -95,7 +94,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             new Thread(getFriendsData).Start();
             new Thread(getPosts).Start();
             new Thread(getLikedPages).Start();
-            //new Thread(getPhotos).Start();
+            new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
@@ -148,6 +147,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             hideLogOutLabels();
             eraseCurrentContent();
             enableButtons(false);
+            restDataSource();
+        }
+
+        private void restDataSource()
+        {
+            likedPagesListBox.DataSource = null;
+            friendsListBox.DataSource = null;
+            postsListBox.DataSource = null;
         }
 
         private void changeToLogOutButton()
@@ -164,6 +171,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             friendPictureBox.Hide();
             birthdayLabel.Hide();
             friendBirthdayLabel.Hide();
+            catchPageLabel.Hide();
         }
 
         private void enableButtons(bool i_Enable)
