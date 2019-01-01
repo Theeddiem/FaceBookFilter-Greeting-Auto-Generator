@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings;
+using A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Greetings;
 using FacebookWrapper.ObjectModel;
 
-namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
+namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
 {
     public partial class GreetingsForm : Form
     {

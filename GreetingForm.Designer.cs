@@ -1,4 +1,4 @@
-﻿namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
+﻿namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
 {
     partial class GreetingsForm
     {
@@ -57,7 +57,7 @@
             // greetingPictureBox
             // 
             this.greetingPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.greetingPictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.Greeting_Card_Envelope;
+            this.greetingPictureBox.Image = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.Greeting_Card_Envelope;
             this.greetingPictureBox.Location = new System.Drawing.Point(600, 62);
             this.greetingPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.greetingPictureBox.Name = "greetingPictureBox";
@@ -149,7 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BackgroundImage = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.greeting_Backround2;
+            this.BackgroundImage = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.greeting_Backround2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1042, 448);
             this.Controls.Add(this.msgTextBox);

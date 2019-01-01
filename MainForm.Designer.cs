@@ -1,4 +1,4 @@
-﻿namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
+﻿namespace A19Ex02EddieKnyazhinsky311354047HadasFoox205651060
 {
     partial class MainForm
     {
@@ -52,7 +52,7 @@
             this.placesPictureBox = new System.Windows.Forms.PictureBox();
             this.facebookLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.logOutButton = new System.Windows.Forms.Button();
-            this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
+            this.profilePictureBox = new A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
             this.friendPictureBox = new System.Windows.Forms.PictureBox();
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.friendBirthdayLabel = new System.Windows.Forms.Label();
@@ -288,7 +288,7 @@
             // placesPictureBox
             // 
             this.placesPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.placesPictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.favourite_places;
+            this.placesPictureBox.Image = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.favourite_places;
             this.placesPictureBox.Location = new System.Drawing.Point(1, 224);
             this.placesPictureBox.Name = "placesPictureBox";
             this.placesPictureBox.Size = new System.Drawing.Size(38, 36);
@@ -312,7 +312,7 @@
             // logOutButton
             // 
             this.logOutButton.BackColor = System.Drawing.Color.DarkRed;
-            this.logOutButton.BackgroundImage = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.user_exit_logout_sign_out_icon;
+            this.logOutButton.BackgroundImage = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.user_exit_logout_sign_out_icon;
             this.logOutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.logOutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -329,7 +329,7 @@
             // profilePictureBox
             // 
             this.profilePictureBox.BackColor = System.Drawing.Color.DarkGray;
-            this.profilePictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
+            this.profilePictureBox.Image = global::A19Ex02EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.profilePictureBox.Location = new System.Drawing.Point(7, 43);
             this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
