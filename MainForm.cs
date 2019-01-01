@@ -63,7 +63,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void updateLogInUi()
         {
-            profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
+            profilePictureBox.Invoke(new Action(() => profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
+           // profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL);
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
             userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Gender : {0} {1}Birthday: {2} {1}Email: {3}{1}", m_LoggedInUser.Gender, Environment.NewLine, m_LoggedInUser.Birthday,m_LoggedInUser.Email)));
