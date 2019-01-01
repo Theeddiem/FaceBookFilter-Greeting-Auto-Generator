@@ -13,7 +13,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 4;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        //private string k_GuyAppId = "1450160541956417";
 
         public MainForm()
         {
@@ -43,7 +42,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 "user_posts",
                 "user_tagged_places",
                 "user_photos"
-                            );
+                );
 
             fetchUserConnection(result);
         }
@@ -66,7 +65,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             profilePictureBox.Invoke(new Action(() => profilePictureBox.LoadAsync(m_LoggedInUser.PictureNormalURL)));
             this.Invoke(new Action(() => this.Text = m_LoggedInUser.Name));
             nameLabel.Invoke(new Action(() => nameLabel.Text = m_LoggedInUser.Name));
-            userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Gender : {0} {1}Birthday: {2} {1}Email: {3}{1}", m_LoggedInUser.Gender, Environment.NewLine, m_LoggedInUser.Birthday,m_LoggedInUser.Email)));
+            userInfoLabel.Invoke(new Action(() => userInfoLabel.Text = string.Format("Gender : {0} {1}Birthday: {2} {1}Email: {3}{1}", m_LoggedInUser.Gender, Environment.NewLine, m_LoggedInUser.Birthday, m_LoggedInUser.Email)));
             showLogInLabels();
             changeToLogInButton();
             enableButtons(true);

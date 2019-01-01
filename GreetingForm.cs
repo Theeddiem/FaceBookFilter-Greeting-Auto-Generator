@@ -33,7 +33,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void getGreetingList()
         {
-            foreach (var item in Enum.GetNames(typeof(Greeting.GreetingType)))
+            foreach (var item in Enum.GetNames(typeof(EgreetingType)))
             {
                 greetingsListBox.Items.Add(GreetingFactory.Create(item));
             }
