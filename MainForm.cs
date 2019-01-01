@@ -13,7 +13,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 4;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        //private string k_GuyAppId = "1450160541956417";
+        private string k_GuyAppId = "1450160541956417";
 
         public MainForm()
         {
@@ -31,7 +31,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_MyAppId,
+                LoginResult result = FacebookService.Login(k_GuyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -94,7 +94,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             new Thread(getFriendsData).Start();
             new Thread(getPosts).Start();
             new Thread(getLikedPages).Start();
-            new Thread(getPhotos).Start();
+            //new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
