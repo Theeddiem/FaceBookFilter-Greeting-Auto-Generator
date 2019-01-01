@@ -57,6 +57,10 @@
             this.birthdayLabel = new System.Windows.Forms.Label();
             this.friendBirthdayLabel = new System.Windows.Forms.Label();
             this.catchPageLabel = new System.Windows.Forms.Label();
+            this.photosFlowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.friendsListBox2 = new System.Windows.Forms.ListBox();
+            this.postsListBox2 = new System.Windows.Forms.ListBox();
+            this.likedPagesListBox2 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
@@ -371,13 +375,61 @@
             // catchPageLabel
             // 
             this.catchPageLabel.AutoSize = true;
-            this.catchPageLabel.Location = new System.Drawing.Point(564, 297);
+            this.catchPageLabel.Location = new System.Drawing.Point(568, 299);
             this.catchPageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.catchPageLabel.Name = "catchPageLabel";
             this.catchPageLabel.Size = new System.Drawing.Size(27, 13);
             this.catchPageLabel.TabIndex = 26;
             this.catchPageLabel.Text = "N/A";
             this.catchPageLabel.Visible = false;
+            // 
+            // photosFlowLayoutPanel2
+            // 
+            this.photosFlowLayoutPanel2.AutoScroll = true;
+            this.photosFlowLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.photosFlowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.photosFlowLayoutPanel2.Location = new System.Drawing.Point(560, 73);
+            this.photosFlowLayoutPanel2.Name = "photosFlowLayoutPanel2";
+            this.photosFlowLayoutPanel2.Size = new System.Drawing.Size(320, 160);
+            this.photosFlowLayoutPanel2.TabIndex = 23;
+            this.photosFlowLayoutPanel2.Visible = false;
+            // 
+            // friendsListBox2
+            // 
+            this.friendsListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.friendsListBox2.FormattingEnabled = true;
+            this.friendsListBox2.ItemHeight = 15;
+            this.friendsListBox2.Location = new System.Drawing.Point(218, 73);
+            this.friendsListBox2.Name = "friendsListBox2";
+            this.friendsListBox2.Size = new System.Drawing.Size(185, 79);
+            this.friendsListBox2.TabIndex = 27;
+            this.friendsListBox2.Visible = false;
+            // 
+            // postsListBox2
+            // 
+            this.postsListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.postsListBox2.FormattingEnabled = true;
+            this.postsListBox2.ItemHeight = 15;
+            this.postsListBox2.Location = new System.Drawing.Point(215, 264);
+            this.postsListBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.postsListBox2.Name = "postsListBox2";
+            this.postsListBox2.Size = new System.Drawing.Size(282, 94);
+            this.postsListBox2.TabIndex = 28;
+            this.postsListBox2.Visible = false;
+            // 
+            // likedPagesListBox2
+            // 
+            this.likedPagesListBox2.DisplayMember = "Albums";
+            this.likedPagesListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likedPagesListBox2.FormattingEnabled = true;
+            this.likedPagesListBox2.ItemHeight = 15;
+            this.likedPagesListBox2.Location = new System.Drawing.Point(560, 292);
+            this.likedPagesListBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.likedPagesListBox2.Name = "likedPagesListBox2";
+            this.likedPagesListBox2.Size = new System.Drawing.Size(309, 64);
+            this.likedPagesListBox2.TabIndex = 29;
+            this.likedPagesListBox2.ValueMember = "Albums";
+            this.likedPagesListBox2.Visible = false;
             // 
             // MainForm
             // 
@@ -386,6 +438,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(913, 399);
+            this.Controls.Add(this.likedPagesListBox2);
+            this.Controls.Add(this.postsListBox2);
+            this.Controls.Add(this.friendsListBox2);
+            this.Controls.Add(this.photosFlowLayoutPanel2);
             this.Controls.Add(this.catchPageLabel);
             this.Controls.Add(this.birthdayLabel);
             this.Controls.Add(this.friendPictureBox);
@@ -458,5 +514,9 @@
         private System.Windows.Forms.Label birthdayLabel;
         private System.Windows.Forms.BindingSource likedPagesBindingSource;
         private System.Windows.Forms.Label catchPageLabel;
+        private System.Windows.Forms.FlowLayoutPanel photosFlowLayoutPanel2;
+        private System.Windows.Forms.ListBox friendsListBox2;
+        private System.Windows.Forms.ListBox postsListBox2;
+        private System.Windows.Forms.ListBox likedPagesListBox2;
     }
 }
