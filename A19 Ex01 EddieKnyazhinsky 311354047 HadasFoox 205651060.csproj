@@ -82,7 +82,8 @@
     </Compile>
     <Compile Include="Greetings\AnniversaryGreeting.cs" />
     <Compile Include="Greetings\BirthdayGreeting.cs" />
-    <Compile Include="Greetings\GreetingFactory.cs" />
+    <Compile Include="GreetingFactory.cs" />
+    <Compile Include="Greetings\EgreetingType.cs" />
     <Compile Include="Greetings\HolidayGreeting.cs" />
     <Compile Include="Greetings\NewYearGreeting.cs" />
     <Compile Include="Greetings\RecruitmentGreeting.cs" />
@@ -120,8 +121,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
