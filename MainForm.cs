@@ -32,7 +32,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void loginAndInit()
         {
-                LoginResult result = FacebookService.Login(k_GuyAppId,
+                LoginResult result = FacebookService.Login(k_MyAppId,
                 "public_profile",
                 "user_birthday",
                 "user_friends",
@@ -88,6 +88,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             birthdayLabel.Invoke(new Action(() => birthdayLabel.Show()));
             friendBirthdayLabel.Invoke(new Action(() => friendBirthdayLabel.Show()));
             friendPictureBox.Invoke(new Action(() => friendPictureBox.Show()));
+            friendsListBox.Invoke(new Action(() => friendsListBox.Show()));
+            postsListBox.Invoke(new Action(() => postsListBox.Show()));
+            likedPagesListBox.Invoke(new Action(() => likedPagesListBox.Show()));
+            photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Show()));
+
+            friendsListBox2.Invoke(new Action(() => friendsListBox2.Hide()));
+            postsListBox2.Invoke(new Action(() => postsListBox2.Hide()));
+            likedPagesListBox2.Invoke(new Action(() => likedPagesListBox2.Hide()));
+            photosFlowLayoutPanel2.Invoke(new Action(() => photosFlowLayoutPanel2.Hide()));
         }
 
         private void fetchInfo()
@@ -146,23 +155,21 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             changeToLogOutButton();
             profilePictureBox.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.Text = "Welcome to Facebook";
-            hideLogOutLabels();
+            hideLogOut();
             enableButtons(false);
-            restDataSource();
+            //restDataSource();
         }
 
-        private void restDataSource()
-        {
-
-            // friendsListBox.DataSource = null;
+        //private void restDataSource()
+        //{
             
-            friendsListBox.DataBindings.Clear();
-            friendsListBox.Items.Clear();
+        //    friendsListBox.DataBindings.Clear();
+        //    friendsListBox.Items.Clear();
 
-            postsListBox.DataSource = null;
-            postsListBox.DataBindings.Clear();
-         //   photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Clear()));      
-        }
+        //    postsListBox.DataSource = null;
+        //    postsListBox.DataBindings.Clear();
+        // //   photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Clear()));      
+        //}
 
         private void changeToLogOutButton()
         {
@@ -170,7 +177,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             logOutButton.Hide();
         }
 
-        private void hideLogOutLabels()
+        private void hideLogOut()
         {
             nameLabel.Hide();
             userInfoLabel.Hide();
@@ -179,6 +186,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             birthdayLabel.Hide();
             friendBirthdayLabel.Hide();
             catchPageLabel.Hide();
+            friendsListBox.Hide();
+            postsListBox.Hide();
+            likedPagesListBox.Hide();
+            photosFlowLayoutPanel.Hide();
+
+            friendsListBox2.Show();
+            postsListBox2.Show();
+            likedPagesListBox2.Show();
+            photosFlowLayoutPanel2.Show();
         }
 
         private void enableButtons(bool i_Enable)
@@ -226,9 +242,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getFriendsData()
         {
             try
-            {
-               // friendsListBox.Invoke(new Action(() => friendsListBox.DataSource = null));
-                
+            {                
                 var allFriends = m_LoggedInUser.Friends;
                 if (!friendsListBox.InvokeRequired)
                 {
