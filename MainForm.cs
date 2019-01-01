@@ -10,21 +10,19 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     public partial class MainForm : Form
     {
-        private const int k_PhotosAmountPerAlbum = 1;
+        private const int k_PhotosAmountPerAlbum = 3;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        private string k_GuyAppId = "1450160541956417";
 
         public MainForm()
         {
-            FacebookService.s_CollectionLimit = 5;
+            FacebookService.s_CollectionLimit = 15;
             FacebookService.s_FbApiVersion = 2.8f;
             InitializeComponent();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
             Thread thread = new Thread(loginAndInit);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
@@ -104,7 +102,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             new Thread(getFriendsData).Start();
             new Thread(getPosts).Start();
             new Thread(getLikedPages).Start();
-         //   new Thread(getPhotos).Start();
+            new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
@@ -127,8 +125,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getPosts()
         {
             try
-            {
-              
+            { 
                 var allPosts = m_LoggedInUser.Posts;
                 if (!postsListBox.InvokeRequired)
                 {
@@ -157,19 +154,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             this.Text = "Welcome to Facebook";
             hideLogOut();
             enableButtons(false);
-            //restDataSource();
         }
-
-        //private void restDataSource()
-        //{
-            
-        //    friendsListBox.DataBindings.Clear();
-        //    friendsListBox.Items.Clear();
-
-        //    postsListBox.DataSource = null;
-        //    postsListBox.DataBindings.Clear();
-        // //   photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Clear()));      
-        //}
 
         private void changeToLogOutButton()
         {
@@ -190,7 +175,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             postsListBox.Hide();
             likedPagesListBox.Hide();
             photosFlowLayoutPanel.Hide();
-
+            photosFlowLayoutPanel.Controls.Clear();
             friendsListBox2.Show();
             postsListBox2.Show();
             likedPagesListBox2.Show();
@@ -206,7 +191,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             getLikedPagesButton.Invoke(new Action(() => getLikedPagesButton.Enabled = i_Enable));
             getPostsButton.Invoke(new Action(() => getPostsButton.Enabled = i_Enable));
         }
-
 
         private void getLikedPages_Click(object sender, EventArgs e)
         {
@@ -262,7 +246,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void photosButton_Click(object sender, EventArgs e)
         {
-          //  new Thread(getPhotos).Start();
+           new Thread(getPhotos).Start();
         }
 
         private void getPhotos()
