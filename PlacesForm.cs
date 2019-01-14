@@ -16,6 +16,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private ListBox m_CurrentFriends;
 
+        public Func<string> getSearchSite =() => @"http://www.google.com/search?q=";
+
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
         }
+
 
         private void getPopularPlacesButton_Click(object sender, EventArgs e)
         {
@@ -197,7 +200,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             StringBuilder addreas = new StringBuilder();
 
-            addreas.Append(@"http://www.google.com/search?q=");
+            // addreas.Append(@"http://www.google.com/search?q=");
+           // addreas.Append(@"https://www.bing.com/search?q=");
+            addreas.Append(getSearchSite.Invoke());
             addreas.Append(i_SelectedPlaceStr);
             maps.Navigate(addreas.ToString());
         }
@@ -272,6 +277,27 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void commonPlacesListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             displaySelectedPlace(commonPlacesListBox);
+        }
+
+        private void radioButtonSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonGoogle.Checked)
+            {
+                getSearchSite = () => @"http://www.google.com/search?q=";
+            }
+            else if (radioButtonBing.Checked)
+            {
+                getSearchSite = () => @"https://www.bing.com/search?q=";
+            }
+            else if (radioButtonDuckDuckGo.Checked)
+            {
+                getSearchSite = () => @"https://duckduckgo.com/?q=";
+
+            }
+
+
+            //(@"http://www.google.com/search?q=");
+            //@"https://www.bing.com/search?q=");
         }
     }
 }

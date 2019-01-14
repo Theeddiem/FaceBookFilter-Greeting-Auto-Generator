@@ -1,0 +1,9 @@
+==========================Exercise Checking Report==========================
+Exercise No...........: 2
+First Student Details.: 311354047 - Eddie Knyazhinsky
+Second Student Details: 205651060 - Hadas Foox
+Delivery Date.........: 01- January 2019
+Delivered In Delay....: No
+Delay Reason..........: 
+Comments..............: Greeting feature only work if we have access to friend Email, but we don't.
+========================End Exercise Checking Report========================

@@ -10,6 +10,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
     public class OvalPictureBox : PictureBox
     {
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);

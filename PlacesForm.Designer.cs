@@ -42,8 +42,13 @@
             this.friendPictureBox = new System.Windows.Forms.PictureBox();
             this.commonPlacesListBox = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButtonGoogle = new System.Windows.Forms.RadioButton();
+            this.radioButtonBing = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonDuckDuckGo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // friendsListBox
@@ -177,12 +182,61 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // radioButtonGoogle
+            // 
+            this.radioButtonGoogle.AutoSize = true;
+            this.radioButtonGoogle.Checked = true;
+            this.radioButtonGoogle.Location = new System.Drawing.Point(6, 25);
+            this.radioButtonGoogle.Name = "radioButtonGoogle";
+            this.radioButtonGoogle.Size = new System.Drawing.Size(86, 24);
+            this.radioButtonGoogle.TabIndex = 18;
+            this.radioButtonGoogle.TabStop = true;
+            this.radioButtonGoogle.Text = "Google";
+            this.radioButtonGoogle.UseVisualStyleBackColor = true;
+            this.radioButtonGoogle.CheckedChanged += new System.EventHandler(this.radioButtonSearch_CheckedChanged);
+            // 
+            // radioButtonBing
+            // 
+            this.radioButtonBing.AutoSize = true;
+            this.radioButtonBing.Location = new System.Drawing.Point(6, 55);
+            this.radioButtonBing.Name = "radioButtonBing";
+            this.radioButtonBing.Size = new System.Drawing.Size(66, 24);
+            this.radioButtonBing.TabIndex = 19;
+            this.radioButtonBing.Text = "Bing";
+            this.radioButtonBing.UseVisualStyleBackColor = true;
+            this.radioButtonBing.CheckedChanged += new System.EventHandler(this.radioButtonSearch_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButtonDuckDuckGo);
+            this.groupBox1.Controls.Add(this.radioButtonGoogle);
+            this.groupBox1.Controls.Add(this.radioButtonBing);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(158, 121);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search engine";
+            // 
+            // radioButtonDuckDuckGo
+            // 
+            this.radioButtonDuckDuckGo.AutoSize = true;
+            this.radioButtonDuckDuckGo.Location = new System.Drawing.Point(7, 88);
+            this.radioButtonDuckDuckGo.Name = "radioButtonDuckDuckGo";
+            this.radioButtonDuckDuckGo.Size = new System.Drawing.Size(130, 24);
+            this.radioButtonDuckDuckGo.TabIndex = 21;
+            this.radioButtonDuckDuckGo.TabStop = true;
+            this.radioButtonDuckDuckGo.Text = "DuckDuckGo";
+            this.radioButtonDuckDuckGo.UseVisualStyleBackColor = true;
+            this.radioButtonDuckDuckGo.CheckedChanged += new System.EventHandler(this.radioButtonSearch_CheckedChanged);
+            // 
             // PlacesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(450, 738);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.commonPlacesListBox);
             this.Controls.Add(this.placeGoogleSearchLabel);
@@ -202,6 +256,8 @@
             this.Text = "Places";
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +276,9 @@
         private System.Windows.Forms.Label placeGoogleSearchLabel;
         private System.Windows.Forms.ListBox commonPlacesListBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioButtonGoogle;
+        private System.Windows.Forms.RadioButton radioButtonBing;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButtonDuckDuckGo;
     }
 }

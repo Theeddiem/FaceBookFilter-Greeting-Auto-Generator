@@ -71,6 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
     <Compile Include="Greetings\Greeting.cs" />
