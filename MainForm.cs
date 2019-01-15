@@ -18,6 +18,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             FacebookService.s_CollectionLimit = 15;
             FacebookService.s_FbApiVersion = 2.8f;
+            Counter counter = Singleton<Counter>.Instance;
+            counter.InfoHappend += onNewInfo;
             InitializeComponent();
         }
 
@@ -105,16 +107,29 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             //new Thread(getPhotos).Start();
         }
 
+
+
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
+            
+
             placesForm.Show();
         }
 
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
+            
+
             greetingsForm.Show();
+        }
+
+        private void onNewInfo(int i_Counter ,string i_Msg)
+        {
+            listViewHistory.Items.Add(i_Msg + "\n");
+            labelcounterNumber.Text = i_Counter.ToString();
+            labelMsg.Text = i_Msg;
         }
 
         private void getPostsButton_Click(object sender, EventArgs e)
@@ -287,6 +302,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

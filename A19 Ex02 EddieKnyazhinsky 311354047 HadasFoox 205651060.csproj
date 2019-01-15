@@ -74,8 +74,10 @@
     <Compile Include="ButtonCommand.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Counter.cs" />
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
+    <Compile Include="GenericSingletons.cs" />
     <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>

@@ -65,9 +65,12 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     {
                         foreach (User selectedFriend in friendsListBox.SelectedItems)
                         {
+                            Counter Counter = Singleton<Counter>.Instance;
+                            Counter.OnInfoChanged("Tried to send  Mail to : " + selectedFriend.Name);
                             sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
                         }
 
+                      
                     MessageBox.Show("Sent");
                 }
                     catch (Exception ex)

@@ -205,6 +205,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             addreas.Append(getSearchSite.Invoke());
             addreas.Append(i_SelectedPlaceStr);
             maps.Navigate(addreas.ToString());
+
+            Counter counter = Singleton<Counter>.Instance;
+            counter.OnInfoChanged("You have searched : " + i_SelectedPlaceStr);
         }
 
         private void getPotentialFriendsButton_Click(object sender, EventArgs e)
