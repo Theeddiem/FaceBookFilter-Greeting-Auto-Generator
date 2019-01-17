@@ -27,8 +27,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             }
         }
 
-
-
         public Func<string> getSearchSite =  ()=> @"http://www.google.com/search?q=";
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
@@ -309,10 +307,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 getSearchSite = () => @"https://duckduckgo.com/?q=";
 
             }
-
-
-            //(@"http://www.google.com/search?q=");
-            //@"https://www.bing.com/search?q=");
         }
     }
 }

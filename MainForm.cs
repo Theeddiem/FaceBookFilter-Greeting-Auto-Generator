@@ -118,6 +118,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
+
+
             greetingsForm.m_ReportGreetingSentDelegates += new Action<string>(this.upDateListBoxListener);
 
 
