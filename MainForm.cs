@@ -122,7 +122,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
             greetingsForm.m_ReportGreetingSentDelegates += new Action<string>(this.upDateListBoxListener);
 
-
             greetingsForm.Show();
         }
 
