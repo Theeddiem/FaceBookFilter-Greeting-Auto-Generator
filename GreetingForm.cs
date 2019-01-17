@@ -18,6 +18,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private Greeting m_SelectedGreeting;
 
+        public event Action<string> m_ReportGreetingSentDelegates;
+
+     
         public GreetingsForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
             InitializeComponent();
@@ -29,6 +32,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             base.OnShown(e);
             getGreetingList();
+        }
+
+        private void notifyObservers(string i_HistoryMsg)
+        {
+            if (m_ReportGreetingSentDelegates != null)
+            {
+                m_ReportGreetingSentDelegates.Invoke(i_HistoryMsg);
+
+            }
         }
 
         private void getGreetingList()
@@ -61,22 +73,24 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             {
                 if (friendsListBox.SelectedItems.Count > 0 && greetingsListBox.SelectedItem != null)
                 {
+                    string currentFriendName = null;
                     try
                     {
                         foreach (User selectedFriend in friendsListBox.SelectedItems)
                         {
-                            Counter Counter = Singleton<Counter>.Instance;
-                            Counter.OnInfoChanged("Tried to send  Mail to : " + selectedFriend.Name);
+                            currentFriendName = selectedFriend.Name;
                             sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
+                            string msg = string.Format("{0:HH:mm:ss tt} | Sent Mail to : {1}", DateTime.Now, currentFriendName);
+                            notifyObservers(msg);
                         }
-
-                      
                     MessageBox.Show("Sent");
                 }
                     catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                }
+                    string msg = string.Format("{0:HH:mm:ss tt} | Failed to send mail to : {1}", DateTime.Now, currentFriendName);
+                    notifyObservers(msg);
+                    }
             }
             }));
         }

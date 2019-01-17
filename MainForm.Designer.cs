@@ -60,10 +60,8 @@
             this.friendsListBox2 = new System.Windows.Forms.ListBox();
             this.postsListBox2 = new System.Windows.Forms.ListBox();
             this.likedPagesListBox2 = new System.Windows.Forms.ListBox();
-            this.listViewHistory = new System.Windows.Forms.ListView();
-            this.labelcounterNumber = new System.Windows.Forms.Label();
-            this.labelMsg = new System.Windows.Forms.Label();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
+            this.HistoryListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
@@ -422,33 +420,6 @@
             this.likedPagesListBox2.ValueMember = "Albums";
             this.likedPagesListBox2.Visible = false;
             // 
-            // listViewHistory
-            // 
-            this.listViewHistory.Location = new System.Drawing.Point(437, 134);
-            this.listViewHistory.Name = "listViewHistory";
-            this.listViewHistory.Size = new System.Drawing.Size(353, 253);
-            this.listViewHistory.TabIndex = 30;
-            this.listViewHistory.UseCompatibleStateImageBehavior = false;
-            this.listViewHistory.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // labelcounterNumber
-            // 
-            this.labelcounterNumber.AutoSize = true;
-            this.labelcounterNumber.Location = new System.Drawing.Point(270, 248);
-            this.labelcounterNumber.Name = "labelcounterNumber";
-            this.labelcounterNumber.Size = new System.Drawing.Size(51, 20);
-            this.labelcounterNumber.TabIndex = 31;
-            this.labelcounterNumber.Text = "label1";
-            // 
-            // labelMsg
-            // 
-            this.labelMsg.AutoSize = true;
-            this.labelMsg.Location = new System.Drawing.Point(270, 272);
-            this.labelMsg.Name = "labelMsg";
-            this.labelMsg.Size = new System.Drawing.Size(72, 20);
-            this.labelMsg.TabIndex = 32;
-            this.labelMsg.Text = "labelMsg";
-            // 
             // profilePictureBox
             // 
             this.profilePictureBox.BackColor = System.Drawing.Color.DarkGray;
@@ -460,6 +431,15 @@
             this.profilePictureBox.TabIndex = 23;
             this.profilePictureBox.TabStop = false;
             // 
+            // HistoryListBox
+            // 
+            this.HistoryListBox.FormattingEnabled = true;
+            this.HistoryListBox.ItemHeight = 20;
+            this.HistoryListBox.Location = new System.Drawing.Point(554, 293);
+            this.HistoryListBox.Name = "HistoryListBox";
+            this.HistoryListBox.Size = new System.Drawing.Size(545, 164);
+            this.HistoryListBox.TabIndex = 30;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -467,9 +447,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1370, 614);
-            this.Controls.Add(this.labelMsg);
-            this.Controls.Add(this.labelcounterNumber);
-            this.Controls.Add(this.listViewHistory);
+            this.Controls.Add(this.HistoryListBox);
             this.Controls.Add(this.likedPagesListBox2);
             this.Controls.Add(this.postsListBox2);
             this.Controls.Add(this.friendsListBox2);
@@ -549,8 +527,6 @@
         private System.Windows.Forms.ListBox friendsListBox2;
         private System.Windows.Forms.ListBox postsListBox2;
         private System.Windows.Forms.ListBox likedPagesListBox2;
-        private System.Windows.Forms.ListView listViewHistory;
-        private System.Windows.Forms.Label labelcounterNumber;
-        private System.Windows.Forms.Label labelMsg;
+        private System.Windows.Forms.ListBox HistoryListBox;
     }
 }

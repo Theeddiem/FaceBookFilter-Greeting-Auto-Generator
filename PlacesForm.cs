@@ -16,7 +16,20 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private ListBox m_CurrentFriends;
 
-        public Func<string> getSearchSite =() => @"http://www.google.com/search?q=";
+        public event Action<string> m_ReportSiteSearchDelegates;
+
+        private void notifyObservers(string i_SearchHistory)
+        {
+            if (m_ReportSiteSearchDelegates != null)
+            {
+                m_ReportSiteSearchDelegates.Invoke(i_SearchHistory);
+
+            }
+        }
+
+
+
+        public Func<string> getSearchSite =  ()=> @"http://www.google.com/search?q=";
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
@@ -188,7 +201,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                         selectedPlaceStr = i_CurrentListBox.Text;
                     }
 
-                navigateToGoogle(selectedPlaceStr);
+                navigateToSearchEngine(selectedPlaceStr);
             }
             catch (Exception ex)
             {
@@ -196,18 +209,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             }
         }
 
-        private void navigateToGoogle(string i_SelectedPlaceStr)
+        private void navigateToSearchEngine(string i_SelectedPlaceStr)
         {
             StringBuilder addreas = new StringBuilder();
 
-            // addreas.Append(@"http://www.google.com/search?q=");
-           // addreas.Append(@"https://www.bing.com/search?q=");
             addreas.Append(getSearchSite.Invoke());
             addreas.Append(i_SelectedPlaceStr);
             maps.Navigate(addreas.ToString());
 
-            Counter counter = Singleton<Counter>.Instance;
-            counter.OnInfoChanged("You have searched : " + i_SelectedPlaceStr);
+            string msg = string.Format("{0:HH:mm:ss tt} | You have searched :  {1}", DateTime.Now, i_SelectedPlaceStr);
+            notifyObservers(msg);
+
         }
 
         private void getPotentialFriendsButton_Click(object sender, EventArgs e)

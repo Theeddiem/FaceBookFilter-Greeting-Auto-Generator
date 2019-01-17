@@ -71,13 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonCommand.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Counter.cs" />
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
-    <Compile Include="GenericSingletons.cs" />
     <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>
@@ -126,6 +121,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

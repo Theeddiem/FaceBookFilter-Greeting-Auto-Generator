@@ -18,8 +18,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             FacebookService.s_CollectionLimit = 15;
             FacebookService.s_FbApiVersion = 2.8f;
-            Counter counter = Singleton<Counter>.Instance;
-            counter.InfoHappend += onNewInfo;
             InitializeComponent();
         }
 
@@ -112,7 +110,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-            
+            placesForm.m_ReportSiteSearchDelegates += new Action<string>(this.upDateListBoxListener);
 
             placesForm.Show();
         }
@@ -120,16 +118,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
-            
+            greetingsForm.m_ReportGreetingSentDelegates += new Action<string>(this.upDateListBoxListener);
+
 
             greetingsForm.Show();
         }
 
-        private void onNewInfo(int i_Counter ,string i_Msg)
+        private void upDateListBoxListener(string i_Msg)
         {
-            listViewHistory.Items.Add(i_Msg + "\n");
-            labelcounterNumber.Text = i_Counter.ToString();
-            labelMsg.Text = i_Msg;
+            HistoryListBox.Items.Add(i_Msg + "\n");
         }
 
         private void getPostsButton_Click(object sender, EventArgs e)
@@ -304,9 +301,5 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
