@@ -227,7 +227,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void fetchFriendsWithMostCommonPlaces()
         {
             friendsWithCommonPlacesListBox.Items.Clear();
-            List<FavoriteFriend> friendsWithCommonPlaces = findFriendsWithCommonPlaces();
+            List<FavoriteFriendUser> friendsWithCommonPlaces = findFriendsWithCommonPlaces();
 
             if (friendsWithCommonPlaces.Count > 0)
             {
@@ -239,13 +239,13 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             }
         }
 
-        private List<FavoriteFriend> findFriendsWithCommonPlaces()
+        private List<FavoriteFriendUser> findFriendsWithCommonPlaces()
         {
-            List<FavoriteFriend> friendsWithCommonPlaces = new List<FavoriteFriend>();
+            List<FavoriteFriendUser> friendsWithCommonPlaces = new List<FavoriteFriendUser>();
             
             foreach (User currentFriend in friendsListBox.Items)
             {
-                FavoriteFriend currentFavFriend = new FavoriteFriend(currentFriend);
+                FavoriteFriendUser currentFavFriend = new FavoriteFriendUser(currentFriend);
 
                 foreach (Checkin friendCheckIn in currentFriend.Checkins)
                 {
@@ -277,10 +277,10 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             return friendsWithCommonPlaces;
         }
 
-        private void showByPopularityFriendsWithCommonPlaces(List<FavoriteFriend> i_FriendsWithCommonPlaces)
+        private void showByPopularityFriendsWithCommonPlaces(List<FavoriteFriendUser> i_FriendsWithCommonPlaces)
         {
             i_FriendsWithCommonPlaces.Sort();
-            foreach (FavoriteFriend item in i_FriendsWithCommonPlaces)
+            foreach (FavoriteFriendUser item in i_FriendsWithCommonPlaces)
             {
                 friendsWithCommonPlacesListBox.Items.Add(item);
             }
@@ -306,10 +306,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 getSearchSite = () => @"https://duckduckgo.com/?q=";
 
             }
-  ]
-   SADSADdsadsad322131c sadsa
-            //(@"http://www.google.com/search?q=");
-            //@"https://www.bing.com/search?q=");
         }
     }
 }

@@ -6,11 +6,11 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
-    public class FriendDecorator : User
+    public class UserDecorator : User
     {
         public User User { get; set; }
 
-        public FriendDecorator(User i_User)
+        public UserDecorator(User i_User)
         {
             User = i_User;
         }

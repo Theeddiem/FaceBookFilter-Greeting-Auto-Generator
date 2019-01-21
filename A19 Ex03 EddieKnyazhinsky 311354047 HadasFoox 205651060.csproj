@@ -74,17 +74,17 @@
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
     <Compile Include="FriendDecorator.cs" />
-    <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GreetingForm.Designer.cs">
       <DependentUpon>GreetingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GreetingFactory.cs" />
     <Compile Include="Greetings\AnniversaryGreeting.cs" />
     <Compile Include="Greetings\BirthdayGreeting.cs" />
-    <Compile Include="GreetingFactory.cs" />
     <Compile Include="Greetings\EgreetingType.cs" />
+    <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="Greetings\HolidayGreeting.cs" />
     <Compile Include="Greetings\NewYearGreeting.cs" />
     <Compile Include="Greetings\RecruitmentGreeting.cs" />
