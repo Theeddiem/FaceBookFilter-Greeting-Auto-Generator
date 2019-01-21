@@ -71,16 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FavoriteFriend.cs" />
-    <Compile Include="Favoriteplace.cs" />
-    <Compile Include="FriendDecorator.cs" />
+    <Compile Include="GreetingFactory.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GreetingForm.Designer.cs">
       <DependentUpon>GreetingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GreetingFactory.cs" />
     <Compile Include="Greetings\AnniversaryGreeting.cs" />
     <Compile Include="Greetings\BirthdayGreeting.cs" />
     <Compile Include="Greetings\EgreetingType.cs" />
@@ -89,7 +86,6 @@
     <Compile Include="Greetings\NewYearGreeting.cs" />
     <Compile Include="Greetings\RecruitmentGreeting.cs" />
     <Compile Include="Greetings\WeddingGreeting.cs" />
-    <Compile Include="Mail.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +185,12 @@
     <None Include="Resources\unknow.png" />
     <None Include="Resources\not-available-.jpg" />
     <None Include="Resources\Greeting-Card-Envelope.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="LogicUtilities\LogicUtilities.csproj">
+      <Project>{cee55deb-7bf0-4918-9a35-19269d741eed}</Project>
+      <Name>LogicUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
             }
             else if (i_Type.Equals("NewYearGreeting"))
             {
-               // greeting = new NewYearGreeting();
+                greeting = new NewYearGreeting();
             }
             else if (i_Type.Equals("RecruitmentGreeting"))
             {

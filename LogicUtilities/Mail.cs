@@ -4,7 +4,6 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading;
-using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
