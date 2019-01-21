@@ -33,7 +33,7 @@
             this.friendsListBox = new System.Windows.Forms.ListBox();
             this.getPopularPlacesButton = new System.Windows.Forms.Button();
             this.popularPlacesListBox = new System.Windows.Forms.ListBox();
-            this.maps = new System.Windows.Forms.WebBrowser();
+            this.searchEngineWeb = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.friendsLabel = new System.Windows.Forms.Label();
             this.friendsWithCommonPlacesButton = new System.Windows.Forms.Button();
@@ -56,11 +56,10 @@
             this.friendsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsListBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.friendsListBox.FormattingEnabled = true;
-            this.friendsListBox.ItemHeight = 15;
-            this.friendsListBox.Location = new System.Drawing.Point(3, 109);
-            this.friendsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendsListBox.ItemHeight = 22;
+            this.friendsListBox.Location = new System.Drawing.Point(4, 168);
             this.friendsListBox.Name = "friendsListBox";
-            this.friendsListBox.Size = new System.Drawing.Size(174, 49);
+            this.friendsListBox.Size = new System.Drawing.Size(259, 70);
             this.friendsListBox.TabIndex = 5;
             this.friendsListBox.SelectedIndexChanged += new System.EventHandler(this.friendsListBox_SelectedIndexChanged_1);
             // 
@@ -69,10 +68,9 @@
             this.getPopularPlacesButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.getPopularPlacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getPopularPlacesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPopularPlacesButton.Location = new System.Drawing.Point(3, 272);
-            this.getPopularPlacesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.getPopularPlacesButton.Location = new System.Drawing.Point(4, 418);
             this.getPopularPlacesButton.Name = "getPopularPlacesButton";
-            this.getPopularPlacesButton.Size = new System.Drawing.Size(257, 28);
+            this.getPopularPlacesButton.Size = new System.Drawing.Size(386, 43);
             this.getPopularPlacesButton.TabIndex = 6;
             this.getPopularPlacesButton.Text = "Popular places among friends";
             this.getPopularPlacesButton.UseVisualStyleBackColor = false;
@@ -83,31 +81,28 @@
             this.popularPlacesListBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.popularPlacesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.popularPlacesListBox.FormattingEnabled = true;
-            this.popularPlacesListBox.ItemHeight = 15;
-            this.popularPlacesListBox.Location = new System.Drawing.Point(3, 303);
-            this.popularPlacesListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.popularPlacesListBox.ItemHeight = 22;
+            this.popularPlacesListBox.Location = new System.Drawing.Point(4, 466);
             this.popularPlacesListBox.Name = "popularPlacesListBox";
-            this.popularPlacesListBox.Size = new System.Drawing.Size(292, 64);
+            this.popularPlacesListBox.Size = new System.Drawing.Size(436, 92);
             this.popularPlacesListBox.TabIndex = 7;
             this.popularPlacesListBox.SelectedIndexChanged += new System.EventHandler(this.popularPlacesListBox_SelectedIndexChanged);
             // 
-            // maps
+            // searchEngineWeb
             // 
-            this.maps.Location = new System.Drawing.Point(297, 8);
-            this.maps.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maps.MinimumSize = new System.Drawing.Size(13, 13);
-            this.maps.Name = "maps";
-            this.maps.Size = new System.Drawing.Size(717, 456);
-            this.maps.TabIndex = 9;
+            this.searchEngineWeb.Location = new System.Drawing.Point(446, 12);
+            this.searchEngineWeb.MinimumSize = new System.Drawing.Size(20, 20);
+            this.searchEngineWeb.Name = "searchEngineWeb";
+            this.searchEngineWeb.Size = new System.Drawing.Size(1076, 702);
+            this.searchEngineWeb.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-1, 94);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(-2, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 13);
+            this.label1.Size = new System.Drawing.Size(349, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Selcet a friend to see your common places";
             // 
@@ -116,10 +111,9 @@
             this.friendsLabel.AutoSize = true;
             this.friendsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.friendsLabel.Location = new System.Drawing.Point(-1, 78);
-            this.friendsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.friendsLabel.Location = new System.Drawing.Point(-2, 120);
             this.friendsLabel.Name = "friendsLabel";
-            this.friendsLabel.Size = new System.Drawing.Size(62, 17);
+            this.friendsLabel.Size = new System.Drawing.Size(84, 25);
             this.friendsLabel.TabIndex = 11;
             this.friendsLabel.Text = "Friends";
             // 
@@ -128,10 +122,9 @@
             this.friendsWithCommonPlacesButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.friendsWithCommonPlacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsWithCommonPlacesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.friendsWithCommonPlacesButton.Location = new System.Drawing.Point(3, 394);
-            this.friendsWithCommonPlacesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendsWithCommonPlacesButton.Location = new System.Drawing.Point(4, 606);
             this.friendsWithCommonPlacesButton.Name = "friendsWithCommonPlacesButton";
-            this.friendsWithCommonPlacesButton.Size = new System.Drawing.Size(275, 31);
+            this.friendsWithCommonPlacesButton.Size = new System.Drawing.Size(412, 48);
             this.friendsWithCommonPlacesButton.TabIndex = 12;
             this.friendsWithCommonPlacesButton.Text = "Friends you have the most common places with";
             this.friendsWithCommonPlacesButton.UseVisualStyleBackColor = false;
@@ -141,30 +134,29 @@
             // 
             this.friendsWithCommonPlacesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsWithCommonPlacesListBox.FormattingEnabled = true;
-            this.friendsWithCommonPlacesListBox.ItemHeight = 15;
-            this.friendsWithCommonPlacesListBox.Location = new System.Drawing.Point(3, 428);
-            this.friendsWithCommonPlacesListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendsWithCommonPlacesListBox.ItemHeight = 22;
+            this.friendsWithCommonPlacesListBox.Location = new System.Drawing.Point(4, 658);
             this.friendsWithCommonPlacesListBox.Name = "friendsWithCommonPlacesListBox";
-            this.friendsWithCommonPlacesListBox.Size = new System.Drawing.Size(292, 34);
+            this.friendsWithCommonPlacesListBox.Size = new System.Drawing.Size(436, 48);
             this.friendsWithCommonPlacesListBox.TabIndex = 13;
             // 
             // placeGoogleSearchLabel
             // 
             this.placeGoogleSearchLabel.AutoSize = true;
             this.placeGoogleSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placeGoogleSearchLabel.Location = new System.Drawing.Point(0, 191);
+            this.placeGoogleSearchLabel.Location = new System.Drawing.Point(0, 294);
+            this.placeGoogleSearchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.placeGoogleSearchLabel.Name = "placeGoogleSearchLabel";
-            this.placeGoogleSearchLabel.Size = new System.Drawing.Size(190, 13);
+            this.placeGoogleSearchLabel.Size = new System.Drawing.Size(265, 20);
             this.placeGoogleSearchLabel.TabIndex = 15;
             this.placeGoogleSearchLabel.Text = "Select a place to see it\'s search";
             // 
             // friendPictureBox
             // 
             this.friendPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.friendPictureBox.Location = new System.Drawing.Point(187, 109);
-            this.friendPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.friendPictureBox.Location = new System.Drawing.Point(280, 168);
             this.friendPictureBox.Name = "friendPictureBox";
-            this.friendPictureBox.Size = new System.Drawing.Size(103, 81);
+            this.friendPictureBox.Size = new System.Drawing.Size(152, 122);
             this.friendPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.friendPictureBox.TabIndex = 8;
             this.friendPictureBox.TabStop = false;
@@ -173,21 +165,19 @@
             // 
             this.commonPlacesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.commonPlacesListBox.FormattingEnabled = true;
-            this.commonPlacesListBox.ItemHeight = 15;
-            this.commonPlacesListBox.Location = new System.Drawing.Point(3, 206);
-            this.commonPlacesListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.commonPlacesListBox.ItemHeight = 22;
+            this.commonPlacesListBox.Location = new System.Drawing.Point(4, 317);
             this.commonPlacesListBox.Name = "commonPlacesListBox";
-            this.commonPlacesListBox.Size = new System.Drawing.Size(292, 34);
+            this.commonPlacesListBox.Size = new System.Drawing.Size(436, 48);
             this.commonPlacesListBox.TabIndex = 16;
             this.commonPlacesListBox.SelectedIndexChanged += new System.EventHandler(this.commonPlacesListBox_SelectedIndexChanged_1);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.placesForm;
-            this.pictureBox1.Location = new System.Drawing.Point(154, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(231, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(206, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -196,10 +186,9 @@
             // 
             this.radioButtonGoogle.AutoSize = true;
             this.radioButtonGoogle.Checked = true;
-            this.radioButtonGoogle.Location = new System.Drawing.Point(4, 16);
-            this.radioButtonGoogle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonGoogle.Location = new System.Drawing.Point(6, 25);
             this.radioButtonGoogle.Name = "radioButtonGoogle";
-            this.radioButtonGoogle.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonGoogle.Size = new System.Drawing.Size(86, 24);
             this.radioButtonGoogle.TabIndex = 18;
             this.radioButtonGoogle.TabStop = true;
             this.radioButtonGoogle.Text = "Google";
@@ -209,10 +198,9 @@
             // radioButtonBing
             // 
             this.radioButtonBing.AutoSize = true;
-            this.radioButtonBing.Location = new System.Drawing.Point(4, 36);
-            this.radioButtonBing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonBing.Location = new System.Drawing.Point(6, 55);
             this.radioButtonBing.Name = "radioButtonBing";
-            this.radioButtonBing.Size = new System.Drawing.Size(46, 17);
+            this.radioButtonBing.Size = new System.Drawing.Size(66, 24);
             this.radioButtonBing.TabIndex = 19;
             this.radioButtonBing.Text = "Bing";
             this.radioButtonBing.UseVisualStyleBackColor = true;
@@ -223,11 +211,9 @@
             this.groupBox1.Controls.Add(this.radioButtonDuckDuckGo);
             this.groupBox1.Controls.Add(this.radioButtonGoogle);
             this.groupBox1.Controls.Add(this.radioButtonBing);
-            this.groupBox1.Location = new System.Drawing.Point(4, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(6, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(105, 79);
+            this.groupBox1.Size = new System.Drawing.Size(158, 122);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search engine";
@@ -235,10 +221,9 @@
             // radioButtonDuckDuckGo
             // 
             this.radioButtonDuckDuckGo.AutoSize = true;
-            this.radioButtonDuckDuckGo.Location = new System.Drawing.Point(5, 57);
-            this.radioButtonDuckDuckGo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonDuckDuckGo.Location = new System.Drawing.Point(8, 88);
             this.radioButtonDuckDuckGo.Name = "radioButtonDuckDuckGo";
-            this.radioButtonDuckDuckGo.Size = new System.Drawing.Size(91, 17);
+            this.radioButtonDuckDuckGo.Size = new System.Drawing.Size(130, 24);
             this.radioButtonDuckDuckGo.TabIndex = 21;
             this.radioButtonDuckDuckGo.TabStop = true;
             this.radioButtonDuckDuckGo.Text = "DuckDuckGo";
@@ -247,10 +232,10 @@
             // 
             // PlacesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(300, 480);
+            this.ClientSize = new System.Drawing.Size(450, 738);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.commonPlacesListBox);
@@ -259,14 +244,13 @@
             this.Controls.Add(this.friendsWithCommonPlacesButton);
             this.Controls.Add(this.friendsLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maps);
+            this.Controls.Add(this.searchEngineWeb);
             this.Controls.Add(this.friendPictureBox);
             this.Controls.Add(this.popularPlacesListBox);
             this.Controls.Add(this.getPopularPlacesButton);
             this.Controls.Add(this.friendsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PlacesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Places";
@@ -284,7 +268,7 @@
         private System.Windows.Forms.Button getPopularPlacesButton;
         private System.Windows.Forms.ListBox popularPlacesListBox;
         private System.Windows.Forms.PictureBox friendPictureBox;
-        private System.Windows.Forms.WebBrowser maps;
+        private System.Windows.Forms.WebBrowser searchEngineWeb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label friendsLabel;
         private System.Windows.Forms.Button friendsWithCommonPlacesButton;

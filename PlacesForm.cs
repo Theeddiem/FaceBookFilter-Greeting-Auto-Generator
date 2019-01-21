@@ -212,7 +212,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
             addreas.Append(getSearchSite.Invoke());
             addreas.Append(i_SelectedPlaceStr);
-            maps.Navigate(addreas.ToString());
+            searchEngineWeb.Navigate(addreas.ToString());
 
             string msg = string.Format("{0:HH:mm:ss tt} | You have searched :  {1}", DateTime.Now, i_SelectedPlaceStr);
             notifyObservers(msg);
@@ -306,8 +306,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 getSearchSite = () => @"https://duckduckgo.com/?q=";
 
             }
-
-
+  ]
+   SADSADdsadsad322131c sadsa
             //(@"http://www.google.com/search?q=");
             //@"https://www.bing.com/search?q=");
         }
