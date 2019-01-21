@@ -79,7 +79,7 @@
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.loginButton.Location = new System.Drawing.Point(114, 54);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(92, 52);
             this.loginButton.TabIndex = 0;
@@ -94,7 +94,7 @@
             this.findPlacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.findPlacesButton.ForeColor = System.Drawing.Color.RoyalBlue;
             this.findPlacesButton.Location = new System.Drawing.Point(44, 225);
-            this.findPlacesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.findPlacesButton.Margin = new System.Windows.Forms.Padding(2);
             this.findPlacesButton.Name = "findPlacesButton";
             this.findPlacesButton.Size = new System.Drawing.Size(143, 36);
             this.findPlacesButton.TabIndex = 3;
@@ -123,7 +123,7 @@
             this.getPostsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getPostsButton.ForeColor = System.Drawing.Color.RoyalBlue;
             this.getPostsButton.Location = new System.Drawing.Point(215, 218);
-            this.getPostsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.getPostsButton.Margin = new System.Windows.Forms.Padding(2);
             this.getPostsButton.Name = "getPostsButton";
             this.getPostsButton.Size = new System.Drawing.Size(93, 34);
             this.getPostsButton.TabIndex = 5;
@@ -139,7 +139,7 @@
             this.postsListBox.FormattingEnabled = true;
             this.postsListBox.ItemHeight = 15;
             this.postsListBox.Location = new System.Drawing.Point(215, 264);
-            this.postsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.postsListBox.Name = "postsListBox";
             this.postsListBox.Size = new System.Drawing.Size(282, 79);
             this.postsListBox.TabIndex = 6;
@@ -173,7 +173,7 @@
             this.sendGreetingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.sendGreetingButton.ForeColor = System.Drawing.Color.RoyalBlue;
             this.sendGreetingButton.Location = new System.Drawing.Point(44, 275);
-            this.sendGreetingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sendGreetingButton.Margin = new System.Windows.Forms.Padding(2);
             this.sendGreetingButton.Name = "sendGreetingButton";
             this.sendGreetingButton.Size = new System.Drawing.Size(143, 37);
             this.sendGreetingButton.TabIndex = 9;
@@ -188,7 +188,7 @@
             this.getLikedPagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getLikedPagesButton.ForeColor = System.Drawing.Color.RoyalBlue;
             this.getLikedPagesButton.Location = new System.Drawing.Point(560, 245);
-            this.getLikedPagesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.getLikedPagesButton.Margin = new System.Windows.Forms.Padding(2);
             this.getLikedPagesButton.Name = "getLikedPagesButton";
             this.getLikedPagesButton.Size = new System.Drawing.Size(93, 35);
             this.getLikedPagesButton.TabIndex = 10;
@@ -204,7 +204,7 @@
             this.likedPagesListBox.FormattingEnabled = true;
             this.likedPagesListBox.ItemHeight = 15;
             this.likedPagesListBox.Location = new System.Drawing.Point(560, 292);
-            this.likedPagesListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.likedPagesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesListBox.Name = "likedPagesListBox";
             this.likedPagesListBox.Size = new System.Drawing.Size(309, 49);
             this.likedPagesListBox.TabIndex = 11;
@@ -258,7 +258,7 @@
             this.photosButton.Enabled = false;
             this.photosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.photosButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.photosButton.Location = new System.Drawing.Point(531, 32);
+            this.photosButton.Location = new System.Drawing.Point(560, 32);
             this.photosButton.Name = "photosButton";
             this.photosButton.Size = new System.Drawing.Size(93, 34);
             this.photosButton.TabIndex = 21;
@@ -271,7 +271,7 @@
             this.photosFlowLayoutPanel.AutoScroll = true;
             this.photosFlowLayoutPanel.BackColor = System.Drawing.Color.White;
             this.photosFlowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.photosFlowLayoutPanel.Location = new System.Drawing.Point(531, 73);
+            this.photosFlowLayoutPanel.Location = new System.Drawing.Point(560, 72);
             this.photosFlowLayoutPanel.Name = "photosFlowLayoutPanel";
             this.photosFlowLayoutPanel.Size = new System.Drawing.Size(320, 160);
             this.photosFlowLayoutPanel.TabIndex = 22;
@@ -319,7 +319,7 @@
             this.logOutButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.logOutButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.logOutButton.Location = new System.Drawing.Point(1, 334);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(2);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(59, 54);
             this.logOutButton.TabIndex = 1;
@@ -377,7 +377,7 @@
             this.photosFlowLayoutPanel2.AutoScroll = true;
             this.photosFlowLayoutPanel2.BackColor = System.Drawing.Color.White;
             this.photosFlowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.photosFlowLayoutPanel2.Location = new System.Drawing.Point(531, 73);
+            this.photosFlowLayoutPanel2.Location = new System.Drawing.Point(560, 72);
             this.photosFlowLayoutPanel2.Name = "photosFlowLayoutPanel2";
             this.photosFlowLayoutPanel2.Size = new System.Drawing.Size(320, 160);
             this.photosFlowLayoutPanel2.TabIndex = 23;
@@ -400,7 +400,7 @@
             this.postsListBox2.FormattingEnabled = true;
             this.postsListBox2.ItemHeight = 15;
             this.postsListBox2.Location = new System.Drawing.Point(215, 263);
-            this.postsListBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postsListBox2.Margin = new System.Windows.Forms.Padding(2);
             this.postsListBox2.Name = "postsListBox2";
             this.postsListBox2.Size = new System.Drawing.Size(282, 79);
             this.postsListBox2.TabIndex = 28;
@@ -413,7 +413,7 @@
             this.likedPagesListBox2.FormattingEnabled = true;
             this.likedPagesListBox2.ItemHeight = 15;
             this.likedPagesListBox2.Location = new System.Drawing.Point(560, 292);
-            this.likedPagesListBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.likedPagesListBox2.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesListBox2.Name = "likedPagesListBox2";
             this.likedPagesListBox2.Size = new System.Drawing.Size(309, 49);
             this.likedPagesListBox2.TabIndex = 29;
@@ -425,7 +425,7 @@
             this.profilePictureBox.BackColor = System.Drawing.Color.DarkGray;
             this.profilePictureBox.Image = global::A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.unknow;
             this.profilePictureBox.Location = new System.Drawing.Point(7, 43);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(103, 101);
             this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -434,11 +434,13 @@
             // 
             // HistoryListBox
             // 
+            this.HistoryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.HistoryListBox.FormattingEnabled = true;
-            this.HistoryListBox.Location = new System.Drawing.Point(312, 165);
-            this.HistoryListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HistoryListBox.ItemHeight = 15;
+            this.HistoryListBox.Location = new System.Drawing.Point(356, 364);
+            this.HistoryListBox.Margin = new System.Windows.Forms.Padding(2);
             this.HistoryListBox.Name = "HistoryListBox";
-            this.HistoryListBox.Size = new System.Drawing.Size(269, 147);
+            this.HistoryListBox.Size = new System.Drawing.Size(269, 124);
             this.HistoryListBox.TabIndex = 30;
             // 
             // MainForm
@@ -447,7 +449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(913, 399);
+            this.ClientSize = new System.Drawing.Size(913, 499);
             this.Controls.Add(this.HistoryListBox);
             this.Controls.Add(this.likedPagesListBox2);
             this.Controls.Add(this.postsListBox2);
@@ -478,7 +480,7 @@
             this.Controls.Add(this.loginButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(909, 420);
             this.Name = "MainForm";

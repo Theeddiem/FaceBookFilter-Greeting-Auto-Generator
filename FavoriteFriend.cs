@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
-    public class FavoriteFriend : IComparable<FavoriteFriend>
+    public class FavoriteFriend : FriendDecorator , IComparable<FavoriteFriend>
     {
         public string FriendName { get; set; }
 
@@ -11,9 +12,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         public int AmountCommonPlaces { get; set; }
 
-        public FavoriteFriend(string i_FriendName)
+        public FavoriteFriend(User i_User):base(i_User)
         {
-            FriendName = i_FriendName;
+            FriendName = i_User.Name;
             CommonPlaces = new List<string>();
         }
 
