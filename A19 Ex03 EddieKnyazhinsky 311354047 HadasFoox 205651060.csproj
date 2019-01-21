@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
+    <Compile Include="FriendDecorator.cs" />
     <Compile Include="Greetings\Greeting.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>

@@ -245,7 +245,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             
             foreach (User currentFriend in friendsListBox.Items)
             {
-                FavoriteFriend currentFavFriend = new FavoriteFriend(currentFriend.Name);
+                FavoriteFriend currentFavFriend = new FavoriteFriend(currentFriend);
 
                 foreach (Checkin friendCheckIn in currentFriend.Checkins)
                 {
