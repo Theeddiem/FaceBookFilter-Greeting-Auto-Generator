@@ -465,7 +465,7 @@
             this.SaveToTxtBtn.TabIndex = 32;
             this.SaveToTxtBtn.Text = "SaveTo Txt";
             this.SaveToTxtBtn.UseVisualStyleBackColor = false;
-            this.SaveToTxtBtn.Click += new System.EventHandler(this.SaveToTxtBtn_Click);
+            this.SaveToTxtBtn.Click += new System.EventHandler(this.saveToTxtBtn_Click);
             // 
             // SaveToXmlBtn
             // 
@@ -476,7 +476,7 @@
             this.SaveToXmlBtn.TabIndex = 33;
             this.SaveToXmlBtn.Text = "Save To Xml";
             this.SaveToXmlBtn.UseVisualStyleBackColor = false;
-            this.SaveToXmlBtn.Click += new System.EventHandler(this.SaveToXmlBtn_Click);
+            this.SaveToXmlBtn.Click += new System.EventHandler(this.saveToXmlBtn_Click);
             // 
             // MainForm
             // 

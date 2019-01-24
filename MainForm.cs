@@ -305,12 +305,12 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }
 
-        private void SaveToTxtBtn_Click(object sender, EventArgs e)
+        private void saveToTxtBtn_Click(object sender, EventArgs e)
         {
             m_Saves[0].SaveHisotry(HistoryListBox);
         }
 
-        private void SaveToXmlBtn_Click(object sender, EventArgs e)
+        private void saveToXmlBtn_Click(object sender, EventArgs e)
         {
             m_Saves[1].SaveHisotry(HistoryListBox);
         }
