@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using LogicUtilities;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
@@ -13,6 +14,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 3;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
+        SaveToBase[] saves = new SaveToBase[] { new SaveToTxt(), new SaveToXml() };
+        
 
         public MainForm()
         {
@@ -302,5 +305,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
         }
 
+        private void SaveToTxtBtn_Click(object sender, EventArgs e)
+        {
+            saves[0].SaveHisotry(HistoryListBox);
+        }
+
+        private void SaveToXmlBtn_Click(object sender, EventArgs e)
+        {
+            saves[1].SaveHisotry(HistoryListBox);
+        }
     }
 }

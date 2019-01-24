@@ -62,6 +62,9 @@
             this.likedPagesListBox2 = new System.Windows.Forms.ListBox();
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
             this.HistoryListBox = new System.Windows.Forms.ListBox();
+            this.historyLabel = new System.Windows.Forms.Label();
+            this.SaveToTxtBtn = new System.Windows.Forms.Button();
+            this.SaveToXmlBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likedPagesBindingSource)).BeginInit();
@@ -122,7 +125,7 @@
             this.getPostsButton.Enabled = false;
             this.getPostsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getPostsButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPostsButton.Location = new System.Drawing.Point(215, 218);
+            this.getPostsButton.Location = new System.Drawing.Point(215, 198);
             this.getPostsButton.Margin = new System.Windows.Forms.Padding(2);
             this.getPostsButton.Name = "getPostsButton";
             this.getPostsButton.Size = new System.Drawing.Size(93, 34);
@@ -138,7 +141,7 @@
             this.postsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postsListBox.FormattingEnabled = true;
             this.postsListBox.ItemHeight = 15;
-            this.postsListBox.Location = new System.Drawing.Point(215, 264);
+            this.postsListBox.Location = new System.Drawing.Point(215, 236);
             this.postsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.postsListBox.Name = "postsListBox";
             this.postsListBox.Size = new System.Drawing.Size(282, 79);
@@ -187,7 +190,7 @@
             this.getLikedPagesButton.Enabled = false;
             this.getLikedPagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.getLikedPagesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getLikedPagesButton.Location = new System.Drawing.Point(560, 245);
+            this.getLikedPagesButton.Location = new System.Drawing.Point(560, 237);
             this.getLikedPagesButton.Margin = new System.Windows.Forms.Padding(2);
             this.getLikedPagesButton.Name = "getLikedPagesButton";
             this.getLikedPagesButton.Size = new System.Drawing.Size(93, 35);
@@ -203,7 +206,7 @@
             this.likedPagesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likedPagesListBox.FormattingEnabled = true;
             this.likedPagesListBox.ItemHeight = 15;
-            this.likedPagesListBox.Location = new System.Drawing.Point(560, 292);
+            this.likedPagesListBox.Location = new System.Drawing.Point(560, 276);
             this.likedPagesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesListBox.Name = "likedPagesListBox";
             this.likedPagesListBox.Size = new System.Drawing.Size(309, 49);
@@ -399,7 +402,7 @@
             this.postsListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.postsListBox2.FormattingEnabled = true;
             this.postsListBox2.ItemHeight = 15;
-            this.postsListBox2.Location = new System.Drawing.Point(215, 263);
+            this.postsListBox2.Location = new System.Drawing.Point(215, 236);
             this.postsListBox2.Margin = new System.Windows.Forms.Padding(2);
             this.postsListBox2.Name = "postsListBox2";
             this.postsListBox2.Size = new System.Drawing.Size(282, 79);
@@ -412,7 +415,7 @@
             this.likedPagesListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likedPagesListBox2.FormattingEnabled = true;
             this.likedPagesListBox2.ItemHeight = 15;
-            this.likedPagesListBox2.Location = new System.Drawing.Point(560, 292);
+            this.likedPagesListBox2.Location = new System.Drawing.Point(560, 276);
             this.likedPagesListBox2.Margin = new System.Windows.Forms.Padding(2);
             this.likedPagesListBox2.Name = "likedPagesListBox2";
             this.likedPagesListBox2.Size = new System.Drawing.Size(309, 49);
@@ -437,11 +440,43 @@
             this.HistoryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.HistoryListBox.FormattingEnabled = true;
             this.HistoryListBox.ItemHeight = 15;
-            this.HistoryListBox.Location = new System.Drawing.Point(356, 364);
+            this.HistoryListBox.Location = new System.Drawing.Point(215, 350);
             this.HistoryListBox.Margin = new System.Windows.Forms.Padding(2);
             this.HistoryListBox.Name = "HistoryListBox";
             this.HistoryListBox.Size = new System.Drawing.Size(269, 124);
             this.HistoryListBox.TabIndex = 30;
+            // 
+            // historyLabel
+            // 
+            this.historyLabel.AutoSize = true;
+            this.historyLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.historyLabel.Location = new System.Drawing.Point(215, 335);
+            this.historyLabel.Name = "historyLabel";
+            this.historyLabel.Size = new System.Drawing.Size(48, 13);
+            this.historyLabel.TabIndex = 31;
+            this.historyLabel.Text = "History : ";
+            // 
+            // SaveToTxtBtn
+            // 
+            this.SaveToTxtBtn.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.SaveToTxtBtn.Location = new System.Drawing.Point(489, 350);
+            this.SaveToTxtBtn.Name = "SaveToTxtBtn";
+            this.SaveToTxtBtn.Size = new System.Drawing.Size(93, 23);
+            this.SaveToTxtBtn.TabIndex = 32;
+            this.SaveToTxtBtn.Text = "SaveTo Txt";
+            this.SaveToTxtBtn.UseVisualStyleBackColor = false;
+            this.SaveToTxtBtn.Click += new System.EventHandler(this.SaveToTxtBtn_Click);
+            // 
+            // SaveToXmlBtn
+            // 
+            this.SaveToXmlBtn.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.SaveToXmlBtn.Location = new System.Drawing.Point(489, 379);
+            this.SaveToXmlBtn.Name = "SaveToXmlBtn";
+            this.SaveToXmlBtn.Size = new System.Drawing.Size(93, 23);
+            this.SaveToXmlBtn.TabIndex = 33;
+            this.SaveToXmlBtn.Text = "Save To Xml";
+            this.SaveToXmlBtn.UseVisualStyleBackColor = false;
+            this.SaveToXmlBtn.Click += new System.EventHandler(this.SaveToXmlBtn_Click);
             // 
             // MainForm
             // 
@@ -450,6 +485,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(913, 499);
+            this.Controls.Add(this.SaveToXmlBtn);
+            this.Controls.Add(this.SaveToTxtBtn);
+            this.Controls.Add(this.historyLabel);
             this.Controls.Add(this.HistoryListBox);
             this.Controls.Add(this.likedPagesListBox2);
             this.Controls.Add(this.postsListBox2);
@@ -478,7 +516,7 @@
             this.Controls.Add(this.findPlacesButton);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.loginButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -532,5 +570,8 @@
         private System.Windows.Forms.ListBox postsListBox2;
         private System.Windows.Forms.ListBox likedPagesListBox2;
         private System.Windows.Forms.ListBox HistoryListBox;
+        private System.Windows.Forms.Label historyLabel;
+        private System.Windows.Forms.Button SaveToTxtBtn;
+        private System.Windows.Forms.Button SaveToXmlBtn;
     }
 }
