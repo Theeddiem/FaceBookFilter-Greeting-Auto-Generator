@@ -15,13 +15,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         [STAThread]
         public static void Main()
         {
-
-            //SaveToBase[] saves = new SaveToBase[] { new SaveToTxt(), new SaveToXml() };
-            //saves[0].SaveHisotry("hesssllo");
-
-
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

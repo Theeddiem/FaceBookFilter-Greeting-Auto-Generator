@@ -17,7 +17,6 @@ namespace LogicUtilities
             string fileName = string.Format("History {0}", DateTime.Now.ToString("d-M-yyyy"));
             string path = string.Format(@"c:\temp\{0}.{1}",fileName,typeSave);
 
-            // string Text = string.Format("{0} {1}", i_msg, Environment.NewLine);
             if (File.Exists(path))
             {
                 try
@@ -40,14 +39,8 @@ namespace LogicUtilities
             {
                 File.AppendAllText(path, string.Format("{0} {1}", line, Environment.NewLine));
             }
-
-            //// Open the file to read from.
-            //string readText = File.ReadAllText(path);
-            //Console.WriteLine(readText);
-
         }
 
         protected abstract string saveAs();
-
     }
 }
