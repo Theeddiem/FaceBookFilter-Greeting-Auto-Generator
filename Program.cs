@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicUtilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+
         }
     }
 }

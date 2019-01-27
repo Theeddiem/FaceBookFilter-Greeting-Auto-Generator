@@ -80,7 +80,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                         {
                             currentFriendName = selectedFriend.Name;
                             sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
-                            string msg = string.Format("{0:HH:mm:ss tt} | Sent Mail to : {1}", DateTime.Now, currentFriendName);
+                            string msg = string.Format("{0:HH:mm:ss}| Sent Mail to : {1}", DateTime.Now, currentFriendName);
                             notifyObservers(msg);
                         }
                     MessageBox.Show("Sent");
@@ -88,7 +88,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-                    string msg = string.Format("{0:HH:mm:ss tt} | Failed to send mail to : {1}", DateTime.Now, currentFriendName);
+                    string msg = string.Format("{0:HH:mm:ss}| Failed to send mail to : {1}", DateTime.Now, currentFriendName);
                     notifyObservers(msg);
                     }
             }
