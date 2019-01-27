@@ -4,7 +4,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
-    public class FavoriteFriendUser : UserDecorator , IComparable<FavoriteFriendUser>
+    public class FavoriteFriendUser :  IComparable<FavoriteFriendUser>
     {
         public string FriendName { get; set; }
 
@@ -12,7 +12,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         public int AmountCommonPlaces { get; set; }
 
-        public FavoriteFriendUser(User i_User):base(i_User)
+        public FavoriteFriendUser(User i_User)
         {
             FriendName = i_User.Name;
             CommonPlaces = new List<string>();
