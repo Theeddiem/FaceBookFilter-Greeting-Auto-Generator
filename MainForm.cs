@@ -14,7 +14,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 3;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        SaveToBase[] m_Saves = new SaveToBase[] { new SaveToTxt(), new SaveToXml() };
+       
         
 
         public MainForm()
@@ -307,12 +307,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void saveToTxtBtn_Click(object sender, EventArgs e)
         {
-            m_Saves[0].SaveHisotry(HistoryListBox);
+            SaveToBase saveAsTxt = new SaveToTxt();
+            saveAsTxt.SaveHisotry(HistoryListBox);
         }
 
         private void saveToXmlBtn_Click(object sender, EventArgs e)
         {
-            m_Saves[1].SaveHisotry(HistoryListBox);
+            SaveToBase saveAsXml = new SaveToXml();
+            saveAsXml.SaveHisotry(HistoryListBox);
         }
     }
 }
