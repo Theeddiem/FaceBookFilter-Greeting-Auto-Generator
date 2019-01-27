@@ -110,7 +110,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-            placesForm.m_ReportSiteSearchDelegates += new Action<string>(this.upDateListBoxListener);
+          //  placesForm.m_ReportSiteSearchDelegates += new Action<string>(this.upDateListBoxListener);
+            placesForm.m_ReportSiteSearchDelegates += (this.upDateListBoxListener);
 
             placesForm.Show();
         }
