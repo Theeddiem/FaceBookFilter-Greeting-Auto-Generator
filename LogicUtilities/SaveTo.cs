@@ -21,7 +21,6 @@ namespace LogicUtilities
 
             else
             {
-                
                 //string currentDir = Directory.GetCurrentDirectory();
                 string fileName = string.Format("History {0}", DateTime.Now.ToString("d-M-yyyy"));
                 //string path = string.Format(@"{0}\{1}.{2}", currentDir, fileName, m_FileType);
@@ -32,20 +31,21 @@ namespace LogicUtilities
                 saveFileDialog.DefaultExt = m_FileType;
                 saveFileDialog.RestoreDirectory = true;
                 saveFileDialog.ShowDialog();
+                bool s = saveFileDialog.CheckFileExists;
                 string path = saveFileDialog.FileName;
 
-                if (File.Exists(path))
-                {
-                    try
-                    {
-                        File.Delete(path);
-                    }
-                    catch (Exception)
-                    {
+                //if (File.Exists(path))
+                //{
+                //    try
+                //    {
+                //        File.Delete(path);
+                //    }
+                //    catch (Exception)
+                //    {
 
-                        throw;
-                    }
-                }
+                //        throw;
+                //    }
+                //}
 
                 saveAs(i_History, path);
             }
