@@ -9,13 +9,12 @@ namespace LogicUtilities
 {
     public abstract class SaveToBase
     {
- 
 
         public void SaveHisotry(ListBox i_History)
         {
-
+            string currentDir = Directory.GetCurrentDirectory();
             string fileName = string.Format("History {0}", DateTime.Now.ToString("d-M-yyyy"));
-            string path = string.Format(@"c:\temp\{0}.{1}",fileName, saveAs());
+            string path = string.Format(@"{0}\{1}.{2}", currentDir, fileName, saveAs());
 
             if (File.Exists(path))
             {
@@ -41,8 +40,8 @@ namespace LogicUtilities
             }
         }
 
-        protected abstract string saveAs();
+       protected abstract string saveAs();
 
-
+        
     }
 }

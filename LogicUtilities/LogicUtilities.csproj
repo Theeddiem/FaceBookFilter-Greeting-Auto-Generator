@@ -60,7 +60,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SaveTo.cs" />
+    <Compile Include="SaveToBase.cs" />
     <Compile Include="SaveToTxt.cs" />
     <Compile Include="SaveToDoc.cs" />
   </ItemGroup>
