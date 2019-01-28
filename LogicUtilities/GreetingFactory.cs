@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using LogicUtilities.Greetings;
 
-namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
+namespace LogicUtilities
 {
     public static class GreetingFactory
     {
-        public static Greeting Create(string i_Type)
+        public static Greeting Create(string i_Type, string i_ImagePath)
         {
             Greeting greeting = null;
 
-            if(i_Type.Equals("AnniversaryGreeting"))
+            if (i_Type.Equals("AnniversaryGreeting"))
             {
-                greeting  = new AnniversaryGreeting();
+                greeting = new AnniversaryGreeting();
             }
-            else if(i_Type.Equals("BirthdayGreeting"))
+            else if (i_Type.Equals("BirthdayGreeting"))
             {
                 greeting = new BirthdayGreeting();
             }
-            else if(i_Type.Equals("HolidayGreeting"))
+            else if (i_Type.Equals("HolidayGreeting"))
             {
                 greeting = new HolidayGreeting();
             }
@@ -36,6 +33,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings
                 greeting = new WeddingGreeting();
             }
 
+            greeting.ImagePath = i_ImagePath;
             return greeting;
         }
     }

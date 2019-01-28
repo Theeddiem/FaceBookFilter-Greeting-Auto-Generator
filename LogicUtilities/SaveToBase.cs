@@ -27,7 +27,6 @@ namespace LogicUtilities
                 saveAs(i_History, path);    
         }
 
-        protected abstract void saveAs(ListBox i_History,string path);
-
+        protected abstract void saveAs(ListBox i_History, string path);
     }
 }

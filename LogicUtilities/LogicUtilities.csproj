@@ -53,6 +53,15 @@
   <ItemGroup>
     <Compile Include="FavoriteFriend.cs" />
     <Compile Include="Favoriteplace.cs" />
+    <Compile Include="Greeting.cs" />
+    <Compile Include="GreetingFactory.cs" />
+    <Compile Include="Greetings\AnniversaryGreeting.cs" />
+    <Compile Include="Greetings\BirthdayGreeting.cs" />
+    <Compile Include="Greetings\EgreetingType.cs" />
+    <Compile Include="Greetings\HolidayGreeting.cs" />
+    <Compile Include="Greetings\NewYearGreeting.cs" />
+    <Compile Include="Greetings\RecruitmentGreeting.cs" />
+    <Compile Include="Greetings\WeddingGreeting.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -63,6 +72,7 @@
     <Compile Include="SaveToBase.cs" />
     <Compile Include="SaveToTxt.cs" />
     <Compile Include="SaveToXml.cs" />
+    <Compile Include="WebSeach.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

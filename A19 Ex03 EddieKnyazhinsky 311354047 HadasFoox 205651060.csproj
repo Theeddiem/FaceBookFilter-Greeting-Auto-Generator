@@ -71,21 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GreetingFactory.cs" />
     <Compile Include="GreetingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GreetingForm.Designer.cs">
       <DependentUpon>GreetingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Greetings\AnniversaryGreeting.cs" />
-    <Compile Include="Greetings\BirthdayGreeting.cs" />
-    <Compile Include="Greetings\EgreetingType.cs" />
-    <Compile Include="Greetings\Greeting.cs" />
-    <Compile Include="Greetings\HolidayGreeting.cs" />
-    <Compile Include="Greetings\NewYearGreeting.cs" />
-    <Compile Include="Greetings\RecruitmentGreeting.cs" />
-    <Compile Include="Greetings\WeddingGreeting.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,7 +104,7 @@
       <DependentUpon>PlacesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -142,9 +133,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\happy_holiday_greeting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\No_User.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -160,21 +148,6 @@
     <None Include="Resources\Facebook_Our_Logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gious_kal.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\happy_newYear_greeting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\happy_Wedding_greeting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wedding_anniversary_greeting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy_birthday_greeting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\greeting_Backround2.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GreetingIcon.ico" />
+    <None Include="Resources\WeddingGreetingImage.jpg" />
+    <None Include="Resources\RecruitmentGreetingImage.jpg" />
+    <None Include="Resources\NewYearGreetingImage.jpg" />
+    <None Include="Resources\HolidayGreetingImage.jpg" />
+    <None Include="Resources\BirthdayGreetingImage.jpg" />
+    <None Include="Resources\AnniversaryGreetingImage.jpg" />
     <None Include="Resources\unknow.png" />
     <None Include="Resources\not-available-.jpg" />
     <None Include="Resources\Greeting-Card-Envelope.jpg" />

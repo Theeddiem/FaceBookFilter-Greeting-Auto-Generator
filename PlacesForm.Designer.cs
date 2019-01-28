@@ -46,6 +46,7 @@
             this.radioButtonBing = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonDuckDuckGo = new System.Windows.Forms.RadioButton();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.friendPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -230,12 +231,21 @@
             this.radioButtonDuckDuckGo.UseVisualStyleBackColor = true;
             this.radioButtonDuckDuckGo.CheckedChanged += new System.EventHandler(this.radioButtonSearch_CheckedChanged);
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(451, 118);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
+            this.webBrowser1.TabIndex = 21;
+            // 
             // PlacesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(450, 738);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.commonPlacesListBox);
@@ -280,5 +290,6 @@
         private System.Windows.Forms.RadioButton radioButtonBing;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButtonDuckDuckGo;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

@@ -13,6 +13,7 @@ namespace LogicUtilities
         {
             m_FileType = "xml";
         }
+
         protected override void saveAs(ListBox i_History, string path)
         {
             XmlTextWriter xmlWriter = new XmlTextWriter(path, Encoding.Unicode);

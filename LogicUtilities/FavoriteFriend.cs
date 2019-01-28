@@ -4,7 +4,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
-    public class FavoriteFriendUser :  IComparable<FavoriteFriendUser>
+    public class FavoriteFriendUser : IComparable<FavoriteFriendUser>
     {
         public string FriendName { get; set; }
 

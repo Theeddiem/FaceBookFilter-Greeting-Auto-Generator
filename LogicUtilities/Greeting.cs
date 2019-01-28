@@ -1,28 +1,23 @@
 ﻿using System.Windows.Forms;
 
-namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
+namespace LogicUtilities.Greetings
 {
     public abstract class Greeting
     {
         protected string m_GreetingSubject;
 
-        protected string m_ImageFileName;
+        protected string m_ImagePath;
 
-        protected PictureBox m_GreetingPicture;
-
-        public string ImageFileName
+        public string ImagePath
         {
             get
             {
-                return m_ImageFileName;
+                return m_ImagePath;
             }
-        }
 
-        public PictureBox GreetingPicture
-        {
-            get
+            set
             {
-                return m_GreetingPicture;
+                m_ImagePath = value;
             }
         }
 
@@ -31,7 +26,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             get
             {
                 return m_GreetingSubject;
-            }
+            }          
         }
 
         public override string ToString()

@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Greetings;
 using FacebookWrapper.ObjectModel;
+using LogicUtilities;
+using LogicUtilities.Greetings;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
@@ -39,22 +41,26 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             if (m_ReportGreetingSentDelegates != null)
             {
                 m_ReportGreetingSentDelegates.Invoke(i_HistoryMsg);
-
             }
         }
 
         private void getGreetingList()
         {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+
             foreach (string item in Enum.GetNames(typeof(EgreetingType)))
             {
-                greetingsListBox.Items.Add(GreetingFactory.Create(item));
+                string FileName = string.Format("{0}Resources\\{1}Image.jpg", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")), item);
+                PictureBox ppppp = new PictureBox();
+
+                greetingsListBox.Items.Add(GreetingFactory.Create(item, FileName));
             }
         }
 
         private void greetingsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             m_SelectedGreeting = greetingsListBox.SelectedItem as Greeting;
-            greetingPictureBox.Image = m_SelectedGreeting.GreetingPicture.Image;
+            greetingPictureBox.ImageLocation = m_SelectedGreeting.ImagePath;
 
             if (friendsListBox.SelectedItems.Count > 0)
             {
@@ -83,6 +89,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                             string msg = string.Format("{0:HH:mm:ss}| Sent Mail to : {1}", DateTime.Now, currentFriendName);
                             notifyObservers(msg);
                         }
+
                     MessageBox.Show("Sent");
                 }
                     catch (Exception ex)
@@ -101,7 +108,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             string toAddress = i_SelectedFriend.Email; 
             string fromAddress = "greetingscsharp@gmail.com";
             string msgSubject = string.Format($"{m_SelectedGreeting.GreetingSubject} from {i_FromName}");
-            string imagePath = string.Format("{0}\\Resources\\{1}.jpg", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, m_SelectedGreeting.ImageFileName);
+            string imagePath = string.Format("{0}\\Resources\\{1}.jpg", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, m_SelectedGreeting.ImagePath);
             Mail.SendEmailMessage(toAddress, fromAddress, msgSubject, i_MsgBody, imagePath);
         }
 

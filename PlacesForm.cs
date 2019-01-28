@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using LogicUtilities;
 
 namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 {
@@ -15,6 +16,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
     {
         private User m_LoggedInUser;
         private ListBox m_CurrentFriends;
+        private WebSearch m_Web;
 
         public event Action<string> m_ReportSiteSearchDelegates;
 
@@ -24,15 +26,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             {
                 m_ReportSiteSearchDelegates.Invoke(i_SearchHistory);
             }
-        }
-        
-        public Func<string> getSearchSite =  ()=> @"http://www.google.com/search?q=";
+        } 
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
             InitializeComponent();
             m_LoggedInUser = i_LoggedInUser;
             m_CurrentFriends = i_CurrentFriends;
+            m_Web = new WebSearch();
             getFriends();
         }
 
@@ -47,7 +48,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 friend.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
         }
-
 
         private void getPopularPlacesButton_Click(object sender, EventArgs e)
         {
@@ -208,16 +208,19 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void navigateToSearchEngine(string i_SelectedPlaceStr)
         {
-            StringBuilder addreas = new StringBuilder();
+            //StringBuilder addreas = new StringBuilder();
 
-            addreas.Append(getSearchSite.Invoke());
-            addreas.Append(i_SelectedPlaceStr);
-            searchEngineWeb.Navigate(addreas.ToString());
+            //addreas.Append(getSearchSite.Invoke());
+            //addreas.Append(i_SelectedPlaceStr);
+          
+
+            searchEngineWeb.Navigate(m_Web.GetWebSearchEngine(i_SelectedPlaceStr));
 
             string msg = string.Format("{0:HH:mm:ss tt} | You have searched :  {1}", DateTime.Now, i_SelectedPlaceStr);
             notifyObservers(msg);
 
         }
+
 
         private void getPotentialFriendsButton_Click(object sender, EventArgs e)
         {
@@ -295,15 +298,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             if (radioButtonGoogle.Checked)
             {
-                getSearchSite = () => @"http://www.google.com/search?q=";
+                m_Web.Amm = () => @"http://www.google.com/search?q=";
             }
             else if (radioButtonBing.Checked)
             {
-                getSearchSite = () => @"https://www.bing.com/search?q=";
+                m_Web.Amm = () => @"https://www.bing.com/search?q=";
             }
             else if (radioButtonDuckDuckGo.Checked)
             {
-                getSearchSite = () => @"https://duckduckgo.com/?q=";
+                m_Web.Amm = () => @"https://duckduckgo.com/?q=";
 
             }
         }

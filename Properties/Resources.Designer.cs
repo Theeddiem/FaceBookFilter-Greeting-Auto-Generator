@@ -22,7 +22,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,27 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Facebook_Our_Logo {
+        public static System.Drawing.Bitmap AnniversaryGreetingImage {
+            get {
+                object obj = ResourceManager.GetObject("AnniversaryGreetingImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BirthdayGreetingImage {
+            get {
+                object obj = ResourceManager.GetObject("BirthdayGreetingImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Facebook_Our_Logo {
             get {
                 object obj = ResourceManager.GetObject("Facebook_Our_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +93,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap favourite_places {
+        public static System.Drawing.Bitmap favourite_places {
             get {
                 object obj = ResourceManager.GetObject("favourite_places", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,17 +103,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gious_kal {
-            get {
-                object obj = ResourceManager.GetObject("gious_kal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap greeting_Backround2 {
+        public static System.Drawing.Bitmap greeting_Backround2 {
             get {
                 object obj = ResourceManager.GetObject("greeting_Backround2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +113,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Greeting_Card_Envelope {
+        public static System.Drawing.Bitmap Greeting_Card_Envelope {
             get {
                 object obj = ResourceManager.GetObject("Greeting_Card_Envelope", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +123,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap greeting_Icon_ {
+        public static System.Drawing.Bitmap greeting_Icon_ {
             get {
                 object obj = ResourceManager.GetObject("greeting_Icon_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,9 +133,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Happy_birthday_greeting1 {
+        public static System.Drawing.Bitmap HolidayGreetingImage {
             get {
-                object obj = ResourceManager.GetObject("Happy_birthday_greeting1", resourceCulture);
+                object obj = ResourceManager.GetObject("HolidayGreetingImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap happy_holiday_greeting {
+        public static System.Drawing.Bitmap NewYearGreetingImage {
             get {
-                object obj = ResourceManager.GetObject("happy_holiday_greeting", resourceCulture);
+                object obj = ResourceManager.GetObject("NewYearGreetingImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,27 +153,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap happy_newYear_greeting {
-            get {
-                object obj = ResourceManager.GetObject("happy_newYear_greeting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap happy_Wedding_greeting {
-            get {
-                object obj = ResourceManager.GetObject("happy_Wedding_greeting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap not_available_ {
+        public static System.Drawing.Bitmap not_available_ {
             get {
                 object obj = ResourceManager.GetObject("not_available_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +163,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap placesForm {
+        public static System.Drawing.Bitmap placesForm {
             get {
                 object obj = ResourceManager.GetObject("placesForm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +173,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unknow {
+        public static System.Drawing.Bitmap RecruitmentGreetingImage {
+            get {
+                object obj = ResourceManager.GetObject("RecruitmentGreetingImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unknow {
             get {
                 object obj = ResourceManager.GetObject("unknow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_exit_logout_sign_out_icon {
+        public static System.Drawing.Bitmap user_exit_logout_sign_out_icon {
             get {
                 object obj = ResourceManager.GetObject("user_exit_logout_sign_out_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,9 +203,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wedding_anniversary_greeting {
+        public static System.Drawing.Bitmap WeddingGreetingImage {
             get {
-                object obj = ResourceManager.GetObject("wedding_anniversary_greeting", resourceCulture);
+                object obj = ResourceManager.GetObject("WeddingGreetingImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

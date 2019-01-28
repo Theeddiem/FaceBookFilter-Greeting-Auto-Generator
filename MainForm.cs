@@ -14,9 +14,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 3;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-      
         
-
         public MainForm()
         {
             FacebookService.s_CollectionLimit = 15;
@@ -108,21 +106,16 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             //new Thread(getPhotos).Start();
         }
 
-
-
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-          //  placesForm.m_ReportSiteSearchDelegates += new Action<string>(this.upDateListBoxListener);
             placesForm.m_ReportSiteSearchDelegates += (this.upDateListBoxListener);
-
             placesForm.Show();
         }
 
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
-
 
             greetingsForm.m_ReportGreetingSentDelegates += new Action<string>(this.upDateListBoxListener);
 
@@ -308,7 +301,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void saveToTxtBtn_Click(object sender, EventArgs e)
         {
-
             SaveToBase saveToTxt = new SaveToTxt();
             saveToTxt.SaveHisotry(HistoryListBox);
         }
