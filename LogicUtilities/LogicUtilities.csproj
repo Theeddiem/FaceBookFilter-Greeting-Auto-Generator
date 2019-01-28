@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="SaveToBase.cs" />
     <Compile Include="SaveToTxt.cs" />
-    <Compile Include="SaveToDoc.cs" />
+    <Compile Include="SaveToXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,15 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Windows.Forms;
 
 namespace LogicUtilities
 {
     public class SaveToTxt : SaveToBase
     {
-        protected override string saveAs()
+        public SaveToTxt()
         {
-            return "txt";
+            m_FileType = "txt";
+        }
+
+        protected override void saveAs(ListBox i_History, string path)
+        {
+            foreach (string line in i_History.Items)
+            {
+                File.AppendAllText(path, string.Format("{0} {1}", line, Environment.NewLine));
+            }
         }
     }
 }
