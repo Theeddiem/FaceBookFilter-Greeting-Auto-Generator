@@ -14,7 +14,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private const int k_PhotosAmountPerAlbum = 3;
         private User m_LoggedInUser;
         private string k_MyAppId = "1954908174562233";
-        SaveToBase[] m_Saves = new SaveToBase[] { new SaveToTxt(), new SaveToXml() };
+      
         
 
         public MainForm()
@@ -308,14 +308,41 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void saveToTxtBtn_Click(object sender, EventArgs e)
         {
-            m_Saves[0].SaveHisotry(HistoryListBox);
+
+            SaveToBase saveToTxt = new SaveToTxt();
+            saveToTxt.SaveHisotry(HistoryListBox);
         }
 
         private void saveToXmlBtn_Click(object sender, EventArgs e)
         {
-            m_Saves[1].SaveHisotry(HistoryListBox);
+            SaveToBase saveToXml = new SaveToXml();
+            saveToXml.SaveHisotry(HistoryListBox);
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+  
+            if (HistoryListBox.Items.Count == 0)
+            {
+                MessageBox.Show("No History to Save");
+            }
+            else
+            {
+                SaveToBase save = null;
+
+                if (radioButtonTxt.Checked)
+                {
+                    save = new SaveToTxt();
+                }
+                else if (radioButtonXml.Checked)
+                {
+                    save = new SaveToXml();
+                }
+
+                save.SaveHisotry(HistoryListBox);
+
+            }       
+       
+        }
     }
 }
