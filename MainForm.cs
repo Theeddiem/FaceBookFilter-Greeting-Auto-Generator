@@ -109,7 +109,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-            placesForm.m_ReportSiteSearchDelegates += (this.upDateListBoxListener);
+            placesForm.ReportWebSearch += (this.upDateListBoxListener);
+            placesForm.s("www.google");
             placesForm.Show();
         }
 
@@ -117,14 +118,14 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
 
-            greetingsForm.m_ReportGreetingSentDelegates += new Action<string>(this.upDateListBoxListener);
-
+            greetingsForm.ReportGreetingSent += (this.upDateListBoxListener);
+            
             greetingsForm.Show();
         }
 
         private void upDateListBoxListener(string i_Msg)
         {
-            HistoryListBox.Items.Add(i_Msg + "\n");
+            HistoryListBox.Items.Add(string.Format("{0} {1} ",i_Msg , Environment.NewLine));
         }
 
         private void getPostsButton_Click(object sender, EventArgs e)

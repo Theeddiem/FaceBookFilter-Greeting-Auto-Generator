@@ -17,16 +17,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private ListBox m_CurrentFriends;
         private WebSearch m_Web;
-
-        public event Action<string> m_ReportSiteSearchDelegates;
-
-        private void notifyObservers(string i_SearchHistory)
-        {
-            if (m_ReportSiteSearchDelegates != null)
-            {
-                m_ReportSiteSearchDelegates.Invoke(i_SearchHistory);
-            }
-        } 
+        public event Action<string> ReportWebSearch;
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
@@ -208,19 +199,11 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void navigateToSearchEngine(string i_SelectedPlaceStr)
         {
-            //StringBuilder addreas = new StringBuilder();
-
-            //addreas.Append(getSearchSite.Invoke());
-            //addreas.Append(i_SelectedPlaceStr);
-          
-
             searchEngineWeb.Navigate(m_Web.GetWebSearchEngine(i_SelectedPlaceStr));
 
             string msg = string.Format("{0:HH:mm:ss tt} | You have searched :  {1}", DateTime.Now, i_SelectedPlaceStr);
-            notifyObservers(msg);
-
+            NotifyWebSearch(msg);
         }
-
 
         private void getPotentialFriendsButton_Click(object sender, EventArgs e)
         {
@@ -309,6 +292,19 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 m_Web.SiteDelegate = () => @"https://duckduckgo.com/?q=";
 
             }
+        }
+
+        protected virtual void OnWebSearch(string i_PlaceSearched)
+        {
+            if (ReportWebSearch != null)
+            {
+                ReportWebSearch.Invoke(i_PlaceSearched);
+            }
+        }
+
+        public void NotifyWebSearch(string i_PlaceSearched)
+        {
+            OnWebSearch(i_PlaceSearched);
         }
     }
 }

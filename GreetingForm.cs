@@ -20,9 +20,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private Greeting m_SelectedGreeting;
 
-        public event Action<string> m_ReportGreetingSentDelegates;
+        public event Action<string> ReportGreetingSent;
 
-     
         public GreetingsForm(User i_LoggedInUser, ListBox i_CurrentFriends)
         {
             InitializeComponent();
@@ -36,12 +35,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             getGreetingList();
         }
 
-        private void notifyObservers(string i_HistoryMsg)
+        protected virtual void OnGreetingSent(string i_HistoryMsg)
         {
-            if (m_ReportGreetingSentDelegates != null)
+            if (ReportGreetingSent != null)
             {
-                m_ReportGreetingSentDelegates.Invoke(i_HistoryMsg);
+                ReportGreetingSent.Invoke(i_HistoryMsg);
             }
+        }
+
+        public void NotifyGreetingSent(string i_HistoryMsg)
+        {
+            OnGreetingSent(i_HistoryMsg);
         }
 
         private void getGreetingList()
@@ -85,7 +89,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                             currentFriendName = selectedFriend.Name;
                             sendEmail(msgTextBox.Text, m_LoggedInUser.Name, selectedFriend);
                             string msg = string.Format("{0:HH:mm:ss}| Sent Mail to : {1}", DateTime.Now, currentFriendName);
-                            notifyObservers(msg);
+                            NotifyGreetingSent(msg);
                         }
 
                     MessageBox.Show("Sent");
@@ -94,7 +98,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 {
                     MessageBox.Show(ex.ToString());
                     string msg = string.Format("{0:HH:mm:ss}| Failed to send mail to : {1}", DateTime.Now, currentFriendName);
-                    notifyObservers(msg);
+                        NotifyGreetingSent(msg);
                     }
             }
             }));

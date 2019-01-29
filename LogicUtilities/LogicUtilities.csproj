@@ -72,7 +72,7 @@
     <Compile Include="SaveToBase.cs" />
     <Compile Include="SaveToTxt.cs" />
     <Compile Include="SaveToXml.cs" />
-    <Compile Include="WebSeach.cs" />
+    <Compile Include="WebSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

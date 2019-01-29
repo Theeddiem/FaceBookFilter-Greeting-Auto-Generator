@@ -7,7 +7,7 @@ namespace LogicUtilities
 {
     public class WebSearch
     {
-        public Func<string> SiteDelegate = () => @"http://www.google.com/search?q="; 
+        public Func<string> SiteDelegate = () => @"http://www.google.com/search?q=";
 
         public string GetWebSearchEngine(string i_SelectedPlaceStr)
         {
