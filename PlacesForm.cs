@@ -298,15 +298,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             if (radioButtonGoogle.Checked)
             {
-                m_Web.Amm = () => @"http://www.google.com/search?q=";
+                m_Web.SiteDelegate = () => @"http://www.google.com/search?q=";
             }
             else if (radioButtonBing.Checked)
             {
-                m_Web.Amm = () => @"https://www.bing.com/search?q=";
+                m_Web.SiteDelegate = () => @"https://www.bing.com/search?q=";
             }
             else if (radioButtonDuckDuckGo.Checked)
             {
-                m_Web.Amm = () => @"https://duckduckgo.com/?q=";
+                m_Web.SiteDelegate = () => @"https://duckduckgo.com/?q=";
 
             }
         }

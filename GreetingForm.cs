@@ -51,8 +51,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             foreach (string item in Enum.GetNames(typeof(EgreetingType)))
             {
                 string FileName = string.Format("{0}Resources\\{1}Image.jpg", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")), item);
-                PictureBox ppppp = new PictureBox();
-
                 greetingsListBox.Items.Add(GreetingFactory.Create(item, FileName));
             }
         }

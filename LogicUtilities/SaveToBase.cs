@@ -15,13 +15,12 @@ namespace LogicUtilities
         {
                 string fileName = string.Format("History {0}", DateTime.Now.ToString("d-M-yyyy"));
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save As";
+                saveFileDialog.Title = "Save History";
                 saveFileDialog.FileName = fileName;
                 saveFileDialog.Filter = string.Format("{0} file (*.{0})|*.{0}", m_FileType);
-                saveFileDialog.DefaultExt = m_FileType;
                 saveFileDialog.RestoreDirectory = true;
                 saveFileDialog.ShowDialog();
-                bool s = saveFileDialog.CheckFileExists;
+
                 string path = saveFileDialog.FileName;
 
                 saveAs(i_History, path);    

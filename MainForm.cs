@@ -301,17 +301,17 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void saveToTxtBtn_Click(object sender, EventArgs e)
         {
-            SaveToBase saveToTxt = new SaveToTxt();
-            saveToTxt.SaveHisotry(HistoryListBox);
+            SaveToBase save = new SaveToTxt();
+            save.SaveHisotry(HistoryListBox);
         }
 
         private void saveToXmlBtn_Click(object sender, EventArgs e)
         {
-            SaveToBase saveToXml = new SaveToXml();
-            saveToXml.SaveHisotry(HistoryListBox);
+            SaveToBase save = new SaveToXml();
+            save.SaveHisotry(HistoryListBox);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveAsFileBtn_Click(object sender, EventArgs e)
         {
   
             if (HistoryListBox.Items.Count == 0)
@@ -330,6 +330,8 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 {
                     save = new SaveToXml();
                 }
+                
+
 
                 save.SaveHisotry(HistoryListBox);
 

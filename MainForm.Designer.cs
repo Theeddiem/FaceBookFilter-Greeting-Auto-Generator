@@ -65,7 +65,7 @@
             this.historyLabel = new System.Windows.Forms.Label();
             this.SaveToTxtBtn = new System.Windows.Forms.Button();
             this.SaveToXmlBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveAsFileBtn = new System.Windows.Forms.Button();
             this.radioButtonXml = new System.Windows.Forms.RadioButton();
             this.radioButtonTxt = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
@@ -485,15 +485,15 @@
             this.SaveToXmlBtn.UseVisualStyleBackColor = false;
             this.SaveToXmlBtn.Click += new System.EventHandler(this.saveToXmlBtn_Click);
             // 
-            // button1
+            // saveAsFileBtn
             // 
-            this.button1.Location = new System.Drawing.Point(198, 538);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 37);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "SaveAs";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.saveAsFileBtn.Location = new System.Drawing.Point(198, 538);
+            this.saveAsFileBtn.Name = "saveAsFileBtn";
+            this.saveAsFileBtn.Size = new System.Drawing.Size(103, 37);
+            this.saveAsFileBtn.TabIndex = 34;
+            this.saveAsFileBtn.Text = "Save As";
+            this.saveAsFileBtn.UseVisualStyleBackColor = true;
+            this.saveAsFileBtn.Click += new System.EventHandler(this.saveAsFileBtn_Click);
             // 
             // radioButtonXml
             // 
@@ -526,7 +526,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 768);
             this.Controls.Add(this.radioButtonTxt);
             this.Controls.Add(this.radioButtonXml);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveAsFileBtn);
             this.Controls.Add(this.SaveToXmlBtn);
             this.Controls.Add(this.SaveToTxtBtn);
             this.Controls.Add(this.historyLabel);
@@ -614,7 +614,7 @@
         private System.Windows.Forms.Label historyLabel;
         private System.Windows.Forms.Button SaveToTxtBtn;
         private System.Windows.Forms.Button SaveToXmlBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveAsFileBtn;
         private System.Windows.Forms.RadioButton radioButtonXml;
         private System.Windows.Forms.RadioButton radioButtonTxt;
     }
