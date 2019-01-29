@@ -331,8 +331,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                     save = new SaveToXml();
                 }
                 
-
-
                 save.SaveHisotry(HistoryListBox);
 
             }       
