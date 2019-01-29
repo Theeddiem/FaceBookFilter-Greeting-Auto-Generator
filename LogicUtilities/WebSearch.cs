@@ -11,12 +11,12 @@ namespace LogicUtilities
 
         public string GetWebSearchEngine(string i_SelectedPlaceStr)
         {
-            StringBuilder addreas = new StringBuilder();
+            StringBuilder WebAddress = new StringBuilder();
 
-            addreas.Append(SiteDelegate.Invoke());
-            addreas.Append(i_SelectedPlaceStr);
+            WebAddress.Append(SiteDelegate.Invoke());
+            WebAddress.Append(i_SelectedPlaceStr);
 
-            return addreas.ToString();
+            return WebAddress.ToString();
         }
     }
 }

@@ -63,8 +63,6 @@
             this.profilePictureBox = new A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.OvalPictureBox();
             this.HistoryListBox = new System.Windows.Forms.ListBox();
             this.historyLabel = new System.Windows.Forms.Label();
-            this.SaveToTxtBtn = new System.Windows.Forms.Button();
-            this.SaveToXmlBtn = new System.Windows.Forms.Button();
             this.saveAsFileBtn = new System.Windows.Forms.Button();
             this.radioButtonXml = new System.Windows.Forms.RadioButton();
             this.radioButtonTxt = new System.Windows.Forms.RadioButton();
@@ -442,7 +440,7 @@
             this.HistoryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.HistoryListBox.FormattingEnabled = true;
             this.HistoryListBox.ItemHeight = 22;
-            this.HistoryListBox.Location = new System.Drawing.Point(322, 538);
+            this.HistoryListBox.Location = new System.Drawing.Point(322, 520);
             this.HistoryListBox.Name = "HistoryListBox";
             this.HistoryListBox.Size = new System.Drawing.Size(421, 180);
             this.HistoryListBox.TabIndex = 30;
@@ -452,54 +450,30 @@
             this.historyLabel.AutoSize = true;
             this.historyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.historyLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.historyLabel.Location = new System.Drawing.Point(322, 509);
+            this.historyLabel.Location = new System.Drawing.Point(322, 492);
             this.historyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.historyLabel.Name = "historyLabel";
             this.historyLabel.Size = new System.Drawing.Size(98, 25);
             this.historyLabel.TabIndex = 31;
             this.historyLabel.Text = "History : ";
             // 
-            // SaveToTxtBtn
-            // 
-            this.SaveToTxtBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold);
-            this.SaveToTxtBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.SaveToTxtBtn.Location = new System.Drawing.Point(750, 566);
-            this.SaveToTxtBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SaveToTxtBtn.Name = "SaveToTxtBtn";
-            this.SaveToTxtBtn.Size = new System.Drawing.Size(104, 57);
-            this.SaveToTxtBtn.TabIndex = 32;
-            this.SaveToTxtBtn.Text = "SaveTo Txt";
-            this.SaveToTxtBtn.UseVisualStyleBackColor = false;
-            this.SaveToTxtBtn.Click += new System.EventHandler(this.saveToTxtBtn_Click);
-            // 
-            // SaveToXmlBtn
-            // 
-            this.SaveToXmlBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold);
-            this.SaveToXmlBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.SaveToXmlBtn.Location = new System.Drawing.Point(750, 633);
-            this.SaveToXmlBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SaveToXmlBtn.Name = "SaveToXmlBtn";
-            this.SaveToXmlBtn.Size = new System.Drawing.Size(104, 57);
-            this.SaveToXmlBtn.TabIndex = 33;
-            this.SaveToXmlBtn.Text = "Save To Xml";
-            this.SaveToXmlBtn.UseVisualStyleBackColor = false;
-            this.SaveToXmlBtn.Click += new System.EventHandler(this.saveToXmlBtn_Click);
-            // 
             // saveAsFileBtn
             // 
-            this.saveAsFileBtn.Location = new System.Drawing.Point(198, 538);
+            this.saveAsFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold);
+            this.saveAsFileBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.saveAsFileBtn.Location = new System.Drawing.Point(640, 706);
             this.saveAsFileBtn.Name = "saveAsFileBtn";
             this.saveAsFileBtn.Size = new System.Drawing.Size(103, 37);
             this.saveAsFileBtn.TabIndex = 34;
             this.saveAsFileBtn.Text = "Save As";
-            this.saveAsFileBtn.UseVisualStyleBackColor = true;
+            this.saveAsFileBtn.UseVisualStyleBackColor = false;
             this.saveAsFileBtn.Click += new System.EventHandler(this.saveAsFileBtn_Click);
             // 
             // radioButtonXml
             // 
             this.radioButtonXml.AutoSize = true;
             this.radioButtonXml.Checked = true;
-            this.radioButtonXml.Location = new System.Drawing.Point(255, 582);
+            this.radioButtonXml.Location = new System.Drawing.Point(322, 706);
             this.radioButtonXml.Name = "radioButtonXml";
             this.radioButtonXml.Size = new System.Drawing.Size(61, 24);
             this.radioButtonXml.TabIndex = 35;
@@ -510,7 +484,7 @@
             // radioButtonTxt
             // 
             this.radioButtonTxt.AutoSize = true;
-            this.radioButtonTxt.Location = new System.Drawing.Point(254, 612);
+            this.radioButtonTxt.Location = new System.Drawing.Point(398, 706);
             this.radioButtonTxt.Name = "radioButtonTxt";
             this.radioButtonTxt.Size = new System.Drawing.Size(55, 24);
             this.radioButtonTxt.TabIndex = 36;
@@ -527,8 +501,6 @@
             this.Controls.Add(this.radioButtonTxt);
             this.Controls.Add(this.radioButtonXml);
             this.Controls.Add(this.saveAsFileBtn);
-            this.Controls.Add(this.SaveToXmlBtn);
-            this.Controls.Add(this.SaveToTxtBtn);
             this.Controls.Add(this.historyLabel);
             this.Controls.Add(this.HistoryListBox);
             this.Controls.Add(this.likedPagesListBox2);
@@ -612,8 +584,6 @@
         private System.Windows.Forms.ListBox likedPagesListBox2;
         private System.Windows.Forms.ListBox HistoryListBox;
         private System.Windows.Forms.Label historyLabel;
-        private System.Windows.Forms.Button SaveToTxtBtn;
-        private System.Windows.Forms.Button SaveToXmlBtn;
         private System.Windows.Forms.Button saveAsFileBtn;
         private System.Windows.Forms.RadioButton radioButtonXml;
         private System.Windows.Forms.RadioButton radioButtonTxt;

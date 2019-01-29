@@ -109,21 +109,18 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-            placesForm.ReportWebSearch += (this.upDateListBoxListener);
-            placesForm.s("www.google");
+            placesForm.ReportWebSearch += (this.updateHisotry);
             placesForm.Show();
         }
 
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
-
-            greetingsForm.ReportGreetingSent += (this.upDateListBoxListener);
-            
+            greetingsForm.ReportGreetingSent += (this.updateHisotry);
             greetingsForm.Show();
         }
 
-        private void upDateListBoxListener(string i_Msg)
+        private void updateHisotry(string i_Msg)
         {
             HistoryListBox.Items.Add(string.Format("{0} {1} ",i_Msg , Environment.NewLine));
         }
@@ -298,18 +295,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             picture.Image = A19Ex01EddieKnyazhinsky311354047HadasFoox205651060.Properties.Resources.not_available_;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             photosFlowLayoutPanel.Invoke(new Action(() => photosFlowLayoutPanel.Controls.Add(picture)));
-        }
-
-        private void saveToTxtBtn_Click(object sender, EventArgs e)
-        {
-            SaveToBase save = new SaveToTxt();
-            save.SaveHisotry(HistoryListBox);
-        }
-
-        private void saveToXmlBtn_Click(object sender, EventArgs e)
-        {
-            SaveToBase save = new SaveToXml();
-            save.SaveHisotry(HistoryListBox);
         }
 
         private void saveAsFileBtn_Click(object sender, EventArgs e)
