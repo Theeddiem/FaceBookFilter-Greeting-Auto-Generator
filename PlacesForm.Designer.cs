@@ -169,7 +169,7 @@
             this.commonPlacesListBox.ItemHeight = 22;
             this.commonPlacesListBox.Location = new System.Drawing.Point(4, 317);
             this.commonPlacesListBox.Name = "commonPlacesListBox";
-            this.commonPlacesListBox.Size = new System.Drawing.Size(436, 48);
+            this.commonPlacesListBox.Size = new System.Drawing.Size(436, 92);
             this.commonPlacesListBox.TabIndex = 16;
             this.commonPlacesListBox.SelectedIndexChanged += new System.EventHandler(this.commonPlacesListBox_SelectedIndexChanged_1);
             // 

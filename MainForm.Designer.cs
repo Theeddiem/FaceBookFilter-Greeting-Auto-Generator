@@ -308,7 +308,7 @@
             this.facebookLogoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.facebookLogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.facebookLogoPictureBox.Name = "facebookLogoPictureBox";
-            this.facebookLogoPictureBox.Size = new System.Drawing.Size(1370, 39);
+            this.facebookLogoPictureBox.Size = new System.Drawing.Size(1924, 39);
             this.facebookLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.facebookLogoPictureBox.TabIndex = 14;
             this.facebookLogoPictureBox.TabStop = false;
@@ -459,6 +459,7 @@
             // 
             // saveAsFileBtn
             // 
+            this.saveAsFileBtn.Enabled = false;
             this.saveAsFileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold);
             this.saveAsFileBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.saveAsFileBtn.Location = new System.Drawing.Point(640, 706);
@@ -497,7 +498,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1370, 774);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.radioButtonTxt);
             this.Controls.Add(this.radioButtonXml);
             this.Controls.Add(this.saveAsFileBtn);
@@ -533,7 +534,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1352, 830);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facebook";

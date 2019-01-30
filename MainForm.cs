@@ -197,6 +197,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             friendsButton.Invoke(new Action(() => friendsButton.Enabled = i_Enable));
             photosButton.Invoke(new Action(() => photosButton.Enabled = i_Enable));
             getLikedPagesButton.Invoke(new Action(() => getLikedPagesButton.Enabled = i_Enable));
+            saveAsFileBtn.Invoke(new Action(() => saveAsFileBtn.Enabled = i_Enable));
             getPostsButton.Invoke(new Action(() => getPostsButton.Enabled = i_Enable));
         }
 
