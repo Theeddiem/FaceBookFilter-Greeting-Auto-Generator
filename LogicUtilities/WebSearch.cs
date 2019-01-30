@@ -10,7 +10,7 @@ namespace LogicUtilities
     {
         public Func<string> CurrentSearchEngine = () => @"http://www.google.com/search?q=";
 
-        public string GetWebSearchEngine(string i_SelectedPlaceStr)
+        public string GetPlaceWebSearch(string i_SelectedPlaceStr)
         {
             StringBuilder WebAddress = new StringBuilder();
             WebAddress.Append(CurrentSearchEngine.Invoke());

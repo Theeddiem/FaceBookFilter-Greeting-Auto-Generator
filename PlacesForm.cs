@@ -200,7 +200,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void navigateToSearchEngine(string i_SelectedPlaceStr)
         {
-            searchEngineWeb.Navigate(m_Web.GetWebSearchEngine(i_SelectedPlaceStr));
+            searchEngineWeb.Navigate(m_Web.GetPlaceWebSearch(i_SelectedPlaceStr));
 
             string msg = string.Format("{0:HH:mm:ss tt} | You have searched :  {1}", DateTime.Now, i_SelectedPlaceStr);
             NotifyWebSearch(msg);
