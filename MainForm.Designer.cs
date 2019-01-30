@@ -497,7 +497,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1370, 768);
+            this.ClientSize = new System.Drawing.Size(1370, 774);
             this.Controls.Add(this.radioButtonTxt);
             this.Controls.Add(this.radioButtonXml);
             this.Controls.Add(this.saveAsFileBtn);
@@ -533,7 +533,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1352, 616);
+            this.MinimumSize = new System.Drawing.Size(1352, 830);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facebook";
