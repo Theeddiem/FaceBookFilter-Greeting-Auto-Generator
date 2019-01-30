@@ -33,7 +33,6 @@ namespace LogicUtilities
             xmlWriter.WriteEndElement();
             xmlWriter.WriteEndDocument();
             xmlWriter.Close();
-
         }
     }
 }

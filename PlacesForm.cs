@@ -17,6 +17,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private User m_LoggedInUser;
         private ListBox m_CurrentFriends;
         private WebSearch m_Web;
+
         public event Action<string> ReportWebSearch;
 
         public PlacesForm(User i_LoggedInUser, ListBox i_CurrentFriends)
@@ -281,16 +282,15 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         {
             if (radioButtonGoogle.Checked)
             {
-                m_Web.SiteDelegate = () => @"http://www.google.com/search?q=";
+                m_Web.CurrentSearchEngine = () => @"http://www.google.com/search?q=";
             }
             else if (radioButtonBing.Checked)
             {
-                m_Web.SiteDelegate = () => @"https://www.bing.com/search?q=";
+                m_Web.CurrentSearchEngine = () => @"https://www.bing.com/search?q=";
             }
             else if (radioButtonDuckDuckGo.Checked)
             {
-                m_Web.SiteDelegate = () => @"https://duckduckgo.com/?q=";
-
+                m_Web.CurrentSearchEngine = () => @"https://duckduckgo.com/?q=";
             }
         }
 

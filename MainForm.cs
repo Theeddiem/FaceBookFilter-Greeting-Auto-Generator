@@ -103,26 +103,26 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
             new Thread(getFriendsData).Start();
            // new Thread(getPosts).Start();
            // new Thread(getLikedPages).Start();
-            //new Thread(getPhotos).Start();
+           // new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
         {
             PlacesForm placesForm = new PlacesForm(m_LoggedInUser, friendsListBox);
-            placesForm.ReportWebSearch += (this.updateHisotry);
+            placesForm.ReportWebSearch += this.updateHisotry;
             placesForm.Show();
         }
 
         private void greetingFeatureButton_Click(object sender, EventArgs e)
         {
             GreetingsForm greetingsForm = new GreetingsForm(m_LoggedInUser, friendsListBox);
-            greetingsForm.ReportGreetingSent += (this.updateHisotry);
+            greetingsForm.ReportGreetingSent += this.updateHisotry;
             greetingsForm.Show();
         }
 
         private void updateHisotry(string i_Msg)
         {
-            HistoryListBox.Items.Add(string.Format("{0} {1} ",i_Msg , Environment.NewLine));
+            HistoryListBox.Items.Add(string.Format("{0} {1} ", i_Msg, Environment.NewLine));
         }
 
         private void getPostsButton_Click(object sender, EventArgs e)
@@ -299,7 +299,6 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
 
         private void saveAsFileBtn_Click(object sender, EventArgs e)
         {
-  
             if (HistoryListBox.Items.Count == 0)
             {
                 MessageBox.Show("No History to Save");
@@ -318,9 +317,7 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
                 }
                 
                 save.SaveHisotry(HistoryListBox);
-
             }       
-       
         }
     }
 }
