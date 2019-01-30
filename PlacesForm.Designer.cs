@@ -60,7 +60,7 @@
             this.friendsListBox.ItemHeight = 22;
             this.friendsListBox.Location = new System.Drawing.Point(4, 168);
             this.friendsListBox.Name = "friendsListBox";
-            this.friendsListBox.Size = new System.Drawing.Size(259, 70);
+            this.friendsListBox.Size = new System.Drawing.Size(259, 114);
             this.friendsListBox.TabIndex = 5;
             this.friendsListBox.SelectedIndexChanged += new System.EventHandler(this.friendsListBox_SelectedIndexChanged_1);
             // 
@@ -85,7 +85,7 @@
             this.popularPlacesListBox.ItemHeight = 22;
             this.popularPlacesListBox.Location = new System.Drawing.Point(4, 466);
             this.popularPlacesListBox.Name = "popularPlacesListBox";
-            this.popularPlacesListBox.Size = new System.Drawing.Size(436, 92);
+            this.popularPlacesListBox.Size = new System.Drawing.Size(436, 114);
             this.popularPlacesListBox.TabIndex = 7;
             this.popularPlacesListBox.SelectedIndexChanged += new System.EventHandler(this.popularPlacesListBox_SelectedIndexChanged);
             // 
@@ -123,7 +123,7 @@
             this.friendsWithCommonPlacesButton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.friendsWithCommonPlacesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsWithCommonPlacesButton.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.friendsWithCommonPlacesButton.Location = new System.Drawing.Point(4, 606);
+            this.friendsWithCommonPlacesButton.Location = new System.Drawing.Point(2, 586);
             this.friendsWithCommonPlacesButton.Name = "friendsWithCommonPlacesButton";
             this.friendsWithCommonPlacesButton.Size = new System.Drawing.Size(412, 48);
             this.friendsWithCommonPlacesButton.TabIndex = 12;
@@ -136,9 +136,9 @@
             this.friendsWithCommonPlacesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.friendsWithCommonPlacesListBox.FormattingEnabled = true;
             this.friendsWithCommonPlacesListBox.ItemHeight = 22;
-            this.friendsWithCommonPlacesListBox.Location = new System.Drawing.Point(4, 658);
+            this.friendsWithCommonPlacesListBox.Location = new System.Drawing.Point(2, 640);
             this.friendsWithCommonPlacesListBox.Name = "friendsWithCommonPlacesListBox";
-            this.friendsWithCommonPlacesListBox.Size = new System.Drawing.Size(436, 48);
+            this.friendsWithCommonPlacesListBox.Size = new System.Drawing.Size(436, 92);
             this.friendsWithCommonPlacesListBox.TabIndex = 13;
             // 
             // placeGoogleSearchLabel
