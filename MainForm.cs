@@ -101,9 +101,9 @@ namespace A19Ex01EddieKnyazhinsky311354047HadasFoox205651060
         private void fetchInfo()
         {
             new Thread(getFriendsData).Start();
-           // new Thread(getPosts).Start();
-           // new Thread(getLikedPages).Start();
-           // new Thread(getPhotos).Start();
+            new Thread(getPosts).Start();
+            new Thread(getLikedPages).Start();
+            new Thread(getPhotos).Start();
         }
 
         private void getPlacesFeatureButton_Click(object sender, EventArgs e)
