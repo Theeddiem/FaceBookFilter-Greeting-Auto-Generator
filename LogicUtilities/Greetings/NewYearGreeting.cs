@@ -1,6 +1,6 @@
 ﻿namespace LogicUtilities.Greetings
 {
-    internal class NewYearGreeting : Greeting//
+    internal class NewYearGreeting : Greeting
     {
         public NewYearGreeting()
         {
